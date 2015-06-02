@@ -17,14 +17,17 @@ newObject["someValue"] = "someValue";
 var myVal = newObject["someValue"];
 
 // 3: using object defineProperty method
-Object.defineProperty('newObject', "someValue" {
+Object.defineProperty(newObject, "someValue", {
   value:"someValue",
   writable: true
 });
 
 // 4: using generic function
 var defineProperty = function(obj, key, value){
-    config.value = value;
+    var config = {
+      value: value,
+      writable: true
+    }
     Object.defineProperty(obj, key , config);
 }
 
@@ -33,12 +36,12 @@ var man = Object.create(null);
 defineProperty(man, 'name', 'Nishant Kumar');
 
 // 5: using object defineProperties method
-Object.defineProperties('man',{
-  "name" : {
+Object.defineProperties(man,{
+  'petname' : {
     value: "Nishant",
     writable : true
   },
-  "Age" : {
+  'Age' : {
     value : '24',
     writable : true
   }
