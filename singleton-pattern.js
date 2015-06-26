@@ -56,6 +56,14 @@ var emailClient = (function(){
 	}
 })();
 
+//Todo Extend emailClient signleton pattern and add one 
+//more functionality without changing the emailClient exiting code
+emailClient.getInstance = function(){
+	if(this._instance){
+		return this._instance;
+	}
+}
+
 
 // emailClient instance for sending email
 var googleEmailClient = emailClient.getInstance();
@@ -70,6 +78,10 @@ var validate = emailClient.getInstance();
 
 // check is both instance are similar or not 
 console.log(googleEmailClient === validate); // output true
+
+
+
+
 
 
 
