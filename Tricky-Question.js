@@ -11,7 +11,7 @@
             console.log(this.myName);
         }
     }
-    // Return display method and test It wooww
+    // Return display method and test It wooww man
     return MyNameSpace.display();
 
 }).call();
