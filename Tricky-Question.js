@@ -11,7 +11,7 @@
             console.log(this.myName);
         }
     }
-
+    // Return display method
     return MyNameSpace.display();
 
 }).call();
