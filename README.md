@@ -603,12 +603,12 @@ Ref Link: http://stackoverflow.com/questions/2449254/what-is-the-instanceof-oper
 
 `Object` has `keys` method which can we used to calculate the length of object.
 
-``` 
+```javascript
  Object.keys(counterArray).length // Output 2 
 ```
 We can also calculate length of object by iterating through object and by doing count of own property of object.  
 
-```
+```javascript
 function getSize(object){
 	var count = 0;
 	for(key in object){
@@ -620,7 +620,7 @@ function getSize(object){
 ```
 > We can also add `length` method directly on `Object` see below code.
 
-```
+```javascript
   Object.length = function(){
   	var count = 0;
 	for(key in object){
