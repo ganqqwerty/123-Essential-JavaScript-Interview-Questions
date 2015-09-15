@@ -1,8 +1,8 @@
-##### What is drawback of creating true private in JavaScript?
+##### 3. What is drawback of creating true private in JavaScript?
 
 > One of the drawback of creating true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
-```
+```javascript
 var Employee = function (name, company, salary) {
     this.name = name || "";       //Public attribute default value is null
     this.company = company || ""; //Public attribute default value is null

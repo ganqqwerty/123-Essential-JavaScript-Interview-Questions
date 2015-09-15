@@ -1,13 +1,13 @@
-##### Write a mul function which will properly when invoked as below syntax.
+##### 5. Write a mul function which will properly when invoked as below syntax.
   
-  ```
+  ```javascript
   console.log(mul(2)(3)(4)); // output : 24 
   console.log(mul(4)(3)(4)); // output : 48
   ```
 
 > Below is code followed by an explanation how it works:
 
-```
+```javascript
 function mul (x) {
     return function (y) { // anonymous function 
         return function (z) { // anonymous function 

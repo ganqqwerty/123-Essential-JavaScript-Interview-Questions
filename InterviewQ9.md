@@ -1,6 +1,6 @@
-##### If we have JavaScript associative array as below code : 
+##### 21. If we have JavaScript associative array as below code : 
 
-```
+```javascript
   var counterArray = {
   		 A : 3,
   		 B : 4

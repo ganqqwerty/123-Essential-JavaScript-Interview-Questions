@@ -1,6 +1,6 @@
-##### What is the `instanceof` operator in JavaScript? what would be the output of below code ? 
+##### 20. What is the `instanceof` operator in JavaScript? what would be the output of below code ? 
 
-```
+```javascript
 function foo(){ 
 	return foo; 
 }
@@ -10,19 +10,19 @@ new foo() instanceof foo;
 
 For Example: 
 
-```
+```javascript
  var dog = new Animal();
  dog instanceof Animal // Output : true
 ```
 Here `dog instanceof Animal` is true since `dog` inherits from `Animal.prototype`
 
-```
+```javascript
  var name = new String("xyz");
  name instanceof String // Output : true
 ```
 Here `name instanceof String` is true since `dog` inherits from `String.prototype`. Now let's understand the working of below code 
 
-```
+```javascript
 function foo(){ 
 	return foo; 
 }
@@ -30,7 +30,7 @@ new foo() instanceof foo;
 ```
 Here function `foo` is returning `foo` which is again pointer to function `foo`
 
-```
+```javascript
 function foo(){ 
 	return foo; 
 }

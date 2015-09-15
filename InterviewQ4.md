@@ -1,6 +1,6 @@
-##### What will be the output of below code ?
+##### 14. What will be the output of below code ?
 
-```
+```javascript
 var bar = true;
 console.log(bar + 0);   
 console.log(bar + "xyz");  
@@ -17,9 +17,9 @@ console.log(bar + false);
 > * String + String 	-> Concatenation
 
 
-##### What will be the output of below code ?
+##### 15. What will be the output of below code ?
 
-```
+```javascript
 var z = 1, y = z = typeof y;
 console.log(y);  
 ```

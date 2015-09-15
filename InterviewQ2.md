@@ -1,6 +1,6 @@
-##### What will be the output of below code ?
+##### 8. What will be the output of below code ?
 
-```
+```javascript
 var output = (function(x){
     delete x;
     return x;
@@ -10,9 +10,9 @@ var output = (function(x){
 ```
 > Above code will output `0` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
 
-##### What will be the output of below code ?
+##### 9. What will be the output of below code ?
 
-```
+```javascript
 var x = 1;
 var output = (function(){
     delete x;
@@ -23,9 +23,9 @@ var output = (function(){
 ```
 > Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
 
-##### What will be the output of below code ?
+##### 10. What will be the output of below code ?
 
-```
+```javascript
 var x = { foo : 1};
 var output = (function(){
     delete x.foo;
@@ -36,9 +36,9 @@ var output = (function(){
 ```
 > Above code will output `undefined` as output. `delete` operator is used to delete property from object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
 
-##### What will be the output of below code ?
+##### 11. What will be the output of below code ?
 
-```
+```javascript
 var Employee = {
   company: 'xyz'
 }
@@ -50,9 +50,9 @@ console.log(emp1.company);
 
 `emp1` object doesn't have **company** as it's own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
-##### What is `undefined x 1` in JavaScript
+##### 12. What is `undefined x 1` in JavaScript
 
-```
+```javascript
 var trees = ["redwood","bay","cedar","oak","maple"];
 delete trees[3];
 ```

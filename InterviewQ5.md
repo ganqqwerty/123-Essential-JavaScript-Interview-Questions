@@ -1,6 +1,6 @@
-##### What will be the output of below code ?
+##### 16. What will be the output of below code ?
 
-```
+```javascript
  // NFE (Named Function Expression 
  var foo = function bar(){ return 12; };
  typeof bar();  
@@ -9,7 +9,7 @@
 
 **Sample 1**
 
-```
+```javascript
  var bar = function(){ return 12; };
  typeof bar();  
 ```
@@ -17,13 +17,13 @@ or
 
 **Sample 2**
 
-```
+```javascript
  function bar(){ return 12; };
  typeof bar();  
 ```
 function definition can have only one reference variable as a function name, In above code **sample 1** bar is reference variable which is pointing to `anonymous function` and in **sample 2** function definition is name function.
 
-```
+```javascript
  var foo = function bar(){ 
     // foo is visible here 
     // bar is visible here
@@ -34,22 +34,22 @@ function definition can have only one reference variable as a function name, In 
   
 ```
 
-##### what is difference between declaring function in below format ?
+##### 17. what is difference between declaring function in below format ?
 
-```
+```javascript
  var foo = function(){ 
 	// Some code
  }; 
 ```
 
-```
+```javascript
  function bar(){ 
 	// Some code
  }; 
 ```
 The main difference is function `foo` is defined at `run-time` whereas function `bar` is defined at parse time. For understanding It in better way let see below code : 
 
-```
+```javascript
 Run-Time function declaration 
 <script>
 foo(); // Call foo function here, It will give Error
@@ -58,7 +58,7 @@ foo(); // Call foo function here, It will give Error
  }; 
  </script>
 ```
-```
+```javascript
 <script>
 Parse-Time function declaration 
 bar(); // Call foo function here, It will not give Error
@@ -69,7 +69,7 @@ bar(); // Call foo function here, It will not give Error
 ```
 The another advantage of first-one way of declaration that you can declare function based on certain condition for example: 
 
-```
+```javascript
 <script>
 if(testCondition) {// If testCondition is true then 
 	 var foo = function(){ 
@@ -84,7 +84,7 @@ if(testCondition) {// If testCondition is true then
 ```
 But If you try to run similar code in below format It would give error 
 
-```
+```javascript
 <script>
 if(testCondition) {// If testCondition is true then 
 	 function foo(){ 

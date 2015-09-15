@@ -1,6 +1,6 @@
-##### What will be the output of below code ?
+##### 13. What will be the output of below code ?
 
-```
+```javascript
 var trees = ["xyz","xxxx","test","ryan","apple"];
 delete trees[3];
   

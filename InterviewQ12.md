@@ -1,4 +1,4 @@
-##### What is “closure” in javascript? Provide an example ?
+##### 4.What is “closure” in javascript? Provide an example ?
 
 > A closure is a function defined inside another function (called parent function) and has access to variable which is declared and defined in parent function scope.
 
@@ -8,7 +8,7 @@ The closure has access to variable in three scopes:
  * Variable declared in parent function scope 
  * Variable declared in global namespace
 
-```
+```javascript
 var globalVar = "abc"; 
 
 // Parent self invoking function 
@@ -33,7 +33,7 @@ var globalVar = "abc";
 
 Output of above code would be:
 
-```
+```javascript
 outerArg = 7
 outerFuncVar = x
 innerArg = 5
