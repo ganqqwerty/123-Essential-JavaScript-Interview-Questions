@@ -1,3 +1,5 @@
+![](coverPage.png)
+
 # 101-JavaScript-Interview-Question
 
 ##### 1. Difference between `undefined` and `not defined` in JavaScript 
@@ -633,4 +635,320 @@ function getSize(object){
   console.log(Object.length(counterArray))
 ```
 **Bonus**: We can also use `Underscore` (recommended, As it's lightweight) to calculate object length.
+
+## Question 22
+##### Difference between `Function`, `Method` and `Constructor` calls in JavaScript.
+
+If your are familiar with Object-oriented programming, More likely familiar to thinking of functions, methods, and class constructors as three separate things. But In JavaScript, these are just three different usage patterns of one single construct. 
+
+functions : The simplest usages of function call:
+
+``` javascript
+ function helloWorld(name){
+   return "hello world, " + name; 
+ }
+ 
+ helloWorld("JS Geeks"); // "hello world JS Geeks"
+```
+Methods in JavaScript are nothing more than object properties that reference to function.
+
+``` javascript
+var obj = {
+  helloWorld : function(){
+    return "hello world, " + this.name; 
+  },
+  name: 'John Carter'
+} 
+obj.helloWorld(); // // "hello world John Carter"
+```
+Notice how `helloWorld` refer to `this` properties of obj. Here It's clear or you might have already understood that `this` gets bound to `obj`. But Interesting point that we can copy a reference to the same function `helloWorld` in another object and get a difference answer. Let see:
+
+``` javascript
+var obj2 = {
+  helloWorld : obj.helloWorld,
+  name: 'John Doe'
+}
+obj2.helloWorld(); // "hello world John Doe"
+```
+You might be wonder what exactly happens in a method call here. Here call expression itself determine the binding of this `this`, The expression `obj2.helloWorld()` looks up the `helloWorld` property of obj and calls it with receiver object `obj2`.
+
+The third use of functions is as constructors. Like function and method, `constructors` are defined with function.
+
+``` javascript
+function Employee(name, age){
+  this.name = name;
+  this.age = age;
+}
+
+var emp1 = new Employee('John Doe', 28);
+emp1.name; // "John Doe"
+emp1.age; // 28
+```
+Unlike function calls and method calls, a constructor call `new Employee('John Doe', 28)` create a brand new object and passes it as the value of `this`, and implicitly returns the new object as it's result. 
+
+The primary role of constructor function is to initialize the object. 
+
+## Question 23
+##### What would be the output of below code ?
+
+
+``` javascript
+  function User(name){
+    this.name = name || "JsGeeks";
+  }
+  
+  var person = new User("xyz")["location"] = "USA";
+  console.log(person);
+```
+
+Output of above code would be `USA`. Here `new User("xyz")` create a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by person.
+
+Let say `new User("xyz")` crated a object called `foo` and returned now `foo["location"]` would be assigned value as `USA` and `person` is referencing to `foo["location"]`.
+
+## Question 24
+##### Write a mul function which will output when invoked as below syntax.
+
+``` javascript
+  console.log(mul(2)(3)(4)); // output : 24 
+  console.log(mul(4)(3)(4)); // output : 48
+```
+Below is code followed by an explanation how it works:
+ 
+``` javascript 
+function mul (x) {
+    return function (y) { // anonymous function 
+        return function (z) { // anonymous function 
+            return x * y * z; 
+        };
+    };
+}
+```
+Here `mul` function accept first argument and return anonymous function which take second parameter and return anonymous function which take third parameter and return multiplication of arguments which is being passed in successive.
+
+In Javascript function defined inside has access to outer function variable and function is first class object so it can be returned by function as well and passed as argument in another function.
+
+* A function is an instance of the Object type
+* A function can have properties and has a link back to its constructor method
+* Function can be stored as variable 
+* Function can be pass as a parameter to another function
+* Function can be return from function
+
+## Question 25
+##### What is the difference between a method and a function in javascript?
+
+A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
+
+``` javascript 
+// Function definition 
+function myFunc(){
+    // Do some stuff;
+}
+
+// Calling function 
+myFunc();
+```
+
+Here myFunc() function call is not associated with object hence not invoked through any object.
+
+A function can be self-invoking anonymous function or named self-invoking function
+
+``` javascript 
+// Named Self-invoking Function
+(function myFunc(){
+    // Do some stuff;
+})();
+
+// Anonymous Self-invoking Function
+(function(){
+    // Do some stuff;
+})();
+```
+
+In case of named self-invoking anonymous function or anonymous self-invoking function there is no need of call function explicitly. 
+
+  A method is a piece of code that is called by name and that is associated with object. In most respects it is identical to function call except for some key difference:
+
+* It is implicitly passed for the object for which it was called.
+* It is able to operate on data that is contained within the class ( remembering that an object is an instance of a class- the class is the definition, the object is an instance of that)
+* Method call is always associated with object
+
+``` javascript 
+var methodObject = {
+    attribute :   "xyz",
+    display   :   function () {  // Method
+          console.log(this.attribute);
+    }
+};
+
+// Call method 
+methodObject.display();
+```
+
+Here methodObject is an object and display is method which is associated with methodObject.
+
+## Question 26
+##### What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
+
+A `self-invoking` anonymous function also called `self-executing anonymous function` runs immediately or automatically when we define it and self-invoking anonymous function doesn't have any name at all. 
+Self-Invoking anonymous function syntax:
+
+``` javascript 
+(function(){
+      console.log("Self-Invoking function code logic ");
+})();
+Output: Self-Invoking function code logic
+```
+We must have to know the fact that JavaScript functions run immediately when we put `()` after their names.
+
+``` javascript 
+function display(){
+    console.log("Display me");
+}
+display();  // This will run immediately
+
+Output: "Display me"
+/* 
+This will not run immediately as we haven't put () after function 
+name, only function name is use full when we want to pass it as 
+callback to another function or method.
+*/
+display; 
+
+function testCallBack(callback){
+    callback ();  // This will be call display method immediately 
+    if callback parameter is being set method display
+}
+testCallBack(display); // Here display function is being passed as callback 
+```
+## Question 27
+##### Describe Singleton Pattern In JavaScript ?
+
+The singleton pattern is the most commonly used design pattern and one that you will probably is more than any others. It provides a great way to wrap code into logical unit that can be accessed through a single variable. 
+The Singleton design pattern is used when only one instance of object is needed throughout the lifetime of an application. 
+   
+In JavaScript there is different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (Prevent from polluting global space), Organising code in a consistent manner, which increase the readability and maintainability of your pages.
+There are two important point in the traditional definition of Singleton pattern:
+* There should be only one instance allowed for a class and 
+* We should allow global point of access to that single instance
+Let me define singleton pattern in JavaScript context: 
+
+>It is an object that is used to create namespace and group together a related set of methods and attributes (encapsulation) and if we allow to instantiate than it can be instantiate only once.
+
+In JavaScript we can create singleton though object literal, However there are some another way but that I will cover in next post. 
+ 
+A singleton object consists of two parts: The object itself, containing the members (Both methods and attributes) within it, and global variable used to access it. The variable is global so that object can be accessed anywhere in the page, this is key feature of the singleton pattern.
+
+**JavaScript: A Singleton as a Namespace**
+
+As I have already stated above that singleton can be used to declare Namespace in JavaScript. NameSpacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, and it is very easy to wipe out variable by mistake or a function, or even a class without even knowing it.
+A common example which happen frequently when you are working with another team member parallel,  
+
+```javascript
+function findUserName(id){
+    
+}
+
+/* Later in the page another programmer 
+added code */
+var findUserName = $('#user_list');
+
+/* You are trying to call :( */
+console.log(findUserName())
+```
+One of the best way to prevent accidentally overwriting variable is to namespace your code within a singleton object.
+
+```javascript
+/*  Using Namespace */
+
+var MyNameSpace = {
+    
+    findUserName : function(id){
+        
+    },
+    // Other methods and attribute go here as well 
+}
+
+/* Later in the page another programmer 
+added code */
+var findUserName = $('#user_list');
+
+/* You are trying to call and you make this time workable */
+console.log(MyNameSpace.findUserName());
+```
+#####Singleton Design Pattern Implementation
+
+```javascript
+/* Lazy Instantiation skeleton for a singleton pattern */
+
+var MyNameSpace = {};
+MyNameSpace.Singleton = (function(){
+
+  // Private attribute that holds the single instance
+  var singletonInstance;  
+    
+      // All of the normal code goes here 
+      function constructor(){
+          // Private members
+          var privateVar1 = "Nishant";
+          var privateVar2 = [1,2,3,4,5];
+          
+          function privateMethod1(){
+              // code stuff
+          }
+          
+          function privateMethod1(){
+              // code stuff
+          }
+          
+          return {
+              attribute1 : "Nishant",
+              publicMethod: function(){
+                  alert("Nishant");// some code logic
+              }
+          }
+      }
+      
+      return {
+        // public method ( Global access point to Singleton object) 
+        getInstance: function(){
+            //instance already exist then return  
+           if(!singletonInstance){
+                singletonInstance = constructor();
+           }
+           return singletonInstance;           
+        }           
+      }
+  }
+})();   
+
+// getting access of publicMethod 
+console.log(MyNamespace.Singleton.getInstance().publicMethod());
+```
+
+The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.
+
+## Question 28
+##### What are the way by which we can create object in JavaScript ?
+
+**Method 1:** `Function Based`
+
+If we want to create several similar `objects`. In below code sample, `Employee` which is called *constructor function*. This is similar to classes in object oriented languages.
+
+```javascript
+
+  function Employee(fName, lName, age, salary){
+    this.firstName = fName;
+    this.lastName = lName;
+    this.age = age;
+    this.salary = salary;
+  }
+  
+  // Creating multiple object which have similar property but diff value assigned to object property.
+  var employee1 = new Employee('John', 'Moto', 24, '5000$');
+  var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
+  var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
+```
+
+**Method 2:** `Object Constructor` 
+
 
