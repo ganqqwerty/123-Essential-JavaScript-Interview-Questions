@@ -2,15 +2,15 @@
 
 # 101-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
-> In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and script will stop execution thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
+> In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
 Before starting further discussion let understand the difference between declaration and definition.
 
 `var x` is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need of memory allocation.
 
 ```javascript
-> var x; // declaring x
-> console.log(x); //output: undefined
+var x; // declaring x
+console.log(x); //output: undefined
 ```
 
 `var x = 1` is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it's declared then assignment happen in order this term is called `hoisting`.
@@ -25,7 +25,7 @@ if(typeof x === 'undefined') // Will return true
 > A variable that neither declared nor defined when we try to reference such variable then It result `not defined`.
 
 ```javascript
-> console.log(y);  // Output: ReferenceError: y is not defined
+console.log(y);  // Output: ReferenceError: y is not defined
 ```
 
 ### Ref Link:
@@ -63,7 +63,7 @@ if (1) {
 console.log(k); // output 1function
 ```
 
-## 3. What is drawback of creating true private in JavaScript?
+## 3. What is the drawback of creating true private in JavaScript?
 > One of the drawback of creating a true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
 ```javascript
@@ -121,8 +121,8 @@ var globalVar = "abc";
       "innerArg = " + innerArg + "\n" +
       "innerFuncVar = " + innerFuncVar + "\n" +
       "globalVar = " + globalVar);
-    }// end of scope innerFunction)(5); // Pass 5 as parameter
-}// end of scope outerFunction )(7); // Pass 7 as parameter
+    } // end of scope innerFunction)(5); // Pass 5 as parameter
+} // end of scope outerFunction )(7); // Pass 7 as parameter
 ```
 
 `innerFunction` is closure which is defined inside `outerFunction` and has access to all variable which is declared and defined in outerFunction scope. In addition to this function defined inside function as closure has access to variable which is declared in `global namespace`.
@@ -166,7 +166,7 @@ In Javascript function defined inside has access to outer function variable and 
 - Function can be returned from function
 
 ### 6. How to empty an array in JavaScript?
-For instance,
+For instance:
 
 ```javascript
 var arrayList =  ['a', 'b', 'c', 'd', 'e', 'f'];
@@ -184,7 +184,7 @@ arrayList = [];
 
 Above code will set the variable `arrayList` to a new empty array. This is recommended if you don't have **references to the original array** `arrayList` anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable `arrayList`.
 
-For Instance,
+For Instance:
 
 ```javascript
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -201,7 +201,7 @@ arrayList.length = 0;
 
 Above code will clear the existing array by setting its length to 0. This way of empty the array also update all the reference variable which pointing to the original array. This way of empty the array is useful when you want to update all the another reference variable which pointing to `arrayList`.
 
-For Instance,
+For Instance:
 
 ```javascript
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -216,7 +216,7 @@ console.log(anotherArrayList); // Output []
 arrayList.splice(0, arrayList.length);
 ```
 
-Above implementation will also work perfectly. This way of empty the array will also update all the references of original array.
+Above implementation will also work perfectly. This way of empty the array will also update all the references of the original array.
 
 ```javascript
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -254,19 +254,19 @@ function greet(param) {
 }
 ```
 
-However in above implementation it might not necessary to check type for array, we can check for single value string and put array logic code in else block, let see below code for the same.
+However, in above implementation it might not necessary to check type for array, we can check for single value string and put array logic code in else block, let see below code for the same.
 
 ```javascript
  function greet(param) {
-     if(typeof param === 'string') {
-     }
-     else {
-       // If param is of type array then this block of code would execute
-     }
+   if(typeof param === 'string') {
+   }
+   else {
+     // If param is of type array then this block of code would execute
+   }
  }
 ```
 
-Now it's fine we can go with above two implementations, but when we have a situation like parameter can be `single value`, `array`, and `object` type then we will be in trouble.
+Now it's fine we can go with above two implementations, but when we have a situation like a parameter can be `single value`, `array`, and `object` type then we will be in trouble.
 
 Coming back to checking type of object, As we mentioned that we can use `Object.prototype.toString`
 
@@ -286,9 +286,9 @@ if($.isArray(arrayList)) {
 }
 ```
 
-FYI jQuery uses `Object.prototype.toString.call` internally to check whether object is an array or not.
+FYI jQuery uses `Object.prototype.toString.call` internally to check whether an object is an array or not.
 
-In Modern browser you can also use
+In modern browser, you can also use:
 
 ```javascript
 Array.isArray(arrayList);
@@ -350,7 +350,7 @@ console.log(emp1.company);
 
 > Above code will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property.
 
-`emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
+`emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
 #### 12. What is `undefined x 1` in JavaScript
 
@@ -359,9 +359,9 @@ var trees = ["redwood", "bay", "cedar", "oak", "maple"];
 delete trees[3];
 ```
 
-when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialised index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
+when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialized index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
 
-**Note:** Please remember you need not check for uninitialised index of array in  `trees[3] === 'undefined × 1'` it will give error, Because `'undefined × 1'` this is just way of displaying uninitialised index of array in chrome.
+**Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
 
 #### 13. What will be the output of below code?
 
@@ -391,7 +391,7 @@ console.log(bar + false);
   - Boolean + Number -> Addition
   - Number + String  -> Concatenation
   - String + Boolean -> Concatenation
-  - String + String     -> Concatenation
+  - String + String  -> Concatenation
 
 #### 15. What will be the output of below code?
 
@@ -428,7 +428,7 @@ function bar() { return 12; };
 typeof bar();
 ```
 
-function definition can have only one reference variable as a function name, In above code **sample 1** bar is reference variable which is pointing to `anonymous function` and in **sample 2** function definition is name function.
+The function definition can have only one reference variable as a function name, In above code **sample 1** bar is reference variable which is pointing to `anonymous function` and in **sample 2** function definition is name function.
 
 ```javascript
 var foo = function bar() {
@@ -457,7 +457,7 @@ function bar() {
 The main difference is function `foo` is defined at `run-time` whereas function `bar` is defined at parse time. For understanding It in better way let see below code :
 
 ```javascript
-Run-Time function declaration
+// Run-Time function declaration
 <script>
   foo(); // Call foo function here, It will give Error
   var foo = function() {
@@ -467,8 +467,8 @@ Run-Time function declaration
 ```
 
 ```javascript
+// Parse-Time function declaration
 <script>
-Parse-Time function declaration
 bar(); // Call foo function here, It will not give Error
 function bar() {
   console.log("Hi I am inside Foo");
@@ -496,7 +496,7 @@ But If you try to run similar code in below format It would give error
 
 ```javascript
 <script>
-if(testCondition) {// If testCondition is true then
+if(testCondition) { // If testCondition is true then
   function foo() {
     console.log("inside Foo with testCondition True value");
   };
@@ -558,7 +558,7 @@ var salary = "1000$";
 })();
 ```
 
-> Above code will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand It better have a look of below code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
+> Above code will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of below code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
 
 ```javascript
 var salary = "1000$";
@@ -632,7 +632,7 @@ counterArray["C"] = 1;
 ```
 
 #### How we will calculate length of the above associative array `counterArray`
-> There are no built-in function and property available to calculate length of associative array object, However there are ways by which we can calculate the length of associative array object, In addition to this we can also extend `Object` by adding method or property on prototype for calculate length but extending object might break enumeration in various libraries or might create cross-browser issue, so it's not recommended unless it's necessary. There is various way by which we can calculate length.
+> There are no built-in function and property available to calculate length of associative array object. However, there are ways by which we can calculate the length of associative array object, In addition to this we can also extend `Object` by adding method or property on prototype for calculating length but extending object might break enumeration in various libraries or might create cross-browser issue, so it's not recommended unless it's necessary. There is various way by which we can calculate length.
 
 `Object` has `keys` method which can we used to calculate the length of object.
 
@@ -721,7 +721,7 @@ emp1.name; // "John Doe"
 emp1.age; // 28
 ```
 
-Unlike function calls and method calls, a constructor call `new Employee('John Doe', 28)` create a brand new object and passes it as the value of `this`, and implicitly returns the new object as it's result.
+Unlike function calls and method calls, a constructor call `new Employee('John Doe', 28)` create a brand new object and passes it as the value of `this`, and implicitly returns the new object as its result.
 
 The primary role of the constructor function is to initialize the object.
 
@@ -858,20 +858,20 @@ testCallBack(display); // Here display function is being passed as callback
 ### Describe Singleton Pattern In JavaScript?
 The singleton pattern is the most commonly used design pattern and one that you will probably is more than any others. It provides a great way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application.
 
-In JavaScript there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (Prevent from polluting global space), Organising code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
+In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organising the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
 - There should be only one instance allowed for a class and
 - We should allow global point of access to that single instance
 - Let me define singleton pattern in JavaScript context:
 
-> It is an object that is used to create namespace and group together a related set of methods and attributes (encapsulation) and if we allow to instantiate than it can be instantiate only once.
+> It is an object that is used to create namespace and group together a related set of methods and attributes (encapsulation) and if we allow to initiate then it can be initiated only once.
 
-In JavaScript we can create singleton though object literal, However there are some another way but that I will cover in next post.
+In JavaScript, we can create singleton though object literal. However, there is some another way but that I will cover in next post.
 
-A singleton object consists of two parts: The object itself, containing the members (Both methods and attributes) within it, and global variable used to access it. The variable is global so that object can be accessed anywhere in the page, this is key feature of the singleton pattern.
+A singleton object consists of two parts: The object itself, containing the members (Both methods and attributes) within it, and global variable used to access it. The variable is global so that object can be accessed anywhere in the page, this is a key feature of the singleton pattern.
 
 **JavaScript: A Singleton as a Namespace**
 
-As I have already stated above that singleton can be used to declare Namespace in JavaScript. NameSpacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, and it is very easy to wipe out variable by mistake or a function, or even a class without even knowing it. A common example which happen frequently when you are working with another team member parallel,  
+As I have already stated above that singleton can be used to declare Namespace in JavaScript. NameSpacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, and it is very easy to wipe out variable by mistake or a function, or even a class without even knowing it. A common example which happens frequently when you are working with another team member parallel,  
 
 ```javascript
 function findUserName(id) {
@@ -886,7 +886,7 @@ var findUserName = $('#user_list');
 console.log(findUserName())
 ```
 
-One of the best way to prevent accidentally overwriting variable is to namespace your code within a singleton object.
+One of the best ways to prevent accidentally overwriting variable is to namespace your code within a singleton object.
 
 ```javascript
 /*  Using Namespace */
@@ -970,7 +970,7 @@ function Employee(fName, lName, age, salary) {
   this.salary = salary;
 }
 
-// Creating multiple object which have similar property but diff value assigned to object property.
+// Creating multiple object which have a similar property but diff value assigned to object property.
 var employee1 = new Employee('John', 'Moto', 24, '5000$');
 var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
 var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
