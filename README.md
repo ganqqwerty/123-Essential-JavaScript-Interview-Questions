@@ -957,23 +957,177 @@ console.log(MyNamespace.Singleton.getInstance().publicMethod());
 The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.
 
 ## Question 28
-### What are the way by which we can create an object in JavaScript?
+##### What are the way by which we can create object in JavaScript ?
+
 **Method 1:** `Function Based`
 
-If we want to create several similar `objects`. In below code sample, `Employee` which is called _constructor function_. This is similar to classes in object oriented languages.
+If we want to create several similar `objects`. In below code sample, `Employee` which is called *constructor function*. This is similar to classes in object oriented languages.
 
 ```javascript
-function Employee(fName, lName, age, salary) {
-  this.firstName = fName;
-  this.lastName = lName;
-  this.age = age;
-  this.salary = salary;
-}
 
-// Creating multiple object which have a similar property but diff value assigned to object property.
-var employee1 = new Employee('John', 'Moto', 24, '5000$');
-var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
-var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
+  function Employee(fName, lName, age, salary){
+  	this.firstName = fName;
+  	this.lastName = lName;
+  	this.age = age;
+  	this.salary = salary;
+  }
+  
+  // Creating multiple object which have similar property but diff value assigned to object property.
+  var employee1 = new Employee('John', 'Moto', 24, '5000$');
+  var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
+  var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
 ```
 
-**Method 2:** `Object Constructor`
+**Method 2:** `Object Literal` 
+
+Object Literal is bast way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.
+
+```javascript
+var employee = {
+	name : 'Nishant',
+	salary : 245678,
+	getName : function(){
+		return this.name;
+	}
+}
+```
+Below code sample is Nested Object Literal, Here address is an object inside employee object.
+
+```javascript
+var employee = {
+	name : 'Nishant',
+	salary : 245678,
+	address : {
+		addressLine1 : 'BITS Pilani',
+		addressLine2 : 'Vidya Vihar'.
+		phoneNumber: {
+		  workPhone: 7098889765,
+		  homePhone: 1234567898
+		}
+	}
+}
+```
+**Method 3:** `Using JavaScript new keyword`
+
+In below code sample object has been created using Object constructor function. 
+
+```javascript
+var employee = new Object(); // Created employee object using new keywords and Object()
+employee.name = 'Nishant';
+employee.getName = function(){
+	return this.name;
+}
+```
+Note: As a best practices object literal way is used to create object over this method.
+
+
+## Question 29
+##### What would be the output of below code?
+
+```javascript
+for (var i = 1; i <= 3; i++) { 
+	setTimeout(function(){ console.log(i); }, 0);
+};
+```
+**Output:** 
+
+**Explanation:** 
+
+## Question 30
+##### Write a function called deepClone which takes an object and creates a object copy of it.
+
+``` javascript 
+var newObject = deepClone(obj);
+```
+Solution: 
+
+```javascript
+function deepClone(object){
+	var newObject = {};
+	for(var key in object){
+		if(typeof object[key] === 'object'){
+		 newObject[key] = deepClone(object[key]);
+		}else{
+		 newObject[key] = object[key];
+		}
+	}
+	return newObject;
+}
+```
+
+**Explanation:** We have been asked to do deep copy of object so What's basically it's mean ??. Let's understand in this way you have been given an object `personalDetail` this object contains some property which again a type of object here as you can see `address` is an object and `phoneNumber` in side an `address` is also an object. In simple term `personalDetail` is nested object(object inside object). So Here deep copy means we have to copy all the property of `personalDetail` object including nested object. 
+
+```javascript
+var personalDetail = {
+	name : 'Nishant',
+	address : {
+	  location: 'xyz',
+	  zip : '123456',
+	  phoneNumber : {
+	    homePhone: 8797912345,
+	    workPhone : 1234509876
+	  }
+	}
+}
+```
+So when we do deep clone then we should copy every property (including nested object).
+
+## Question 31
+##### Write a function called `Clone` which takes an object and creates a object copy of it but not copy deep property of object. 
+
+```javascript
+   var objectLit = {foo : 'Bar'}; 
+	var cloneObj = Clone(obj); // Clone is the function which you have to write 
+	console.log(cloneObj === Clone(objectLit)); // this should return false
+	console.log(cloneObj == Clone(objectLit)); // this should return true
+```
+**solution:** 
+
+```javascript
+function Clone(object){
+  var newObject = {};
+  for(var key in object){
+  	newObject[key] = object[key];
+  }
+  return newObject;
+}
+```
+
+
+**Explanation:** 
+
+## Question 32
+##### What is Progressive Enhancement and Graceful Degradation ?
+
+## Question 33
+##### Why we should use prototype to define methods instead of static methods ?
+
+## Question 34
+##### Best way to detect `undefined` object property in JavaScript.
+
+> Suppose we have given an object `person`
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age : 24
+}
+```
+here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
+
+**Explanation:**
+
+We can use `typeof` operator to check undefined 
+
+```javascript
+if(typeof someProperty === 'undefined'){
+	console.log('something is undefined here');
+}
+```
+Now we are trying to access salary property of person object.
+
+```javascript
+if(typeof person.salary === 'undefined'){
+	console.log("salary is undefined here because we haven't declared");
+}
+```
