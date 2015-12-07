@@ -1020,6 +1020,5 @@ employee.getName = function(){
 ```
 Note: As a best practices object literal way is used to create object over this method.
 
-This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address.
+This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
 
-<iframe src="https://docs.google.com/forms/d/1AB6ZIa2VyY6890JiDmkPyz0J-7TcrcQmoobtupqwufw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
