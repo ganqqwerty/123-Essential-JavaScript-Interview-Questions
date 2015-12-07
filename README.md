@@ -1020,7 +1020,7 @@ employee.getName = function(){
 	return this.name;
 }
 ```
-Note: As a best practices object literal way is used to create object over this method.
+**Note:** As a best practices object literal way is used to create object over this method.
 
 ## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
 
