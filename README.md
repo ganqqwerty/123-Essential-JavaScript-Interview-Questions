@@ -2,7 +2,7 @@
 
 ## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
 
-# 101-JavaScript-Interview-Question
+# 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
 > In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
