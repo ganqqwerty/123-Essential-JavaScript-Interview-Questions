@@ -390,7 +390,6 @@ console.log(bar + false);
 > Above code will output `1, "truexyz", 2, 1` as output. General guideline  for addition of operator:
   - Number + Number  -> Addition
   - Boolean + Number -> Addition
-  - Boolean + Number -> Addition
   - Number + String  -> Concatenation
   - String + Boolean -> Concatenation
   - String + String  -> Concatenation
@@ -600,7 +599,7 @@ var name = new String("xyz");
 name instanceof String; // Output : true
 ```
 
-Here `name instanceof String` is true since `dog` inherits from `String.prototype`. Now let's understand the working of below code
+Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand the working of below code
 
 ```javascript
 function foo() {
@@ -982,7 +981,7 @@ If we want to create several similar `objects`. In below code sample, `Employee`
 
 **Method 2:** `Object Literal` 
 
-Object Literal is bast way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.
+Object Literal is best way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.
 
 ```javascript
 var employee = {
