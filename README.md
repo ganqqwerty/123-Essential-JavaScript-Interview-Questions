@@ -1021,5 +1021,75 @@ employee.getName = function(){
 ```
 **Note:** As a best practices object literal way is used to create object over this method.
 
+## Question 29
+##### Write a function called deepClone which takes an object and creates a object copy of it.
+
+``` javascript 
+var newObject = deepClone(obj);
+```
+Solution: 
+
+```javascript
+function deepClone(object){
+	var newObject = {};
+	for(var key in object){
+		if(typeof object[key] === 'object'){
+		 newObject[key] = deepClone(object[key]);
+		}else{
+		 newObject[key] = object[key];
+		}
+	}
+	return newObject;
+}
+```
+
+**Explanation:** We have been asked to do deep copy of object so What's basically it's mean ??. Let's understand in this way you have been given an object `personalDetail` this object contains some property which again a type of object here as you can see `address` is an object and `phoneNumber` in side an `address` is also an object. In simple term `personalDetail` is nested object(object inside object). So Here deep copy means we have to copy all the property of `personalDetail` object including nested object. 
+
+```javascript
+var personalDetail = {
+	name : 'Nishant',
+	address : {
+	  location: 'xyz',
+	  zip : '123456',
+	  phoneNumber : {
+	    homePhone: 8797912345,
+	    workPhone : 1234509876
+	  }
+	}
+}
+```
+So when we do deep clone then we should copy every property (including nested object).
+
+## Question 30
+##### Best way to detect `undefined` object property in JavaScript.
+
+> Suppose we have given an object `person`
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age : 24
+}
+```
+here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
+
+**Explanation:**
+
+We can use `typeof` operator to check undefined 
+
+```javascript
+if(typeof someProperty === 'undefined'){
+	console.log('something is undefined here');
+}
+```
+Now we are trying to access salary property of person object.
+
+```javascript
+if(typeof person.salary === 'undefined'){
+	console.log("salary is undefined here because we haven't declared");
+}
+```
+
+
 ## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
 
