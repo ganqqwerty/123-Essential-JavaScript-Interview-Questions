@@ -17,7 +17,7 @@
 		organization: 'Big Parser',
 		status: 'Not availble for Hire full time',
 		location: 'India',
-		experience: '4 years 2 month',
+		experience: '5 years',
 		skills: {
 			'scripting-language' :['javascript']
 			'frameworks': ['angular.js','backbone.js','sails.js'],
