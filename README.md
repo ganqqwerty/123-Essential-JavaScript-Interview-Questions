@@ -1,12 +1,12 @@
 ![](coverPage.png)
 
-## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
+## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
 
 # 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
 > In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
-Before starting further discussion let understand the difference between declaration and definition.
+Before starting further discussion let's understand the difference between declaration and definition.
 
 `var x` is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need of memory allocation.
 
@@ -33,7 +33,7 @@ console.log(y);  // Output: ReferenceError: y is not defined
 ### Ref Link:
 [http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration](http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration)
 
-## 2. What will be the output of below code?
+## 2. What will be the output of the following code?
 
 ```javascript
 var y = 1;
@@ -298,7 +298,7 @@ Array.isArray(arrayList);
 
 `Array.isArray` is supported by Chrome 5, Firefox 4.0, IE 9, Opera 10.5 and Safari 5
 
-#### 8. What will be the output of below code?
+#### 8. What will be the output of the following code?
 
 ```javascript
 var output = (function(x) {
@@ -311,7 +311,7 @@ console.log(output);
 
 > Above code will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
 
-#### 9. What will be the output of below code?
+#### 9. What will be the output of the following code?
 
 ```javascript
 var x = 1;
@@ -325,7 +325,7 @@ console.log(output);
 
 > Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
 
-#### 10. What will be the output of below code?
+#### 10. What will be the output of the following code?
 
 ```javascript
 var x = { foo : 1};
@@ -339,7 +339,7 @@ console.log(output);
 
 > Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
 
-#### 11. What will be the output of below code?
+#### 11. What will be the output of the following code?
 
 ```javascript
 var Employee = {
@@ -363,9 +363,9 @@ delete trees[3];
 
 when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialized index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
 
-**Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
+**Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give an error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
 
-#### 13. What will be the output of below code?
+#### 13. What will be the output of the following code?
 
 ```javascript
 var trees = ["xyz", "xxxx", "test", "ryan", "apple"];
@@ -377,7 +377,7 @@ console.log(trees.length);
 
 So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
 
-#### 14. What will be the output of below code?
+#### 14. What will be the output of the following code?
 
 ```javascript
 var bar = true;
@@ -394,7 +394,7 @@ console.log(bar + false);
   - String + Boolean -> Concatenation
   - String + String  -> Concatenation
 
-#### 15. What will be the output of below code?
+#### 15. What will be the output of the following code?
 
 ```javascript
 var z = 1, y = z = typeof y;
@@ -403,7 +403,7 @@ console.log(y);
 
 > Above code will output `undefined` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is `undefined` and assigned to `z` and then `y` would be assigned the value of z and then `z` would be assign value `1`.
 
-#### 16. What will be the output of below code?
+#### 16. What will be the output of the following code?
 
 ```javascript
 // NFE (Named Function Expression
@@ -460,7 +460,7 @@ The main difference is function `foo` is defined at `run-time` whereas function 
 ```javascript
 // Run-Time function declaration
 <script>
-  foo(); // Call foo function here, It will give Error
+  foo(); // Call foo function here, It will give an error
   var foo = function() {
     console.log("Hi I am inside Foo");
   };
@@ -470,7 +470,7 @@ The main difference is function `foo` is defined at `run-time` whereas function 
 ```javascript
 // Parse-Time function declaration
 <script>
-bar(); // Call foo function here, It will not give Error
+bar(); // Call bar function here, It will not give an Error
 function bar() {
   console.log("Hi I am inside Foo");
 };
@@ -493,7 +493,7 @@ if(testCondition) {// If testCondition is true then
  </script>
 ```
 
-But If you try to run similar code in below format It would give error
+But If you try to run similar code in the following format, it would give an error
 
 ```javascript
 <script>
@@ -545,7 +545,7 @@ foo = function foo() {
 foo(); // Now foo is defined here
 ```
 
-#### 19. What will be the output of below code?
+#### 19. What will be the output of the following code?
 
 ```javascript
 var salary = "1000$";
@@ -559,7 +559,7 @@ var salary = "1000$";
 })();
 ```
 
-> Above code will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of below code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
+> Above code will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of the following code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
 
 ```javascript
 var salary = "1000$";
@@ -574,7 +574,7 @@ var salary = "1000$";
 })();
 ```
 
-#### 20. What is the `instanceof` operator in JavaScript? what would be the output of below code?
+#### 20. What is the `instanceof` operator in JavaScript? what would be the output of the following code?
 
 ```javascript
 function foo() {
@@ -599,7 +599,7 @@ var name = new String("xyz");
 name instanceof String; // Output : true
 ```
 
-Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand the working of below code
+Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand the working of the following code
 
 ```javascript
 function foo() {
@@ -633,7 +633,7 @@ counterArray["C"] = 1;
 ```
 
 #### How we will calculate length of the above associative array `counterArray`
-> There are no built-in function and property available to calculate length of associative array object. However, there are ways by which we can calculate the length of associative array object, In addition to this we can also extend `Object` by adding method or property on prototype for calculating length but extending object might break enumeration in various libraries or might create cross-browser issue, so it's not recommended unless it's necessary. There is various way by which we can calculate length.
+> There are no built-in function and property available to calculate length of associative array object. However, there are ways by which we can calculate the length of associative array object, In addition to this we can also extend `Object` by adding method or property on prototype for calculating length but extending object might break enumeration in various libraries or might create cross-browser issue, so it's not recommended unless it's necessary. There is various ways by which we can calculate length.
 
 `Object` has `keys` method which can we used to calculate the length of object.
 
@@ -641,7 +641,7 @@ counterArray["C"] = 1;
 Object.keys(counterArray).length; // Output 2
 ```
 
-We can also calculate length of object by iterating through object and by doing count of own property of object.  
+We can also calculate length of object by iterating through the object and by doing a count of own property of object.  
 
 ```javascript
 function getSize(object) {
@@ -697,7 +697,7 @@ var obj = {
 obj.helloWorld(); // // "hello world John Carter"
 ```
 
-Notice how `helloWorld` refer to `this` properties of obj. Here It's clear or you might have already understood that `this` gets bound to `obj`. But the interesting point that we can copy a reference to the same function `helloWorld` in another object and get a difference answer. Let see:
+Notice how `helloWorld` refer to `this` properties of obj. Here it's clear or you might have already understood that `this` gets bound to `obj`. But the interesting point that we can copy a reference to the same function `helloWorld` in another object and get a difference answer. Let see:
 
 ```javascript
 var obj2 = {
@@ -707,7 +707,7 @@ var obj2 = {
 obj2.helloWorld(); // "hello world John Doe"
 ```
 
-You might be wonder what exactly happens in a method call here. Here call expression itself determine the binding of this `this`, The expression `obj2.helloWorld()` looks up the `helloWorld` property of obj and calls it with receiver object `obj2`.
+You might be wonder what exactly happens in a method call here. Here we call the expression itself determine the binding of this `this`, The expression `obj2.helloWorld()` looks up the `helloWorld` property of obj and calls it with receiver object `obj2`.
 
 The third use of functions is as constructors. Like function and method, `constructors` are defined with function.
 
@@ -727,7 +727,7 @@ Unlike function calls and method calls, a constructor call `new Employee('John D
 The primary role of the constructor function is to initialize the object.
 
 ## Question 23
-### What would be the output of below code?
+### What would be the output of the following code?
 
 ```javascript
 function User(name) {
@@ -738,7 +738,7 @@ var person = new User("xyz")["location"] = "USA";
 console.log(person);
 ```
 
-The output of above code would be `USA`. Here `new User("xyz")` create a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by the person.
+The output of above code would be `USA`. Here `new User("xyz")` creates a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by the person.
 
 Let say `new User("xyz")` crated a object called `foo` and returned now `foo["location"]` would be assigned value as `USA` and `person` is referencing to `foo["location"]`.
 
@@ -859,7 +859,7 @@ testCallBack(display); // Here display function is being passed as callback
 ### Describe Singleton Pattern In JavaScript?
 The singleton pattern is the most commonly used design pattern and one that you will probably is more than any others. It provides a great way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application.
 
-In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organising the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
+In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
 - There should be only one instance allowed for a class and
 - We should allow global point of access to that single instance
 - Let me define singleton pattern in JavaScript context:
@@ -972,14 +972,14 @@ If we want to create several similar `objects`. In below code sample, `Employee`
   	this.age = age;
   	this.salary = salary;
   }
-  
+
   // Creating multiple object which have similar property but diff value assigned to object property.
   var employee1 = new Employee('John', 'Moto', 24, '5000$');
   var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
   var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
 ```
 
-**Method 2:** `Object Literal` 
+**Method 2:** `Object Literal`
 
 Object Literal is best way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.
 
@@ -1010,7 +1010,7 @@ var employee = {
 ```
 **Method 3:** `Using JavaScript new keyword`
 
-In below code sample object has been created using Object constructor function. 
+In below code sample object has been created using Object constructor function.
 
 ```javascript
 var employee = new Object(); // Created employee object using new keywords and Object()
@@ -1024,10 +1024,10 @@ employee.getName = function(){
 ## Question 29
 ##### Write a function called deepClone which takes an object and creates a object copy of it.
 
-``` javascript 
+``` javascript
 var newObject = deepClone(obj);
 ```
-Solution: 
+Solution:
 
 ```javascript
 function deepClone(object){
@@ -1043,7 +1043,7 @@ function deepClone(object){
 }
 ```
 
-**Explanation:** We have been asked to do deep copy of object so What's basically it's mean ??. Let's understand in this way you have been given an object `personalDetail` this object contains some property which again a type of object here as you can see `address` is an object and `phoneNumber` in side an `address` is also an object. In simple term `personalDetail` is nested object(object inside object). So Here deep copy means we have to copy all the property of `personalDetail` object including nested object. 
+**Explanation:** We have been asked to do deep copy of object so What's basically it's mean ??. Let's understand in this way you have been given an object `personalDetail` this object contains some property which again a type of object here as you can see `address` is an object and `phoneNumber` in side an `address` is also an object. In simple term `personalDetail` is nested object(object inside object). So Here deep copy means we have to copy all the property of `personalDetail` object including nested object.
 
 ```javascript
 var personalDetail = {
@@ -1058,7 +1058,7 @@ var personalDetail = {
 	}
 }
 ```
-So when we do deep clone then we should copy every property (including nested object).
+So when we do deep clone then we should copy every property (including the nested object).
 
 ## Question 30
 ##### Best way to detect `undefined` object property in JavaScript.
@@ -1071,11 +1071,11 @@ var person = {
 	age : 24
 }
 ```
-here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
+Here the `person` object has a `name` and `age` property. Now we are trying to access the **salary** property which we haven't declared on the person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it?
 
 **Explanation:**
 
-We can use `typeof` operator to check undefined 
+We can use `typeof` operator to check undefined
 
 ```javascript
 if(typeof someProperty === 'undefined'){
@@ -1091,5 +1091,4 @@ if(typeof person.salary === 'undefined'){
 ```
 
 
-## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb). 
-
+## This Book will be completed by Jan 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
