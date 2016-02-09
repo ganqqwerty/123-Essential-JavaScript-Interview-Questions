@@ -1,6 +1,6 @@
 ![](coverPage.png)
 
-## This Book will be completed by Feb 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
+## This Book will be completed by April 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
 
 [![Join the chat at https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question](https://badges.gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question.svg)](https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -1093,4 +1093,4 @@ if(typeof person.salary === 'undefined'){
 ```
 
 
-## This Book will be completed by Feb 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
+## This Book will be completed by April 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
