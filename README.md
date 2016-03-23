@@ -1112,7 +1112,7 @@ function Clone(object){
 }
 ```
 
-## Question 34
+## Question 32
 ##### Best way to detect `undefined` object property in JavaScript.
 
 > Suppose we have given an object `person`
@@ -1141,7 +1141,7 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
-## Question 35
+## Question 32
 ##### How to check whether a key exist in a JavaScript object or not.
 
 >Let say we have `person` object with property **name** and **age**
@@ -1528,4 +1528,4 @@ This book is released under a Creative Commons Attribution-Noncommercial- No Der
 
 What this means it that the project is free to read and use, but the license does not permit commercial use of the material (i.e you can freely print out the questions for your own use, but you can't sell it). I'm trying to best to publish all of my books in a free + purchased (if you would like to support these projects) form so I would greatly appreciate it if you would respect these terms.
 
-Copyright Nishant Kumar, 2015.
+Copyright Nishant Kumar, 2016.
