@@ -1141,7 +1141,7 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
-## Question 32
+## Question 33
 ##### How to check whether a key exist in a JavaScript object or not.
 
 >Let say we have `person` object with property **name** and **age**
