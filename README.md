@@ -1091,6 +1091,426 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
+## Question 31
+##### Write a function called `Clone` which takes an object and creates a object copy of it but not copy deep property of object. 
 
+```javascript
+   var objectLit = {foo : 'Bar'}; 
+	var cloneObj = Clone(obj); // Clone is the function which you have to write 
+	console.log(cloneObj === Clone(objectLit)); // this should return false
+	console.log(cloneObj == Clone(objectLit)); // this should return true
+```
+**solution:** 
+
+```javascript
+function Clone(object){
+  var newObject = {};
+  for(var key in object){
+  	newObject[key] = object[key];
+  }
+  return newObject;
+}
+```
+
+## Question 34
+##### Best way to detect `undefined` object property in JavaScript.
+
+> Suppose we have given an object `person`
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age : 24
+}
+```
+here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
+
+**Explanation:**
+
+We can use `typeof` operator to check undefined 
+
+```javascript
+if(typeof someProperty === 'undefined'){
+	console.log('something is undefined here');
+}
+```
+Now we are trying to access salary property of person object.
+
+```javascript
+if(typeof person.salary === 'undefined'){
+	console.log("salary is undefined here because we haven't declared");
+}
+```
+## Question 35
+##### How to check whether a key exist in a JavaScript object or not.
+
+>Let say we have `person` object with property **name** and **age**
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age: 24
+}
+```
+Now we want to check whether `name` property exist in `person` object or not ?
+
+In JavaScript object can have own property, in above example name and age is own property of person object. Object also have some of inherited property of base object like toString is inherited property of person object.
+
+So how we will check whether property is own property or inherited property. 
+
+Method 1: We can use `in` operator on objet to check own property or inherited property. 
+
+```javascript
+console.log('name' in person); // checking own property print true 
+console.log('salary' in person); // checking undefined property print false
+```
+`in` operator also look into inherited property if it doesn't find property defined as own property. For instance If I check existence of toString property as we know that we haven't declared this property on person object so `in` operator look into there base property.
+
+Here 
+
+```javascript
+console.log('toString' in person); // Will print true
+```
+If we want to test property of object instance not inherited properties then we will use `hasOwnProperty` method of object instance.
+
+```javascript
+console.log(person.hasOwnProperty('toString')); // print false
+console.log(person.hasOwnProperty('name')); // print true
+console.log(person.hasOwnProperty('salary')); // print false
+```
+
+#Objective Question 
+
+## Hoisting 
+
+###1. console.log(employeeId);
+
+1.  Some Value
+2.  Undefined 
+3.  Type Error
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 4) ReferenceError: employeeId is not defined 
+
+###2. What would be the output of following code?
+
+```javascript
+console.log(employeeId);
+var employeeId = '19000';
+```
+
+1.  Some Value
+2.  undefined 
+3.  Type Error
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 2) undefined 
+
+###3. What would be the output of following code?
+
+```javascript
+var employeeId = '1234abe';
+(function(){
+	console.log(employeeId);
+	var employeeId = '122345';
+})();
+```
+
+1.  '122345'
+2.  undefined 
+3.  Type Error
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 2) undefined 
+
+## Object
+
+###1. What would be the output of following code ?
+
+```javascript
+(function() {
+	'use strict';
+
+	var person = {
+		name: 'Nishant'
+	};
+	person.salary = '10000$';
+	person['country'] = 'USA';
+
+	Object.defineProperty(person, 'phoneNo', {
+		value: '8888888888',
+		enumerable: true
+	})
+
+	console.log(Object.keys(person)); 
+})();
+```
+1.  Type Error
+2.  undefined 
+3.  ["name", "salary", "country", "phoneNo"]
+4.  ["name", "salary", "country"]
+	
+Answer: 3) ["name", "salary", "country", "phoneNo"]
+
+###2. What would be the output of following code ?
+
+```javascript
+(function() {
+	'use strict';
+
+	var person = {
+		name: 'Nishant'
+	};
+	person.salary = '10000$';
+	person['country'] = 'USA';
+
+	Object.defineProperty(person, 'phoneNo', {
+		value: '8888888888',
+		enumerable: false
+	})
+
+	console.log(Object.keys(person)); 
+})();
+```
+1.  Type Error
+2.  undefined 
+3.  ["name", "salary", "country", "phoneNo"]
+4.  ["name", "salary", "country"]
+	
+Answer: 4) ["name", "salary", "country"]
+
+###3. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = {
+		foo: 'foo',
+		bar: 'bar'
+	};
+	var objB = {
+		foo: 'foo',
+		bar: 'bar'
+	};
+	console.log(objA == objB);
+	console.log(objA === objB);
+}());
+```
+1.  false true
+2.  false false 
+3.  true false
+4.  true true
+	
+Answer: 2) false false
+
+###4. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = new Object({foo: "foo"});
+	var objB = new Object({foo: "foo"});
+	console.log(objA == objB);
+	console.log(objA === objB);
+}());
+```
+1.  false true
+2.  false false 
+3.  true false
+4.  true true
+	
+Answer: 2) false false
+
+## Array
+
+###1. What would be the output of following code?
+
+```javascript
+(function() {
+	var array = new Array('100');
+	console.log(array);
+	console.log(array.length);
+}());
+```
+
+1.  undefined undefined
+2.  [undefined × 100] 100 
+3.  ["100"] 1
+4.  ReferenceError: array is not defined 
+
+Answer: 3) ["100"] 1
+
+###2. What would be the output of following code?
+
+```javascript
+(function() {
+	var array1 = [];
+	var array2 = new Array(100);
+	var array3 = new Array(['1',2,'3',4,5.6]);
+	console.log(array1);
+	console.log(array2);
+	console.log(array3);
+	console.log(array3.length);
+}());
+```
+
+1.  [] [] [Array[5]] 1
+2.  [] [undefined × 100] Array[5] 5 
+3.  [] [] ['1',2,'3',4,5.6] 5
+4.  [] [] [Array[5]] 5 
+
+Answer: 1) [] [] [Array[5]] 1
+
+###3. What would be the output of following code?
+
+```javascript
+(function () {
+  var array = new Array('a', 'b', 'c', 'd', 'e');
+  array[10] = 'f';
+  delete array[10];
+  console.log(array.length);
+}());
+```
+
+1.  11
+2.  5
+3.  6
+4.  undefined
+
+Answer: 1) 11
+
+###4. What would be the output of following code?
+
+```javascript
+(function(){
+	var animal = ['cow','horse'];
+		animal.push('cat');
+		animal.push('dog','rat','goat');
+		console.log(animal.length);
+})();
+```
+
+1.  4
+2.  5
+3.  6
+4.  undefined
+
+Answer: 3) 6
+
+## Function: 
+
+###1. What would be the output of following code ?
+
+```javascript
+function funcA(){
+	console.log("funcA ", this);
+	(function innerFuncA1(){
+		console.log("innerFunc1", this);
+		(function innerFunA11(){
+			console.log("innerFunA11", this);
+		})();
+	})();
+}
+	
+console.log(funcA());
+```
+
+1.  funcA  Window {...} 
+    innerFunc1 Window {...} 
+    innerFunA11 Window {...}
+2.  undefined 
+3.  Type Error
+4.  ReferenceError: this is not defined 
+	
+Answer: 1) 
+
+###2. What would be the output of following code ?
+
+```javascript
+var obj = {
+	message: "Hello",
+	innerMessage: !(function() {
+		console.log(this.message);
+	})()
+};
+	
+console.log(obj.innerMessage);
+```
+
+1.  ReferenceError: this.message is not defined 
+2.  undefined 
+3.  Type Error
+4.  undefined true
+	
+Answer: 4) undefined true
+
+###3. What would the output of following code ?
+
+```javascript
+var obj = {
+	message: "Hello",
+	innerMessage: function() {
+		console.log(this.message);
+	}
+};
+	
+console.log(obj.innerMessage());
+```
+
+1.  Hello 
+2.  undefined 
+3.  Type Error
+4.  ReferenceError: this.message is not defined
+	
+Answer: 1) Hello
+
+###4. What would the output of following code ?
+
+```javascript
+var obj = {
+  message: 'Hello',
+  innerMessage: function () {
+    (function () {
+      console.log(this.message);
+    }());
+  }
+};
+console.log(obj.innerMessage());
+```
+
+1.  Type Error 
+2.  Hello 
+3.  undefined
+4.  ReferenceError: this.message is not defined
+	
+Answer: 3) undefined
+
+## Object Oriented
+
+###1. What would the output of following code ?
+
+```javascript
+function Person(name, age){
+	this.name = name || "John";
+	this.age = age || 24;
+	this.displayName = function(){
+		console.log(this.name);
+	}
+}
+
+Person.name = "John";
+Person.displayName = function(){
+	console.log(this.name);
+}
+
+var person1 = new Person('Nishant');
+	person1.displayName();
+	Person.displayName();
+```
+
+1.  Nishant Person
+2.  Nishant John
+3.  Nishant undefined
+4.  John John
+	
+Answer: 1) Nishant Person 
 
 ## This Book will be completed by April 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
