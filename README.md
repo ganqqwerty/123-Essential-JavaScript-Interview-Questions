@@ -1514,3 +1514,18 @@ var person1 = new Person('Nishant');
 Answer: 1) Nishant Person 
 
 ## This Book will be completed by April 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
+
+##Contributing
+
+I'm always welcome to feedback on how the book can be improved, and more questions can be added. If you think you have some question then please add that and open a pull request. 
+
+####Note: All contributor to this book will be added as contributor in Book Last page by default, So if you have contributed and don't wanted to be included then please write an email to me at nihantanu@gmail.com 
+
+
+##License
+
+This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
+
+What this means it that the project is free to read and use, but the license does not permit commercial use of the material (i.e you can freely print out the questions for your own use, but you can't sell it). I'm trying to best to publish all of my books in a free + purchased (if you would like to support these projects) form so I would greatly appreciate it if you would respect these terms.
+
+Copyright Nishant Kumar, 2015.
