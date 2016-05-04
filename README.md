@@ -4,6 +4,9 @@
 
 [![Join the chat at https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question](https://badges.gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question.svg)](https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## Have question for me ?
+[Ask me @nishant kumar](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 # 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
 > In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
@@ -34,6 +37,9 @@ console.log(y);  // Output: ReferenceError: y is not defined
 
 ### Ref Link:
 [http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration](http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration)
+
+## Have doubt in this question ??
+[Schedule time to discuss with me @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 ## 2. What will be the output of the following code?
 
@@ -67,6 +73,9 @@ if (1) {
 console.log(k); // output 1function
 ```
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 ## 3. What is the drawback of creating true private in JavaScript?
 > One of the drawback of creating a true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
@@ -99,6 +108,9 @@ var emp3 = new Employee("Ren","Pluto",2500);
 Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalary private method.
 
 So as recommendation don't go for a private method unless it's necessary.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 ## 4.What is “closure” in javascript? Provide an example?
 > A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
@@ -140,6 +152,9 @@ innerArg = 5
 innerFuncVar = y
 globalVar = abc
 ```
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 ## 5. Write a mul function which will properly when invoked as below syntax.
 
@@ -239,6 +254,9 @@ while(arrayList.length) {
 
 Above implementation can also empty the array. But not recommended to use often.
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 ### 7. How to check if an object is an array or not?
 > The best way to find whether an object is instance of a particular class or not using `toString` method from `Object.prototype`
 
@@ -300,6 +318,9 @@ Array.isArray(arrayList);
 
 `Array.isArray` is supported by Chrome 5, Firefox 4.0, IE 9, Opera 10.5 and Safari 5
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 #### 8. What will be the output of the following code?
 
 ```javascript
@@ -312,6 +333,9 @@ console.log(output);
 ```
 
 > Above code will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 9. What will be the output of the following code?
 
@@ -327,6 +351,9 @@ console.log(output);
 
 > Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 #### 10. What will be the output of the following code?
 
 ```javascript
@@ -340,6 +367,9 @@ console.log(output);
 ```
 
 > Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 11. What will be the output of the following code?
 
@@ -356,6 +386,9 @@ console.log(emp1.company);
 
 `emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 #### 12. What is `undefined x 1` in JavaScript
 
 ```javascript
@@ -366,6 +399,9 @@ delete trees[3];
 when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialized index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
 
 **Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give an error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 13. What will be the output of the following code?
 
@@ -378,6 +414,9 @@ console.log(trees.length);
 > Above code will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected from this. This holds even if you deleted all the element of array using `delete` operator.
 
 So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 14. What will be the output of the following code?
 
@@ -395,6 +434,9 @@ console.log(bar + false);
   - Number + String  -> Concatenation
   - String + Boolean -> Concatenation
   - String + String  -> Concatenation
+  
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 15. What will be the output of the following code?
 
@@ -404,6 +446,9 @@ console.log(y);
 ```
 
 > Above code will output `undefined` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is `undefined` and assigned to `z` and then `y` would be assigned the value of z and then `z` would be assign value `1`.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 #### 16. What will be the output of the following code?
 
@@ -442,6 +487,10 @@ var foo = function bar() {
 // foo is visible here
 // bar is undefined here
 ```
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 
 #### 17. What is the difference between declaring a function in below format?
 
@@ -728,6 +777,10 @@ Unlike function calls and method calls, a constructor call `new Employee('John D
 
 The primary role of the constructor function is to initialize the object.
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
+
 ## Question 23
 ### What would be the output of the following code?
 
@@ -772,6 +825,10 @@ In Javascript function defined inside has access to outer function variable and 
 - Function can be stored as variable
 - Function can be pass as a parameter to another function
 - Function can be returned from function
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 
 ## Question 25
 ### What is the difference between a method and a function in javascript?
@@ -824,6 +881,10 @@ methodObject.display();
 
 Here methodObject is an object and display is a method which is associated with methodObject.
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
+
 ## Question 26
 ### What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
 A `self-invoking` anonymous function also called `self-executing anonymous function` runs immediately or automatically when we define it and self-invoking anonymous function doesn't have any name at all. Self-Invoking anonymous function syntax:
@@ -856,6 +917,8 @@ function testCallBack(callback) {
 }
 testCallBack(display); // Here display function is being passed as callback
 ```
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 ## Question 27
 ### Describe Singleton Pattern In JavaScript?
@@ -958,6 +1021,10 @@ console.log(MyNamespace.Singleton.getInstance().publicMethod());
 ```
 
 The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 
 ## Question 28
 ##### What are the way by which we can create object in JavaScript ?
@@ -1252,6 +1319,10 @@ Answer: 2) undefined
 	
 Answer: 3) ["name", "salary", "country", "phoneNo"]
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
+
 ###2. What would be the output of following code ?
 
 ```javascript
@@ -1278,6 +1349,10 @@ Answer: 3) ["name", "salary", "country", "phoneNo"]
 4.  ["name", "salary", "country"]
 	
 Answer: 4) ["name", "salary", "country"]
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 
 ###3. What would be the output of following code ?
 
@@ -1319,6 +1394,10 @@ Answer: 2) false false
 	
 Answer: 2) false false
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
+
 ## Array
 
 ###1. What would be the output of following code?
@@ -1359,6 +1438,10 @@ Answer: 3) ["100"] 1
 
 Answer: 1) [] [] [Array[5]] 1
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
+
 ###3. What would be the output of following code?
 
 ```javascript
@@ -1376,6 +1459,10 @@ Answer: 1) [] [] [Array[5]] 1
 4.  undefined
 
 Answer: 1) 11
+
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 
 ###4. What would be the output of following code?
 
@@ -1513,6 +1600,9 @@ var person1 = new Person('Nishant');
 	
 Answer: 1) Nishant Person 
 
+## Have doubt in this question ??
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+
 ## This Book will be completed by June 1 2016 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
 
 ##Contributing
@@ -1520,6 +1610,9 @@ Answer: 1) Nishant Person
 I'm always welcome to feedback on how the book can be improved, and more questions can be added. If you think you have some question then please add that and open a pull request. 
 
 ####Note: All contributor to this book will be added as contributor in Book Last page by default, So if you have contributed and don't wanted to be included then please write an email to me at nihantanu@gmail.com 
+
+##For any other query: 
+[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
 
 
 ##License
