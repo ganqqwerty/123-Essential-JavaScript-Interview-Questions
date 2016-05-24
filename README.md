@@ -532,22 +532,6 @@ The another advantage of first-one way of declaration that you can declare funct
 
 ```javascript
 <script>
-if(testCondition) {// If testCondition is true then
-   var foo = function() {
-      console.log("inside Foo with testCondition True value");
-   };
- } else {
-    var foo = function() {
-      console.log("inside Foo with testCondition false value");
-   };
- }
- </script>
-```
-
-But If you try to run similar code in the following format, it would give an error
-
-```javascript
-<script>
 if(testCondition) { // If testCondition is true then
   function foo() {
     console.log("inside Foo with testCondition True value");
@@ -556,6 +540,22 @@ if(testCondition) { // If testCondition is true then
   function foo() {
     console.log("inside Foo with testCondition false value");
   };
+ }
+ </script>
+```
+
+But If you try to run similar code in the following format, it would give an error
+
+```javascript
+<script>
+if(testCondition) {// If testCondition is true then
+   var foo = function() {
+      console.log("inside Foo with testCondition True value");
+   };
+ } else {
+    var foo = function() {
+      console.log("inside Foo with testCondition false value");
+   };
  }
  </script>
 ```
