@@ -1246,6 +1246,409 @@ console.log(person.hasOwnProperty('name')); // print true
 console.log(person.hasOwnProperty('salary')); // print false
 ```
 
+## Question 34
+##### Best way to detect `undefined` object property in JavaScript.
+
+> Suppose we have given an object `person`
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age : 24
+}
+```
+here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
+
+**Explanation:**
+
+We can use `typeof` operator to check undefined 
+
+```javascript
+if(typeof someProperty === 'undefined'){
+	console.log('something is undefined here');
+}
+```
+Now we are trying to access salary property of person object.
+
+```javascript
+if(typeof person.salary === 'undefined'){
+	console.log("salary is undefined here because we haven't declared");
+}
+```
+## Question 35
+##### How to check whether a key exist in a JavaScript object or not.
+
+>Let say we have `person` object with property **name** and **age**
+
+```javascript
+var person = {
+	name: 'Nishant',
+	age: 24
+}
+```
+Now we want to check whether `name` property exist in `person` object or not ?
+
+In JavaScript object can have own property, in above example name and age is own property of person object. Object also have some of inherited property of base object like toString is inherited property of person object.
+
+So how we will check whether property is own property or inherited property. 
+
+Method 1: We can use `in` operator on objet to check own property or inherited property. 
+
+```javascript
+console.log('name' in person); // checking own property print true 
+console.log('salary' in person); // checking undefined property print false
+```
+`in` operator also look into inherited property if it doesn't find property defined as own property. For instance If I check existence of toString property as we know that we haven't declared this property on person object so `in` operator look into there base property.
+
+Here 
+
+```javascript
+console.log('toString' in person); // Will print true
+```
+If we want to test property of object instance not inherited properties then we will use `hasOwnProperty` method of object instance.
+
+```javascript
+console.log(person.hasOwnProperty('toString')); // print false
+console.log(person.hasOwnProperty('name')); // print true
+console.log(person.hasOwnProperty('salary')); // print false
+```
+
+## Question 36
+##### What is best way to detect an arrays object on JavaScript ?
+
+>We always encounter in such situation where we need to know whether value is type of array or not.
+
+For Instance : Below code perform some operation based value type
+
+```javascript
+function(value){
+	if("value is an array"){
+		// Then perform some operation
+	}else{
+		// otherwise
+	}
+}
+```
+
+Let's discuss some way to detect an array in JavaScript.
+
+**Method 1 :** 
+
+Duck typing test for array type detection 
+
+```javascript
+ // Duck typing arrays
+ function isArray(value){
+ 	return typeof value.sort === 'function';
+ }
+```
+As we can see above isArray method will return true if value object have `sort` method of type `function`. Now assume you have created a object with sort method
+
+```javascript
+	var bar = {
+		sort: function(){
+			// Some code 
+		}
+	}
+```
+Now when you check `isArray(bar)` then it will return true because bar object has sort method, But the fact is bar is not an array.
+
+So method 1 is not a best way to detect an array as you can see it's not handle the case when some object has sort method.
+
+**Method 2:**
+
+Juriy Zaytsev (Also known as kangax) proposed an elegant solution to this.
+
+```javascript
+	function isArray(value){
+		return Object.prototype.toString.call(value) === '[object Array]';
+	}
+```
+This approach is most popular way to detecting a value of type array in JavaScript and recommended to use. This approach relies on the fact that, native toString() method on a given value produce a standard string in all browser.
+
+>ECMAScript 5 has introduced **Array.isArray()** method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.
+
+In many JavaScript libraries you may see below code for detecting an value of type array.
+
+```javascript
+function(value){
+   // ECMAScript 5 feature
+	if(typeof Array.isArray === 'function'){
+		return Array.isArray(value);
+	}else{
+	   return Object.prototype.toString.call(value) === '[object Array]';
+	}
+}
+```
+
+## Question 37
+##### Best way to detect reference values of any type in JavaScript ?
+
+> In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as **Object**, **Array**, **Function**, **Date**, **null** and **Error**.
+
+Detecting object using `typeof` operator
+
+```javascript
+console.log(typeof {});           // object
+console.log(typeof []);           // object
+console.log(typeof new Array());  // object
+console.log(typeof null);         // object 
+console.log(typeof new RegExp()); // object
+console.log(typeof new Date());   // object
+```
+But the downside of using typeof operator to detect an object is that typeof returns `object` for `null` (However this is fact that null is an object in JavaScript).
+
+The best way to detect an object of specific reference type using `instanceof` operator.
+
+>Syntax : **value** instanceof **constructor**   
+
+```javascript
+//Detecting an array
+if(value instanceof Array){
+	console.log("value is type of array");
+}
+```
+```javascript
+// Employee constructor function
+function Employee(name){
+	this.name = name; // Public property
+}
+
+var emp1 = new Employee('John');
+
+console.log(emp1 instanceof Employee); // true
+```
+`instanceof` not only check the constructor which is used to create an object but also check it's prototype chain see below example.
+
+```javascript
+console.log(emp1 instanceof Object); // true
+```
+
+## Question 38
+##### Describe Object-Based inheritance in JavaScript.
+
+> Object-based inheritance also called prototypal inheritance in which we one object inherit from another object without invoking a constructor function.
+
+The ECMAScript 5 **Object.create()** method is the easiest way for one object to inherit from another. 
+
+**For Instance:** 
+
+```javascript
+var employee = {
+  name: 'Nishant',
+  displayName: function () {
+    console.log(this.name);
+  }
+};
+
+var emp1 = Object.create(employee);
+console.log(emp1.displayName());  // output "Nishant"
+```
+
+Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as emp1's prototype is set to employee. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
+
+**For Instance:** Defining displayName() method on emp1 automatically override the employee displayName.
+
+```javascript
+emp1.displayName = function() {
+	console.log('xyz-Anonymous');
+};
+
+employee.displayName();// "xyz-Anonymous"
+emp1.displayName(); // "Nishant"
+``` 
+
+In addition to this **Object.create()** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
+
+**For Example**
+
+```javascript
+var emp1 = Object.create(employee, {
+	name: {
+		value: "John"
+	}
+});
+
+emp1.displayName(); // "John"
+employee.displayName(); // "Nishant"
+```
+In above example, emp1 is created with it's own value for name, so calling **displayName()** method display `"John"` instead of `"Nishant"`.
+
+>Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
+
+## Question 39
+##### Describe Type-Based inheritance in JavaScript.
+
+>Type-based inheritance works with constructor function instead of object, It means we need to call constructor function of the object from which you  want to inherit.
+
+Let say we have `Person` class which has name, age, salary properties and **incrementSalary()** method.
+
+```javascript
+function Person(name, age, salary) {
+  this.name = name;
+  this.age = age;
+  this.salary = salary;
+  this.incrementSalary = function (byValue) {
+    this.salary = this.salary + byValue;
+  };
+}
+```
+
+Now we wish to create Employee class which contains all the properties of Person class and wanted to add some additional properties into Employee class.
+
+```javascript
+function Employee(company){
+	this.company = company;
+}
+
+//Prototypal Inheritance 
+Employee.prototype = new Person("Nishant", 24,5000);
+```
+In above example, **Employee** type inherits from **Person**, which is called super types. It does so by assigning a new instance of Person to Employee prototype. After that, every instance of Employee inherits it's properties and methods from Person.
+
+```javascript
+//Prototypal Inheritance 
+Employee.prototype = new Person("Nishant", 24,5000);
+
+var emp1 = new Employee("Google");
+
+console.log(emp1 instanceof Person); // true
+console.log(emp1 instanceof Employee); // true
+```
+
+Let's understand Constructor inheritance 
+
+```javascript
+//Defined Person class
+function Person(name){
+	this.name = name || "Nishant";
+}
+
+var obj = {};
+
+// obj inherit Person class properties and method 
+Person.call(obj); // constructor inheritance
+
+console.log(obj); // Object {name: "Nishant"}
+```
+Here we saw calling **Person.call(obj)** define the name properties from `Person` to `obj`.
+
+```javascript
+console.log(name in obj); // true
+```
+Type-based inheritance is best used with developer defined constructor function rather than natively in JavaScript. In addition to this also allows flexibility in how we create similar type of object.
+
+## Question 40
+##### How we can prevent modification of object in JavaScript ?.
+
+> ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object.
+
+There are three levels of preventing modification: 
+
+**1: Prevent extensions :** 
+
+No new properties or methods can be added to the object, but one can change the existing properties and method.
+
+For Example: 
+
+```javascript
+var employee = {
+	name: "Nishant"
+};
+
+// lock the object 
+Object.preventExtensions(employee);
+
+// Now try to change the employee object property name
+employee.name = "John"; // work fine 
+
+//Now try to add some new property to the object
+employee.age = 24; // fails silently unless it's inside the strict mode
+```
+**2: Seal :**
+
+>It is same as prevent extension, in addition to this also prevent existing properties and methods from being deleted.
+
+To seal an object, we use **Object.seal()** method. you can check whether an object is sealed or not using **Object.isSealed();**
+
+```javascript
+var employee = {
+	name: "Nishant"
+};
+
+// Seal the object 
+Object.seal(employee);
+
+console.log(Object.isExtensible(employee)); // false
+console.log(Object.isSealed(employee)); // true
+
+delete employee.name // fails silently unless it's in strict mode
+
+// Trying to add new property will give an error
+employee.age = 30; // fails silently unless in strict mode
+``` 
+
+when an object is sealed, its existing properties and methods can't be removed. Sealed object are also non-extensible.
+
+**3: Freeze :**
+
+>Same as seal, In addition to this prevent existing properties methods from being modified (All properties and methods are read only).
+
+To freeze an object, use Object.freeze() method. We can also determine whether an object is frozen using Object.isFrozen();
+
+```javascript
+var employee = {
+	name: "Nishant"
+};
+
+//Freeze the object
+Object.freeze(employee); 
+
+// Seal the object 
+Object.seal(employee);
+
+console.log(Object.isExtensible(employee)); // false
+console.log(Object.isSealed(employee));     // true
+console.log(Object.isFrozen(employee));     // true
+
+
+employee.name = "xyz"; // fails silently unless in strict mode
+employee.age = 30;     // fails silently unless in strict mode
+delete employee.name   // fails silently unless it's in strict mode
+``` 
+
+Frozen objects are considered both non-extensible and sealed.
+
+**Recommended:**
+
+If you are decided to prevent modification, sealed, freeze the object then use in strict mode so that you can catch the error.
+
+For Example: 
+
+```javascript
+"use strict";
+
+var employee = {
+	name: "Nishant"
+};
+
+//Freeze the object
+Object.freeze(employee); 
+
+// Seal the object 
+Object.seal(employee);
+
+console.log(Object.isExtensible(employee)); // false
+console.log(Object.isSealed(employee));     // true
+console.log(Object.isFrozen(employee));     // true
+
+
+employee.name = "xyz"; // fails silently unless in strict mode
+employee.age = 30;     // fails silently unless in strict mode
+delete employee.name;  // fails silently unless it's in strict mode
+``` 
+
+
 #Objective Question 
 
 ## Hoisting 
