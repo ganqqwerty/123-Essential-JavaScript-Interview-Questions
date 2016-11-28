@@ -3,7 +3,7 @@
  *
  *  Hi there, I am Nishant. I am UI Engineering Lead, JavaScript Engineer,
  *  Mozila Tech Contributor, CodeMentor Front-end Expert, Writer from India.
- */
+ */Thanks Nishant 
 
 (function() {
 	'use strict';
