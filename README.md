@@ -86,13 +86,13 @@ var Employee = function (name, company, salary) {
   this.salary = salary || 5000; //Public attribute default value is null
 
   // Private method
-  var increaseSlary = function () {
+  var increaseSalary = function () {
     this.salary = this.salary + 1000;
   };
 
   // Public method
   this.dispalyIncreasedSalary = function() {
-    increaseSlary();
+    increaseSalary();
     console.log(this.salary);
   };
 };
