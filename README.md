@@ -137,8 +137,10 @@ var globalVar = "abc";
       "innerArg = " + innerArg + "\n" +
       "innerFuncVar = " + innerFuncVar + "\n" +
       "globalVar = " + globalVar);
-    } // end of scope innerFunction)(5); // Pass 5 as parameter
-} // end of scope outerFunction )(7); // Pass 7 as parameter
+  // end of scope innerFunction
+  })(5); // Pass 5 as parameter
+// end of scope outerFunction
+})(7); // Pass 7 as parameter
 ```
 
 `innerFunction` is closure which is defined inside `outerFunction` and has access to all variable which is declared and defined in outerFunction scope. In addition to this function defined inside function as closure has access to variable which is declared in `global namespace`.
