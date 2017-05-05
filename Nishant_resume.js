@@ -34,7 +34,7 @@
 			'tools': ['Webpack','Gulp', 'Grunt', 'bower','yoman','Git'],
 			'testing': ['Jasmine', 'Protractor'],
 			'backend': ['Node.js', 'Express.js','Python'],
-			'dataBase': ['mongoDb', 'SQL'],
+			'dataBase': ['mongoDb', 'MYSQL'],
 			'uncategorized' : ['C','C#','HTML','CSS', 'HTML5','JSON']
 		},
 		work_experience:[{
