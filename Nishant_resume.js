@@ -1,8 +1,17 @@
 /**
  *  The Curriculum vitae of Nishant Kumar
  *
- *  Hi there, I am Nishant. I am UI Engineering Lead, JavaScript Engineer,
- *  Mozila Tech Contributor, CodeMentor Front-end Expert, Writer from India.
+ *  Hi there, I am Nishant. I am Software Architect @GetMyParking,
+ *  Mozila Tech Contributor, Teacher at CodeInstitute (Dublin), CodeMentor Front-end Expert, 
+ *  JavaScript Interview Question Author from India.
+ *
+ *  I love to pair program and ship quality code that's solidly tested. 
+ *  Skills that I'm proficient in and continue to learn with: Object Oriented JavaScript, 
+ *  JavaScript Design Pattern, MVC, Client Side Performance Optimization, Node.js, Angular.js,
+ *  Backbone.js, Vue.js, HTML5 and Tools: Git jasmine Test Framework, Grunt, webpack, bower, yoman.
+ *  
+ *  Domain: Cloud Computing, Distributed Systems, Big Data, SOA, Data mining, Hadoop, NoSQL and Graph Database.
+ * 
  */
 
 (function() {
@@ -11,29 +20,76 @@
 	/*
   	 About Me 
  	*/
-	var me = {
+	const me = {
 		name: 'Nishant Kumar',
-		job: 'UI Engineering Lead',
-		organization: 'Big Parser',
-		status: 'Not availble for Hire full time',
-		location: 'India',
-		experience: '5 years',
+		job: 'Software Architect',
+		organization: 'GetMyParking',
+		status: 'Not availble for hire',
+		location: 'Noida, India',
+		experience: '5+ years',
 		skills: {
-			'scripting-language' :['javascript']
-			'frameworks': ['angular.js','backbone.js','sails.js'],
+			'scripting-language' :['JavaScript','ECMAScript 6']
+			'frameworks': ['angular.js','React','Vue','Vuex','backbone.js','IONIC','sails.js'],
 			'library' : ['jQuery']
-			'tools': ['Gulp', 'Grunt', 'bower','yoman','Git'],
-			'testing': ['jasmine', 'protractor'],
-			'backend': ['node.js', 'express.js'],
+			'tools': ['Webpack','Gulp', 'Grunt', 'bower','yoman','Git'],
+			'testing': ['Jasmine', 'Protractor'],
+			'backend': ['Node.js', 'Express.js','Python'],
 			'dataBase': ['mongoDb', 'SQL'],
 			'uncategorized' : ['C','C#','HTML','CSS', 'HTML5','JSON']
-		}
+		},
+		work_experience:[{
+			'company' : 'GetMyParking',
+			'position': 'Software Architect',
+			'duration': 'Jan 2017 - April 2017',
+			'location': 'New Delhi',
+			'job_type': 'Contract',
+			'responsibility': {
+				"1": 'Responsible for designing and implementing development infrastructure',
+				"2": 'Manage risk identification and risk mitigation strategies associated with the architecture',
+				"3": 'Plan for new technology insertion',
+				"4": 'Make sure the right modeling is being done, to know that qualities like performance are going to be met',
+				"5": 'Commitment to following dev "best practices", with code-reviews, unit tests, etc.',
+				"6": 'Migrating monolithic base code to microservice based architecture to support million transaction per day',
+				"7": 'Creating and ensuring best practices properly followed for Node JS, and React JS based app.'
+			},{
+			'company' : 'Engineering Lead',
+			'position' : 'BigParser.com',
+			'duration' : 'Aug 2014 - Dec 2016',
+			'location' : 'Pilani, New Delhi',
+			'job_type': 'Contract, Hourly,Remotely',
+			'responsibility': {
+				"1": 'Understanding Product Feature and Functionality Requirements of the Platform',
+				"2": 'Working with the Design and Architecture teams on design and framework issues.',
+				"3": 'Working interactions on all platforms including mobile devices',
+				"4": 'Developing client side MVC frameworks and Creating UI Libraries and using Angular/React JS',
+				"5": 'Optimize Performance through improved design',
+				"6": 'Working with the Back End teams on Server side integration of the Platform.',
+				"7": 'Providing Level 2 and Level 3, support of the UI and Partner Products in Testing, Stage and Client facing Production Environments.',
+				"8": 'Vertical Specific Customization of Cloud Platform including interfaces to Gmail, Dropbox, Box.Net'
+			},{
+			'company' : 'Sr. Software Engineering',
+			'position' : 'Mindfire Solutions',
+			'duration' : 'June 2011 - July 2014',
+			'location' : 'Bhubaneswar, New Delhi',
+			'job_type': 'Full Time',
+			'responsibility': {
+				"1": 'Analyzed the business requirement with the project manager for different clients',
+				"2": 'Developed the Technical and functional specifications.',
+				"3": 'Developed the web based solutions and windows based solutions for various clients.',
+				"4": 'Perform monthly performance review of the application ',
+				"5": 'Developed a custom GUI for the ease of users',
+				"6": 'Developed discussion forum for internal use of knowledge flow within the organization.',
+				"7": 'Providing Level 2 and Level 3, support of the UI and Partner Products in Testing, Stage and Client facing Production Environments.',
+				"8": 'Trained the intern coming from various collages'
+			}
+		}],
+		'notes': 'For project details & more work exp details please refer my linkedIn profile.'
 	};
 
 	/*
 	  Contact Details
 	 */
-	var me_contact = {
+	const me_contact = {
 		'email' : 'nihantanu@gmail.com',
 		'skypeId' : 'mfsi_nishantk',
 		'linkedIn' :'http://in.linkedin.com/in/nishantkumar1'
@@ -45,18 +101,20 @@
 	/*
 	   Education 
 	 */
-	var education = {
+	const education = {
 		'post-Graduate': {
 			'college': 'Birla Institute of Technology and Science, Pilani',
 			'Major' : 'Software System',
-			'Year' :'2016'
+			'Year' :'2014-2016',
+			'type': 'Regular, Pilani Campus'
 		},
 		'graduation' : {
 			'college': 'ICFAI University, Dehradun',
 			'Major' : 'Computer Science & Engineering',
-			'Year' :'2011'
+			'Year' :'2007-2011',
+			'type': 'Regular'
 		}
-	}
+	},
 
 	/**
 	 *  Nice things people have said about me.
