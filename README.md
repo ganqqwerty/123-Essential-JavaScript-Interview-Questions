@@ -1651,6 +1651,319 @@ delete employee.name;  // fails silently unless it's in strict mode
 ``` 
 
 
+## Question 44
+##### Write a log function which will add prefix `(your message)` to every message you log using console.log ? 
+> For example, If you log `console.log("Some message")` then output should be **(your message) Some message**
+
+Logging error message or some informative message is always required when you dealing with client side JavaScript using console.log method. Some time you want to add some prefix to identify message generated log from your application hence you would like to prefix your app name in every console.log. 
+
+A general way to do this keep adding your app name in every console.log message like 
+
+```javascript
+console.log('your app name' + 'some error message');
+```
+But doing in this way you have to write your app name everytime when you log message using console.
+
+There are some best way we can achieve this 
+
+```javascript
+function appLog() {
+  var args = Array.prototype.slice.call(argument);
+  args.unshift('your app name');
+  console.log.apply(console, args);
+}
+
+console.log(appLog("Some error message")); 
+//output of above console: 'your app name Some error message'
+```
+
+## Question 45 
+##### Write a function which will test string as a literal and as an object ?
+
+For example: We can create string using string literal and using String constructor function. 
+
+```javascript
+ // using string literal
+ var ltrlStr = "Hi I am string literal";
+ // using String constructor function 
+ var objStr = new String("Hi I am string object");
+```
+> We can use typeof operator to test string literal and instanceof operator to test String object.
+
+```javascript
+ function isString(str) {
+ 	return typeof(str) == 'string' || str instanceof String;
+ }
+ 
+ var ltrlStr = "Hi I am string literal";
+ var objStr = new String("Hi I am string object");
+ console.log(isString(ltrlStr)); // true
+ console.log(isString(objStr)); // true
+``` 
+## Question 46 
+##### What is typical use case for anonymous function in JavaScript ?
+
+> Anonymous functions basically used in following scenario.
+
+1. No name is needed if function is only used in one place, then there is no need to add a name to function.
+
+	Let's take the example of setTimeout function 
+	
+	```javascript
+	setTimeout(function(){
+		alert("Hello");
+	},1000);
+	```
+	Here there is no need of using named function when we are sure 	that function which will alert `hello` would use only once in 	application.
+
+2. Anonymous functions are declared inline and inline functions have advantages in the case that they can access variable in the parent scopes.
+
+	Let's take a example of event handler. Notify event of particular 	type (such as click) for a given object. 
+	
+	Let say we have HTML element (button) on which we want to add click event and when user do click on button we would like to execute some logic.
+	
+	```html
+	<button id="myBtn"></button>
+	```
+	Add Event Listener 
+	
+	```javascript
+	var btn = document.getElementById('myBtn');
+	btn.addEventListener('click', function () {
+	  alert('button clicked');
+	});
+	```
+	
+	Above example shows used of anonymous function as a callback function in event handler.
+	
+3. Passing anonymous function as a parameter to calling function.
+	
+	Example: 
+	
+	```javascript
+	// Function which will execute callback function
+	function processCallback(callback){
+		if(typeof callback === 'function'){
+			callback();
+		}
+	}
+	
+	// Call function and pass anonymous function as callback 
+	processCallback(function(){
+		alert("Hi I am anonymous callback function");
+	});
+	```
+The best way to take decision for using anonymous function is to asked.
+
+> Will the function which I am going to define will use anywhere else.
+
+If your answer is yes then go and create named function rather anonymous function.
+
+**Advantage of using anonymous function:**
+
+1. It can reduce a bit of code, particularly in recursive function and in callback function.
+2.  Avoid needless global namespace pollutions.
+
+## Question 47 
+##### How to set a default parameter value ?
+
+> If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For Instance : 
+
+```python
+// Define sentEmail function 
+// configuration : Configuration object
+// provider : Email Service provider, Default would be gmail
+def sentEmail(configuration, provider = 'Gmail'):
+	# Your code logic
+```
+**In Pre ES6/ES2015**
+
+There are a lot of ways by which you can achieve this in pre ES2015.
+
+Let's understand below code by which we achieved setting default parameter value.
+
+**Method 1: Setting default parameter value** 
+
+```javascript
+function sentEmail(configuration, provider) {
+  // Set default value if user has not passed value for provider
+  provider = typeof provider !== 'undefined' ? provider : 'Gmail'  
+  // Your code logic
+;
+}
+// In this call we are not passing provider parameter value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+});
+// Here we are passing Yahoo Mail as a provider value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+}, 'Yahoo Mail');
+```
+
+**Method 2: Setting default parameter value** 
+
+```javascript
+function sentEmail(configuration, provider) {
+  // Set default value if user has not passed value for provider
+  provider = provider || 'Gmail'  
+  // Your code logic
+;
+}
+// In this call we are not passing provider parameter value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+});
+// Here we are passing Yahoo Mail as a provider value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+}, 'Yahoo Mail');
+```
+
+## Question 48 
+##### Write code for merge two JavaScript Object dynamically.
+> Let say you have two object 
+
+```javascript
+var person = {
+	name : 'John',
+	age  : 24
+}
+
+var location = {
+	addressLine1 : 'Some Location x',
+	addressLine2 : 'Some Location y',
+	city : 'NewYork'
+} 
+```
+Write merge function which will take two object and add all the own property of second object into first object.
+
+```javascript
+merge(person , location); 
+ 
+/* Now person should have 5 properties 
+name , age , addressLine1 , addressLine2 , city */
+```
+**Method 1: Using ES6, Object assign method**
+
+```javascript
+function merge(toObj,fromObj){
+	return Object.assign(person,location);
+}
+```
+ 
+**Method 2: Without using in-built function**
+
+```javascript
+function merge(toObj, fromObj) {
+  // Make sure both of the parameter is an object
+  if (typeof toObj === 'object' && typeof fromObj === 'object') {
+    for (var pro in fromObj) {
+      // Assign only own properties not inherited properties
+      if (fromObj.hasOwnProperty(pro)) {
+        // Assign property and value
+        toObj[pro] = fromObj[pro];
+      }
+    }
+  }else{
+  	throw "Merge function can apply only on object";
+  }
+}
+```
+## Question 49 
+##### What is non-enumerable property in JavaScript and how can create ?
+
+>Object can have properties that don't show up when you iterate through object using for...in loop or using Object.keys() to get an array of property names. This properties is know as non-enumerable properties.
+
+Let say we have following object
+
+```javascript
+var person = {
+	name: 'John'
+};
+person.salary = '10000$';
+person['country'] = 'USA';
+
+console.log(Object.keys(person)); // ['name', 'salary', 'country']
+```
+As we know that person object properties `name`, `salary` ,`country` are enumerable hence it's shown up when we called Object.keys(person).
+
+To create a non-enumerable property we have to use **Object.defineProperty()**. This is a special method for creating non-enumerable property in JavaScript.
+
+```javascript
+var person = {
+	name: 'John'
+};
+person.salary = '10000$';
+person['country'] = 'USA';
+
+// Create non-enumerable property
+Object.defineProperty(person, 'phoneNo',{
+	value : '8888888888',
+	enumerable: false
+})
+
+Object.keys(person); // ['name', 'salary', 'country']
+```
+In above example `phoneNo` property didn't show up because we made it non-enumerable by setting **enumerable:false**
+
+Now let's try to change value of `phoneNo`
+
+```javascript
+person.phoneNo = '7777777777'; 
+```
+Changing non-enumerable property value will return error in `strict mode`. In non-strict mode it won't through any error but it won't change the value of phoneNo.
+
+**Bonus**
+
+**Object.defineProperty()** is also let you create read-only properties as we saw above, we are not able to modify phoneNo value of a person object.
+
+## Question 50 
+##### What is Function binding ?
+
+> Function binding falls in advance JavaScript category and this is very popular technique to use in conjunction with event handler and callback function to preserve code execution context while passing function as a parameter.
+
+Let's consider the following example:
+
+```javascript
+var clickHandler = {
+	message: 'click event handler',
+	handleClick: function(event) {
+		console.log(this.message);
+	}
+};
+
+var btn = document.getElementById('myBtn');
+// Add click event to btn
+btn.addEventListener('click', clickHandler.handleClick);
+```
+
+Here in this example clickHandler object is created which contain message properties and handleClick method.
+
+We have assigned handleClick method to a DOM button, which will be executed in response of click. When the button is clicked, then handleClick method is being called and console message. Here console.log should log the `click event handler` message but it actually log `undefined`.
+
+The problem of displaying `undefined` is because of the execution context of clickHandler.handleClick method is not being saved hence `this` pointing to button `btn` object. We can fix this issue using bind method.
+
+```javascript
+var clickHandler = {
+	message: 'click event handler',
+	handleClick: function(event) {
+		console.log(this.message);
+	}
+};
+
+var btn = document.getElementById('myBtn');
+// Add click event to btn and bind the clickHandler object
+btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
+```
+
+`bind` method is available to all the function similar to call and apply method which take argument value of `this`.
+
+
 #Objective Question 
 
 ## Hoisting 
@@ -1695,6 +2008,154 @@ var employeeId = '1234abe';
 
 Answer: 2) undefined 
 
+###4. What would be the output of following code?
+
+```javascript
+var employeeId = '1234abe';
+(function() {
+	console.log(employeeId);
+	var employeeId = '122345';
+	(function() {
+		var employeeId = 'abc1234';
+	}());
+}());
+```
+
+1.  '122345'
+2.  undefined 
+3.  '1234abe'
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 2) undefined 
+
+###5. What would be the output of following code?
+
+```javascript
+(function() {
+	console.log(typeof displayFunc);
+	var displayFunc = function(){
+		console.log("Hi I am inside displayFunc");
+	}
+}());
+```
+
+1.  undefined
+2.  function 
+3.  'Hi I am inside displayFunc'
+4.  ReferenceError: displayFunc is not defined 
+
+Answer: 1) undefined 
+
+###6. What would be the output of following code?
+
+```javascript
+var employeeId = 'abc123';
+function foo(){
+	employeeId = '123bcd';
+	return;
+}
+foo();
+console.log(employeeId);
+```
+
+1.  undefined
+2.  '123bcd' 
+3.  'abc123'
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 2) '123bcd' 
+
+###7. What would be the output of following code?
+
+```javascript
+var employeeId = 'abc123';
+
+function foo() {
+	employeeId = '123bcd';
+	return;
+
+	function employeeId() {}
+}
+foo();
+console.log(employeeId);
+```
+
+1.  undefined
+2.  '123bcd' 
+3.  'abc123'
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 3) 'abc123' 
+
+###8. What would be the output of following code?
+
+```javascript
+var employeeId = 'abc123';
+
+function foo() {
+	employeeId();
+	return;
+
+	function employeeId() {
+		console.log(typeof employeeId);
+	}
+}
+foo();
+```
+
+1.  undefined
+2.  function 
+3.  string
+4.  ReferenceError: employeeId is not defined 
+
+Answer: 2) 'function'
+
+###9. What would be the output of following code?
+
+```javascript
+function foo() {
+	employeeId();
+	var product = 'Car'; 
+	return;
+
+	function employeeId() {
+		console.log(product);
+	}
+}
+foo();
+```
+
+1.  undefined
+2.  Type Error 
+3.  'Car'
+4.  ReferenceError: product is not defined 
+
+Answer: 1) undefined
+
+###10. What would be the output of following code?
+
+```javascript
+(function foo() {
+	bar();
+
+	function bar() {
+		abc();
+		console.log(typeof abc);
+	}
+
+	function abc() {
+		console.log(typeof bar);
+	}
+}());
+```
+
+1.  undefined undefined
+2.  Type Error 
+3.  function function
+4.  ReferenceError: bar is not defined 
+
+Answer: 3) function function
+
 ## Object
 
 ###1. What would be the output of following code ?
@@ -1704,7 +2165,7 @@ Answer: 2) undefined
 	'use strict';
 
 	var person = {
-		name: 'Nishant'
+		name: 'John'
 	};
 	person.salary = '10000$';
 	person['country'] = 'USA';
@@ -1724,10 +2185,6 @@ Answer: 2) undefined
 	
 Answer: 3) ["name", "salary", "country", "phoneNo"]
 
-## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
-
-
 ###2. What would be the output of following code ?
 
 ```javascript
@@ -1735,7 +2192,7 @@ Answer: 3) ["name", "salary", "country", "phoneNo"]
 	'use strict';
 
 	var person = {
-		name: 'Nishant'
+		name: 'John'
 	};
 	person.salary = '10000$';
 	person['country'] = 'USA';
@@ -1754,10 +2211,6 @@ Answer: 3) ["name", "salary", "country", "phoneNo"]
 4.  ["name", "salary", "country"]
 	
 Answer: 4) ["name", "salary", "country"]
-
-## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
-
 
 ###3. What would be the output of following code ?
 
@@ -1799,9 +2252,149 @@ Answer: 2) false false
 	
 Answer: 2) false false
 
-## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
+###5. What would be the output of following code ?
 
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = Object.create({
+		foo: 'foo'
+	});
+	console.log(objA == objB);
+	console.log(objA === objB);
+}());
+```
+1.  false true
+2.  false false 
+3.  true false
+4.  true true
+	
+Answer: 2) false false
+
+###6. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = Object.create(objA);
+	console.log(objA == objB);
+	console.log(objA === objB);
+}());
+```
+1.  false true
+2.  false false 
+3.  true false
+4.  true true
+	
+Answer: 2) false false
+
+###7. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = Object.create(objA);
+	console.log(objA.toString() == objB.toString());
+	console.log(objA.toString() === objB.toString());
+}());
+```
+1.  false true
+2.  false false 
+3.  true false
+4.  true true
+	
+Answer: 4) true true
+
+###8. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = objA;
+	console.log(objA == objB);
+	console.log(objA === objB);
+	console.log(objA.toString() == objB.toString());
+	console.log(objA.toString() === objB.toString());
+}());
+```
+1.  true true true false
+2.  true false true true 
+3.  true true true true
+4.  true true false false
+	
+Answer: 3) true true true true
+
+###9. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = objA;
+	objB.foo = 'bar';
+	console.log(objA.foo);
+	console.log(objB.foo);
+}());
+```
+1.  foo bar
+2.  bar bar 
+3.  foo foo
+4.  bar foo
+	
+Answer: 2) bar bar
+
+###10. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = Object.create({
+		foo: 'foo'
+	});
+	var objB = objA;
+	objB.foo = 'bar';
+
+	delete objA.foo;
+	console.log(objA.foo);
+	console.log(objB.foo);
+}());
+```
+1.  foo bar
+2.  bar bar 
+3.  foo foo
+4.  bar foo
+	
+Answer: 3) foo foo
+
+###11. What would be the output of following code ?
+
+```javascript
+(function() {
+	var objA = {
+		foo: 'foo'
+	};
+	var objB = objA;
+	objB.foo = 'bar';
+
+	delete objA.foo;
+	console.log(objA.foo);
+	console.log(objB.foo);
+}());
+```
+1.  foo bar
+2.  undefined undefined 
+3.  foo foo
+4.  undefined bar
+	
+Answer: 2) undefined undefined 
 
 ## Array
 
@@ -1843,10 +2436,6 @@ Answer: 3) ["100"] 1
 
 Answer: 1) [] [] [Array[5]] 1
 
-## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
-
-
 ###3. What would be the output of following code?
 
 ```javascript
@@ -1865,10 +2454,6 @@ Answer: 1) [] [] [Array[5]] 1
 
 Answer: 1) 11
 
-## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
-
-
 ###4. What would be the output of following code?
 
 ```javascript
@@ -1886,6 +2471,200 @@ Answer: 1) 11
 4.  undefined
 
 Answer: 3) 6
+
+###5. What would be the output of following code?
+
+```javascript
+(function(){
+	var animal = ['cow','horse'];
+		animal.push('cat');
+		animal.unshift('dog','rat','goat');
+		console.log(animal);
+})();
+```
+
+1.  [ 'dog', 'rat', 'goat', 'cow', 'horse', 'cat' ]
+2.  [ 'cow', 'horse', 'cat', 'dog', 'rat', 'goat' ]
+3.  Type Error
+4.  undefined
+
+Answer: 1) [ 'dog', 'rat', 'goat', 'cow', 'horse', 'cat' ]
+
+###6. What would be the output of following code?
+
+```javascript
+(function(){
+	var array = [1,2,3,4,5];
+	console.log(array.indexOf(2));
+	console.log([{name: 'John'},{name : 'John'}].indexOf({name:'John'}));
+	console.log([[1],[2],[3],[4]].indexOf([3]));
+	console.log("abcdefgh".indexOf('e'));
+})();
+```
+
+1.  1 -1 -1 4
+2.  1 0 -1 4
+3.  1 -1 -1 -1
+4.  1 undefined -1 4
+
+Answer: 1) 1 -1 -1 4
+
+###7. What would be the output of following code?
+
+```javascript
+(function(){
+	var array = [1,2,3,4,5,1,2,3,4,5,6];
+	console.log(array.indexOf(2));
+	console.log(array.indexOf(2,3));
+	console.log(array.indexOf(2,10));
+})();
+```
+
+1.  1 -1 -1
+2.  1 6 -1
+3.  1 1 -1 
+4.  1 undefined undefined
+
+Answer: 2) 1 6 -1
+
+###8. What would be the output of following code?
+
+```javascript
+(function(){
+	var numbers = [2,3,4,8,9,11,13,12,16];
+	var even = numbers.filter(function(element, index){
+		return element % 2 === 0; 
+	});
+	console.log(even);
+
+	var containsDivisibleby3 = numbers.some(function(element, index){
+		return element % 3 === 0;
+	});
+
+	console.log(containsDivisibleby3);	
+})();
+```
+
+1.  [ 2, 4, 8, 12, 16 ] [ 0, 3, 0, 0, 9, 0, 12]
+2.  [ 2, 4, 8, 12, 16 ] [ 3, 9, 12]
+3.  [ 2, 4, 8, 12, 16 ] true 
+4.  [ 2, 4, 8, 12, 16 ] false
+
+Answer: 3) [ 2, 4, 8, 12, 16 ] true 
+
+###9. What would be the output of following code?
+
+```javascript
+(function(){
+	var containers = [2,0,false,"", '12', true];
+	var containers = containers.filter(Boolean);
+	console.log(containers);
+	var containers = containers.filter(Number);
+	console.log(containers);
+	var containers = containers.filter(String);
+	console.log(containers);
+	var containers = containers.filter(Object);
+	console.log(containers);		
+})();
+```
+
+1.	[ 2, '12', true ]
+	[ 2, '12', true ]
+	[ 2, '12', true ]
+	[ 2, '12', true ]
+2.	[false, true]
+	[ 2 ]
+	['12']
+	[ ]
+3.	[2,0,false,"", '12', true]
+	[2,0,false,"", '12', true]
+	[2,0,false,"", '12', true]
+	[2,0,false,"", '12', true]
+4. [ 2, '12', true ]
+	[ 2, '12', true, false ]
+	[ 2, '12', true,false ]
+	[ 2, '12', true,false]
+
+
+Answer: 1) [ 2, '12', true ]
+			 [ 2, '12', true ]
+			 [ 2, '12', true ]
+			 [ 2, '12', true ]
+			 
+###10. What would be the output of following code?
+
+```javascript
+(function(){
+	var list = ['foo','bar','john','ritz'];
+	    console.log(list.slice(1));	
+	    console.log(list.slice(1,3));
+	    console.log(list.slice());
+	    console.log(list.slice(2,2));
+	    console.log(list);				
+})();
+```
+
+1. [ 'bar', 'john', 'ritz' ]
+   [ 'bar', 'john' ]
+   [ 'foo', 'bar', 'john', 'ritz' ]
+   []
+   [ 'foo', 'bar', 'john', 'ritz' ]
+2. [ 'bar', 'john', 'ritz' ]
+   [ 'bar', 'john','ritz ]
+   [ 'foo', 'bar', 'john', 'ritz' ]
+   []
+   [ 'foo', 'bar', 'john', 'ritz' ]
+3. [ 'john', 'ritz' ]
+   [ 'bar', 'john' ]
+   [ 'foo', 'bar', 'john', 'ritz' ]
+   []
+   [ 'foo', 'bar', 'john', 'ritz' ]
+4. [ 'foo' ]
+   [ 'bar', 'john' ]
+   [ 'foo', 'bar', 'john', 'ritz' ]
+   []
+   [ 'foo', 'bar', 'john', 'ritz' ]
+
+Answer: 1) [ 'bar', 'john', 'ritz' ]
+		 	 [ 'bar', 'john' ]
+           [ 'foo', 'bar', 'john', 'ritz' ]
+           []
+           [ 'foo', 'bar', 'john', 'ritz' ]		
+
+###11. What would be the output of following code?
+
+```javascript
+(function(){
+	var list = ['foo','bar','john'];
+	    console.log(list.splice(1));		
+	    console.log(list.splice(1,2));
+	    console.log(list);			
+})();
+```
+
+1.  [ 'bar', 'john' ] [] [ 'foo' ]
+2.  [ 'bar', 'john' ] [] [ 'bar', 'john' ]
+3.  [ 'bar', 'john' ] [ 'bar', 'john' ] [ 'bar', 'john' ]
+4.  [ 'bar', 'john' ] [] []
+
+Answer: 1.  [ 'bar', 'john' ] [] [ 'foo' ] 
+
+###12. What would be the output of following code?
+
+```javascript
+(function(){
+	var arrayNumb = [2, 8, 15, 16, 23, 42];
+	arrayNumb.sort();
+	console.log(arrayNumb);
+})();
+```
+
+1.  [2, 8, 15, 16, 23, 42]
+2.  [42, 23, 26, 15, 8, 2]
+3.  [ 15, 16, 2, 23, 42, 8 ]
+4.  [ 2, 8, 15, 16, 23, 42 ]
+
+Answer: 3.  [ 15, 16, 2, 23, 42, 8 ]
 
 ## Function: 
 
@@ -1974,6 +2753,117 @@ console.log(obj.innerMessage());
 4.  ReferenceError: this.message is not defined
 	
 Answer: 3) undefined
+	
+###5. What would the output of following code ?
+
+```javascript
+var obj = {
+  message: 'Hello',
+  innerMessage: function () {
+  	var self = this;
+    (function () {
+      console.log(self.message);
+    }());
+  }
+};
+console.log(obj.innerMessage());
+```
+
+1.  Type Error 
+2.  'Hello' 
+3.  undefined
+4.  ReferenceError: self.message is not defined
+	
+Answer: 2) 'Hello'
+
+###6. What would the output of following code ?
+
+```javascript
+function myFunc(){
+	console.log(this.message);
+}
+myFunc.message = "Hi John";
+	
+console.log(myFunc());
+```
+
+1.  Type Error 
+2.  'Hi John' 
+3.  undefined
+4.  ReferenceError: this.message is not defined
+	
+Answer: 3) undefined
+
+###7. What would the output of following code ?
+
+```javascript
+function myFunc(){
+	console.log(myFunc.message);
+}
+myFunc.message = "Hi John";
+	
+console.log(myFunc());
+```
+
+1.  Type Error 
+2.  'Hi John' 
+3.  undefined
+4.  ReferenceError: this.message is not defined
+	
+Answer: 2) 'Hi John'
+
+###8. What would the output of following code ?
+
+```javascript
+function myFunc() {
+  myFunc.message = 'Hi John';
+  console.log(myFunc.message);
+}
+console.log(myFunc());
+```
+
+1.  Type Error 
+2.  'Hi John' 
+3.  undefined
+4.  ReferenceError: this.message is not defined
+	
+Answer: 2) 'Hi John'
+
+###9. What would the output of following code ?
+
+```javascript
+function myFunc(param1,param2) {
+  console.log(myFunc.length);
+}
+console.log(myFunc());
+console.log(myFunc("a","b"));
+console.log(myFunc("a","b","c","d"));
+```
+
+1.  2 2 2 
+2.  0 2 4
+3.  undefined
+4.  ReferenceError
+	
+Answer: a) 2 2 2 
+
+###10. What would the output of following code ?
+
+```javascript
+function myFunc() {
+  console.log(arguments.length);
+}
+console.log(myFunc());
+console.log(myFunc("a","b"));
+console.log(myFunc("a","b","c","d"));
+```
+
+1.  2 2 2 
+2.  0 2 4
+3.  undefined
+4.  ReferenceError
+	
+Answer: 2) 0 2 4 
 
 ## Object Oriented
 
@@ -1993,17 +2883,457 @@ Person.displayName = function(){
 	console.log(this.name);
 }
 
-var person1 = new Person('Nishant');
+var person1 = new Person('John');
 	person1.displayName();
 	Person.displayName();
 ```
 
-1.  Nishant Person
-2.  Nishant John
-3.  Nishant undefined
+1.  John Person
+2.  John John
+3.  John undefined
 4.  John John
 	
-Answer: 1) Nishant Person 
+Answer: 1) John Person 
+
+## Scopes
+
+###1. What would the output of following code ?
+
+```javascript
+function passWordMngr() {
+	var password = '12345678';
+	this.userName = 'John';
+	return {
+		pwd: password
+	};
+}
+// Block End
+var userInfo = passWordMngr();
+console.log(userInfo.pwd);
+console.log(userInfo.userName);
+```
+
+1.  12345678 Window
+2.  12345678 John
+3.  12345678 undefined
+4.  undefined undefined
+	
+Answer: 3) 12345678 undefined 
+
+###2. What would the output of following code ?
+
+```javascript
+var employeeId = 'aq123';
+function Employee() {
+  this.employeeId = 'bq1uy';
+}
+console.log(Employee.employeeId);
+```
+
+1.  Reference Error
+2.  aq123
+3.  bq1uy
+4.  undefined
+	
+Answer: 4) undefined 
+
+###3. What would the output of following code ?
+
+```javascript
+var employeeId = 'aq123';
+
+function Employee() {
+	this.employeeId = 'bq1uy';
+}
+console.log(new Employee().employeeId);
+Employee.prototype.employeeId = 'kj182';
+Employee.prototype.JobId = '1BJKSJ';
+console.log(new Employee().JobId);
+console.log(new Employee().employeeId);
+```
+
+1.  bq1uy 1BJKSJ bq1uy undefined
+2.  bq1uy 1BJKSJ bq1uy
+3.  bq1uy 1BJKSJ kj182
+4.  undefined 1BJKSJ kj182
+	
+Answer: 2) bq1uy 1BJKSJ bq1uy 
+
+###4. What would the output of following code ?
+
+```javascript
+var employeeId = 'aq123';
+(function Employee() {
+	try {
+		throw 'foo123';
+	} catch (employeeId) {
+		console.log(employeeId);
+	}
+	console.log(employeeId);
+}());
+```
+
+1.  foo123 aq123
+2.  foo123 foo123
+3.  aq123 aq123
+4.  foo123 undefined 
+	
+Answer: 1) foo123 aq123 
+
+## Call, Apply, Bind
+
+###1. What would the output of following code ?
+
+```javascript
+(function() {
+	var greet = 'Hello World';
+	var toGreet = [].filter.call(greet, function(element, index) {
+		return index > 5;
+	});
+	console.log(toGreet);
+}());
+```
+
+1.  Hello World
+2.  undefined
+3.  World
+4.  [ 'W', 'o', 'r', 'l', 'd' ] 
+	
+Answer: 4) [ 'W', 'o', 'r', 'l', 'd' ]  
+
+###2. What would the output of following code ?
+
+```javascript
+(function() {
+	var fooAccount = {
+		name: 'John',
+		amount: 4000,
+		deductAmount: function(amount) {
+			this.amount -= amount;
+			return 'Total amount left in account: ' + this.amount;
+		}
+	};
+	var barAccount = {
+		name: 'John',
+		amount: 6000
+	};
+	var withdrawAmountBy = function(totalAmount) {
+		return fooAccount.deductAmount.bind(barAccount, totalAmount);
+	};
+	console.log(withdrawAmountBy(400)());
+	console.log(withdrawAmountBy(300)());
+}());
+```
+
+1. Total amount left in account: 5600 Total amount left in account: 5300
+2.  undefined undefined
+3.  Total amount left in account: 3600 Total amount left in account: 3300
+4.  Total amount left in account: 5600 Total amount left in account: 5600
+	
+Answer: 1) Total amount left in account: 5600 Total amount left in account: 5300 
+
+###3. What would the output of following code ?
+
+```javascript
+(function() {
+	var fooAccount = {
+		name: 'John',
+		amount: 4000,
+		deductAmount: function(amount) {
+			this.amount -= amount;
+			return this.amount;
+		}
+	};
+	var barAccount = {
+		name: 'John',
+		amount: 6000
+	};
+	var withdrawAmountBy = function(totalAmount) {
+		return fooAccount.deductAmount.apply(barAccount, [totalAmount]);
+	};
+	console.log(withdrawAmountBy(400));
+	console.log(withdrawAmountBy(300));
+	console.log(withdrawAmountBy(200));
+}());
+```
+
+1. 5600 5300 5100
+2. 3600 3300 3100
+3. 5600 3300 5100
+4. undefined undefined undefined
+	
+Answer: 1) 5600 5300 5100
+
+###4. What would the output of following code ?
+
+```javascript
+(function() {
+	var fooAccount = {
+		name: 'John',
+		amount: 6000,
+		deductAmount: function(amount) {
+			this.amount -= amount;
+			return this.amount;
+		}
+	};
+	var barAccount = {
+		name: 'John',
+		amount: 4000
+	};
+	var withdrawAmountBy = function(totalAmount) {
+		return fooAccount.deductAmount.call(barAccount, totalAmount);
+	};
+	console.log(withdrawAmountBy(400));
+	console.log(withdrawAmountBy(300));
+	console.log(withdrawAmountBy(200));
+}());
+```
+
+1. 5600 5300 5100
+2. 3600 3300 3100
+3. 5600 3300 5100
+4. undefined undefined undefined
+	
+Answer: 2) 3600 3300 3100
+
+###5. What would the output of following code ?
+
+```javascript
+(function greetNewCustomer() {
+	console.log('Hello ' + this.name);
+}.bind({
+	name: 'John'
+})());
+```
+
+1. Hello John
+2. Reference Error
+3. Window
+4. undefined
+	
+Answer: 1) Hello John
+
+###6. What would the output of following code ?
+
+```javascript
+(function greetNewCustomer() {
+	console.log('Hello ' + this.name);
+}.bind({
+	name: 'John'
+})());
+```
+
+1. Hello John
+2. Reference Error
+3. Window
+4. undefined
+	
+Answer: 1) Hello John
+
+## Callback Function
+
+###1. What would the output of following code ?
+
+```javascript
+function getDataFromServer(apiUrl){
+    var name = "John";
+	return {
+		then : function(fn){
+			fn(name);
+		}
+	}
+}
+
+getDataFromServer('www.google.com').then(function(name){
+	console.log(name);
+});
+
+```
+
+1. John
+2. undefined
+3. Reference Error
+4. fn is not defined
+	
+Answer: 1) John
+
+###2. What would the output of following code ?
+
+```javascript
+(function(){
+	var arrayNumb = [2, 8, 15, 16, 23, 42];
+	Array.prototype.sort = function(a,b){
+		return a - b;
+	};
+	arrayNumb.sort();
+	console.log(arrayNumb);
+})();
+
+(function(){
+	var numberArray = [2, 8, 15, 16, 23, 42];
+	numberArray.sort(function(a,b){
+		if(a == b){
+			return 0;
+		}else{
+			return a < b ? -1 : 1;
+		}
+	});
+	console.log(numberArray);
+})();
+
+(function(){
+	var numberArray = [2, 8, 15, 16, 23, 42];
+	numberArray.sort(function(a,b){
+		return a-b;
+	});
+	console.log(numberArray);
+})();
+```
+
+1. [ 2, 8, 15, 16, 23, 42 ]
+   [ 2, 8, 15, 16, 23, 42 ]
+   [ 2, 8, 15, 16, 23, 42 ]
+2. undefined undefined undefined
+3. [42, 23, 16, 15, 8, 2]
+   [42, 23, 16, 15, 8, 2]
+   [42, 23, 16, 15, 8, 2]
+4. Reference Error
+	
+Answer: 1) [ 2, 8, 15, 16, 23, 42 ]
+			 [ 2, 8, 15, 16, 23, 42 ]
+			 [ 2, 8, 15, 16, 23, 42 ]
+			
+## Return Statement
+
+###1. What would the output of following code ?
+
+```javascript
+(function(){
+	function sayHello(){
+		var name = "Hi John";
+		return 
+		{
+			fullName: name
+		}
+	}
+	console.log(sayHello().fullName);
+})();
+```
+
+1. Hi John
+2. undefined
+3. Reference Error
+4. Uncaught TypeError: Cannot read property 'fullName' of undefined
+	
+Answer: 4) Uncaught TypeError: Cannot read property 'fullName' of undefined
+
+###2. What would the output of following code ?
+
+```javascript
+function getNumber(){
+	return (2,4,5);
+}
+
+var numb = getNumber();
+console.log(numb);
+```
+
+1. 5
+2. undefined
+3. 2
+4. (2,4,5)
+	
+Answer: 1) 5
+
+###3. What would the output of following code ?
+
+```javascript
+function getNumber(){
+	return;
+}
+
+var numb = getNumber();
+console.log(numb);
+```
+
+1. null
+2. undefined
+3. ""
+4. 0
+	
+Answer: 2) undefined
+
+###4**. What would the output of following code ?
+
+```javascript
+function mul(x){
+	return function(y){
+		return [x*y, function(z){
+			return x*y + z;
+		}];
+	}
+}
+
+console.log(mul(2)(3)[0]);
+console.log(mul(2)(3)[1](4));
+```
+
+1. 6, 10
+2. undefined undefined
+3. Reference Error
+4. 10, 6
+	
+Answer: 1) 6, 10
+
+###5**. What would the output of following code ?
+
+```javascript
+function mul(x) {
+	return function(y) {
+		return {
+			result: x * y,
+			sum: function(z) {
+				return x * y + z;
+			}
+		};
+	};
+}
+console.log(mul(2)(3).result);
+console.log(mul(2)(3).sum(4));
+```
+
+1. 6, 10
+2. undefined undefined
+3. Reference Error
+4. 10, 6
+	
+Answer: 1) 6, 10
+
+###6. What would the output of following code ?
+
+```javascript
+function mul(x) {
+	return function(y) {
+		return function(z) {
+			return function(w) {
+				return function(p) {
+					return x * y * z * w * p;
+				};
+			};
+		};
+	};
+}
+console.log(mul(2)(3)(4)(5)(6));
+```
+
+1. 720
+2. undefined
+3. Reference Error
+4. Type Error
+	
+Answer: 1) 720
+
+
 
 ## Have doubt in this question ??
 [Schedule 15 min discussion with me for free @nishantk](http://www.canumeet.com/nishantk/javascript-interview-query-discussion) 
