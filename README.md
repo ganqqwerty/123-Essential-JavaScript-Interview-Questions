@@ -1860,7 +1860,7 @@ name , age , addressLine1 , addressLine2 , city */
 
 ```javascript
 function merge(toObj,fromObj){
-	return Object.assign(person,location);
+	return Object.assign(toObj,fromObj);
 }
 ```
  
