@@ -1675,7 +1675,7 @@ But doing in this way you have to write your app name everytime when you log mes
 There are some best way we can achieve this 
 
 ```javascript
-function appLog() {
+function appLog(argument) {
   var args = Array.prototype.slice.call(argument);
   args.unshift('your app name');
   console.log.apply(console, args);
