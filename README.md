@@ -1674,11 +1674,22 @@ But doing in this way you have to write your app name everytime when you log mes
 
 There are some best way we can achieve this 
 
+Method 1:
 ```javascript
 function appLog() {
   var args = Array.prototype.slice.call(argument);
   args.unshift('your app name');
   console.log.apply(console, args);
+}
+
+console.log(appLog("Some error message")); 
+//output of above console: 'your app name Some error message'
+```
+
+Method 2:
+```javascript
+function appLog(argument) {
+	return 'your app name ' + argument;
 }
 
 console.log(appLog("Some error message")); 
