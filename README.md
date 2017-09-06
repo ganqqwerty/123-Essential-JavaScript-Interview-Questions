@@ -1464,8 +1464,8 @@ emp1.displayName = function() {
 	console.log('xyz-Anonymous');
 };
 
-employee.displayName();// "xyz-Anonymous"
-emp1.displayName(); // "Nishant"
+employee.displayName();// "Nishant"
+emp1.displayName(); // "xyz-Anonymous"
 ``` 
 
 In addition to this **Object.create()** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.

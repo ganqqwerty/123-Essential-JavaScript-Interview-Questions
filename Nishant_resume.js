@@ -14,7 +14,7 @@
  * 
  */
 
-(function() {
+(function () {
 	'use strict';
 
 	/*
@@ -28,17 +28,17 @@
 		location: 'Noida, India',
 		experience: '5+ years',
 		skills: {
-			'scripting-language' :['JavaScript','ECMAScript 6']
-			'frameworks': ['angular.js','React','Vue','Vuex','backbone.js','IONIC','sails.js'],
-			'library' : ['jQuery']
-			'tools': ['Webpack','Gulp', 'Grunt', 'bower','yoman','Git'],
+			'scripting-language': ['JavaScript', 'ECMAScript 6'],
+			'frameworks': ['angular.js', 'React', 'Vue', 'Vuex', 'backbone.js', 'IONIC', 'sails.js'],
+			'library': ['jQuery'],
+			'tools': ['Webpack', 'Gulp', 'Grunt', 'bower', 'yoman', 'Git'],
 			'testing': ['Jasmine', 'Protractor'],
-			'backend': ['Node.js', 'Express.js','Python'],
+			'backend': ['Node.js', 'Express.js', 'Python'],
 			'dataBase': ['mongoDb', 'MYSQL'],
-			'uncategorized' : ['C','C#','HTML','CSS', 'HTML5','JSON']
+			'uncategorized': ['C', 'C#', 'HTML', 'CSS', 'HTML5', 'JSON']
 		},
-		work_experience:[{
-			'company' : 'GetMyParking',
+		work_experience: [{
+			'company': 'GetMyParking',
 			'position': 'Software Architect',
 			'duration': 'Jan 2017 - April 2017',
 			'location': 'New Delhi',
@@ -52,10 +52,10 @@
 				"6": 'Migrating monolithic base code to microservice based architecture to support million transaction per day',
 				"7": 'Creating and ensuring best practices properly followed for Node JS, and React JS based app.'
 			},{
-			'company' : 'Engineering Lead',
-			'position' : 'BigParser.com',
-			'duration' : 'Aug 2014 - Dec 2016',
-			'location' : 'Pilani, New Delhi',
+			'company': 'Engineering Lead',
+			'position': 'BigParser.com',
+			'duration': 'Aug 2014 - Dec 2016',
+			'location': 'Pilani, New Delhi',
 			'job_type': 'Contract, Hourly,Remotely',
 			'responsibility': {
 				"1": 'Understanding Product Feature and Functionality Requirements of the Platform',
@@ -67,10 +67,10 @@
 				"7": 'Providing Level 2 and Level 3, support of the UI and Partner Products in Testing, Stage and Client facing Production Environments.',
 				"8": 'Vertical Specific Customization of Cloud Platform including interfaces to Gmail, Dropbox, Box.Net'
 			},{
-			'company' : 'Sr. Software Engineering',
-			'position' : 'Mindfire Solutions',
-			'duration' : 'June 2011 - July 2014',
-			'location' : 'Bhubaneswar, New Delhi',
+			'company': 'Sr. Software Engineering',
+			'position': 'Mindfire Solutions',
+			'duration': 'June 2011 - July 2014',
+			'location': 'Bhubaneswar, New Delhi',
 			'job_type': 'Full Time',
 			'responsibility': {
 				"1": 'Analyzed the business requirement with the project manager for different clients',
@@ -90,11 +90,11 @@
 	  Contact Details
 	 */
 	const me_contact = {
-		'email' : 'nihantanu@gmail.com',
-		'skypeId' : 'mfsi_nishantk',
-		'linkedIn' :'http://in.linkedin.com/in/nishantkumar1'
-		'gitHub' : 'github.com/nishant8BITS'
-		'stackOverFlow' : 'http://stackoverflow.com/users/430803/nishant'
+		'email': 'nihantanu@gmail.com',
+		'skypeId': 'mfsi_nishantk',
+		'linkedIn': 'http://in.linkedin.com/in/nishantkumar1',
+		'gitHub': 'github.com/nishant8BITS',
+		'stackOverFlow': 'http://stackoverflow.com/users/430803/nishant',
 		'codementor': 'codementor.io/nihantanu'
 	}
 
@@ -104,14 +104,14 @@
 	const education = {
 		'post-Graduate': {
 			'college': 'Birla Institute of Technology and Science, Pilani',
-			'Major' : 'Software System',
-			'Year' :'2014-2016',
+			'Major': 'Software System',
+			'Year': '2014-2016',
 			'type': 'Regular, Pilani Campus'
 		},
-		'graduation' : {
+		'graduation': {
 			'college': 'ICFAI University, Dehradun',
-			'Major' : 'Computer Science & Engineering',
-			'Year' :'2007-2011',
+			'Major': 'Computer Science & Engineering',
+			'Year': '2007-2011',
 			'type': 'Regular'
 		}
 	},
@@ -119,7 +119,7 @@
 	/**
 	 *  Nice things people have said about me.
 	 */
-	
+
 	/**
 	 *  Nishant is a very smart and thoughtful person as an engineer. He truly cares
 	 *  about helping others and values the learning experience for young software
@@ -129,7 +129,7 @@
 	 *  help a business but help other engineers grow as well.
 	 *	-Gary Tsai, Software Engineer
 	 */
-	
+
 	/**
 	 *  Nishant is a quick learner and he has very deep understanding on UI stack. He
 	 *  also is a good mentor and help other to understand the technology stack. One
@@ -137,39 +137,39 @@
 	 *  highest standard in his code/solution as well as idea. Keep it up. 
 	 *  	-Apurv Gupta (WDE II at Amazon)
 	 */
-	
-	 /**
-	  * Nishant is one of the best person I'm working with. Along with his strong
-	  * technical understanding of how things work, he also keeps on motivating to team
-	  * and helps them to participate effectively & maintaining their productivity to
-	  * better work towards achieving a goal.  He always prefers to have full stack
-	  * knowledge of the product & leads a team with great enthusiasm. He can deliver
-	  * end to end any product he is working on. 
-	  *	 -Yash Shah (SRE at Linkedin)
-	  */
-	 
-	 /**
-	  * I have been working with Nishant since last one year on a cloud-based product,
-	  * He is one of the vibrant contributor in the team and always been dedicated to
-	  * his work. He has very good level of knowledge when it comes to overall front-end
-	  * architecture solutions and specifically on frameworks like backbone & angular.
-	  *     -Mohiuddin Parekh ( Founder & CEO at Decojent)
-	  */
-	 
-	 /**
-	  * I first met Nishant 3 months ago when I told him I was looking for help with
-	  * AngularJS and asked him to mentor me. One of the first things I noticed was that
-          * he had a great learning attitude, because he told me that he was looking forward
-          * to learning from me, something I wasn’t expecting from a mentor! He is fun,
-          * sweet, generous and has a great sense of humor. We have quickly become friends
-	  * and I think we have spent more time hanging out on Telegram (instant messaging)
-	  * and Skype than we have coding. I had never written my own AngularJS directive
- 	  * before so I asked him if he could write one for me for an autocomplete feature.
-	  * I was impressed with his work and because of it I was then able to write my own
-	  * directives. We have spent a lot of time chatting and I think there is so much
-	  * more he can do that I have not yet seen. I can see he also has a passion for
-	  * startups. 
-	  *     -Jenny Swift (Software Engineer) 
-	  */
+
+	/**
+	 * Nishant is one of the best person I'm working with. Along with his strong
+	 * technical understanding of how things work, he also keeps on motivating to team
+	 * and helps them to participate effectively & maintaining their productivity to
+	 * better work towards achieving a goal.  He always prefers to have full stack
+	 * knowledge of the product & leads a team with great enthusiasm. He can deliver
+	 * end to end any product he is working on. 
+	 *	 -Yash Shah (SRE at Linkedin)
+	 */
+
+	/**
+	 * I have been working with Nishant since last one year on a cloud-based product,
+	 * He is one of the vibrant contributor in the team and always been dedicated to
+	 * his work. He has very good level of knowledge when it comes to overall front-end
+	 * architecture solutions and specifically on frameworks like backbone & angular.
+	 *     -Mohiuddin Parekh ( Founder & CEO at Decojent)
+	 */
+
+	/**
+	 * I first met Nishant 3 months ago when I told him I was looking for help with
+	 * AngularJS and asked him to mentor me. One of the first things I noticed was that
+		 * he had a great learning attitude, because he told me that he was looking forward
+		 * to learning from me, something I wasn’t expecting from a mentor! He is fun,
+		 * sweet, generous and has a great sense of humor. We have quickly become friends
+	 * and I think we have spent more time hanging out on Telegram (instant messaging)
+	 * and Skype than we have coding. I had never written my own AngularJS directive
+	   * before so I asked him if he could write one for me for an autocomplete feature.
+	 * I was impressed with his work and because of it I was then able to write my own
+	 * directives. We have spent a lot of time chatting and I think there is so much
+	 * more he can do that I have not yet seen. I can see he also has a passion for
+	 * startups. 
+	 *     -Jenny Swift (Software Engineer) 
+	 */
 
 })();
