@@ -51,7 +51,8 @@
 				"5": 'Commitment to following dev "best practices", with code-reviews, unit tests, etc.',
 				"6": 'Migrating monolithic base code to microservice based architecture to support million transaction per day',
 				"7": 'Creating and ensuring best practices properly followed for Node JS, and React JS based app.'
-			},{
+			}
+		}, {
 			'company': 'Engineering Lead',
 			'position': 'BigParser.com',
 			'duration': 'Aug 2014 - Dec 2016',
@@ -66,7 +67,8 @@
 				"6": 'Working with the Back End teams on Server side integration of the Platform.',
 				"7": 'Providing Level 2 and Level 3, support of the UI and Partner Products in Testing, Stage and Client facing Production Environments.',
 				"8": 'Vertical Specific Customization of Cloud Platform including interfaces to Gmail, Dropbox, Box.Net'
-			},{
+			}
+		}, {
 			'company': 'Sr. Software Engineering',
 			'position': 'Mindfire Solutions',
 			'duration': 'June 2011 - July 2014',
@@ -114,7 +116,7 @@
 			'Year': '2007-2011',
 			'type': 'Regular'
 		}
-	},
+	}
 
 	/**
 	 *  Nice things people have said about me.
