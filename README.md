@@ -484,7 +484,7 @@ var foo = function bar() {
 ```
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 #### 17. What is the difference between declaring a function in below format?
@@ -773,7 +773,7 @@ Unlike function calls and method calls, a constructor call `new Employee('John D
 The primary role of the constructor function is to initialize the object.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 ## Question 23
@@ -822,7 +822,7 @@ In Javascript function defined inside has access to outer function variable and 
 - Function can be returned from function
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 ## Question 25
@@ -877,7 +877,7 @@ methodObject.display();
 Here methodObject is an object and display is a method which is associated with methodObject.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 ## Question 26
@@ -913,7 +913,7 @@ function testCallBack(callback) {
 testCallBack(display); // Here display function is being passed as callback
 ```
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 ## Question 27
 ### Describe Singleton Pattern In JavaScript?
@@ -1018,7 +1018,7 @@ console.log(MyNamespace.Singleton.getInstance().publicMethod());
 The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 ## Question 28
@@ -3329,7 +3329,7 @@ Answer: 1) 720
 
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 ## This Book will be completed by Sep 1 2017 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](http://goo.gl/forms/QSpxVtvsNb).
 
@@ -3340,7 +3340,7 @@ I'm always welcome to feedback on how the book can be improved, and more questio
 ####Note: All contributor to this book will be added as contributor in Book Last page by default, So if you have contributed and don't wanted to be included then please write an email to me at nihantanu@gmail.com 
 
 ##For any other query: 
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
+
 
 
 ##License
