@@ -13,7 +13,6 @@ What this means it that the project is free to read and use, but the license doe
 Copyright Nishant Kumar, 2017.
 
 ## Have question for me ?
-[Ask me @nishant kumar](https://www.codementor.io/nihantanu/) 
 
 # 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
@@ -47,7 +46,6 @@ console.log(y);  // Output: ReferenceError: y is not defined
 [http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration](http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration)
 
 ## Have doubt in this question ??
-[Schedule time to discuss with me @nishantk](https://www.codementor.io/nihantanu/) 
 
 ## 2. What will be the output of the following code?
 
@@ -82,7 +80,6 @@ console.log(k); // output 1function
 ```
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 ## 3. What is the drawback of creating true private in JavaScript?
 > One of the drawback of creating a true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
@@ -118,7 +115,6 @@ Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalar
 So as recommendation don't go for a private method unless it's necessary.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 ## 4.What is “closure” in javascript? Provide an example?
 > A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
@@ -164,7 +160,6 @@ globalVar = abc
 ```
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 ## 5. Write a mul function which will properly when invoked as below syntax.
 
@@ -265,7 +260,6 @@ while(arrayList.length) {
 Above implementation can also empty the array. But not recommended to use often.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 ### 7. How to check if an object is an array or not?
 > The best way to find whether an object is instance of a particular class or not using `toString` method from `Object.prototype`
@@ -329,7 +323,6 @@ Array.isArray(arrayList);
 `Array.isArray` is supported by Chrome 5, Firefox 4.0, IE 9, Opera 10.5 and Safari 5
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 8. What will be the output of the following code?
 
@@ -345,7 +338,6 @@ console.log(output);
 > Above code will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 9. What will be the output of the following code?
 
@@ -362,7 +354,6 @@ console.log(output);
 > Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 10. What will be the output of the following code?
 
@@ -379,7 +370,6 @@ console.log(output);
 > Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 11. What will be the output of the following code?
 
@@ -397,7 +387,6 @@ console.log(emp1.company);
 `emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 12. What is `undefined x 1` in JavaScript
 
@@ -411,7 +400,6 @@ when you run above code and do `console.log(trees);` in chrome developer console
 **Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give an error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 13. What will be the output of the following code?
 
@@ -426,7 +414,6 @@ console.log(trees.length);
 So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 14. What will be the output of the following code?
 
@@ -446,7 +433,6 @@ console.log(bar + false);
   - String + String  -> Concatenation
   
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 15. What will be the output of the following code?
 
@@ -458,7 +444,6 @@ console.log(y);
 > Above code will output `undefined` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is `undefined` and assigned to `z` and then `y` would be assigned the value of z and then `z` would be assign value `1`.
 
 ## Have doubt in this question ??
-[Schedule 15 min discussion with me for free @nishantk](https://www.codementor.io/nihantanu/) 
 
 #### 16. What will be the output of the following code?
 
