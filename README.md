@@ -1449,8 +1449,8 @@ emp1.displayName = function() {
 	console.log('xyz-Anonymous');
 };
 
-employee.displayName();// "xyz-Anonymous"
-emp1.displayName(); // "Nishant"
+employee.displayName();// "Nishant"
+emp1.displayName(); // "xyz-Anonymous"
 ``` 
 
 In addition to this **Object.create()** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
@@ -1661,7 +1661,7 @@ There are some best way we can achieve this
 
 ```javascript
 function appLog() {
-  var args = Array.prototype.slice.call(argument);
+  var args = Array.prototype.slice.call(arguments);
   args.unshift('your app name');
   console.log.apply(console, args);
 }
