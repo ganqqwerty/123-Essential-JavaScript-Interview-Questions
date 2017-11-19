@@ -684,7 +684,7 @@ counterArray["C"] = 1;
 `Object` has `keys` method which can we used to calculate the length of object.
 
 ```javascript
-Object.keys(counterArray).length; // Output 2
+Object.keys(counterArray).length; // Output 3
 ```
 
 We can also calculate length of object by iterating through the object and by doing a count of own property of object.  
