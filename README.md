@@ -1663,7 +1663,7 @@ There are some best way we can achieve this
 
 ```javascript
 function appLog() {
-  var args = Array.prototype.slice.call(argument);
+  var args = Array.prototype.slice.call(arguments);
   args.unshift('your app name');
   console.log.apply(console, args);
 }
