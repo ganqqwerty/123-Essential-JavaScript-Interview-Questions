@@ -6,7 +6,7 @@
 
 Yuri Katkov from [Flashcards.js](http://flashcardsjs.com) became a co-author and the rights holder of the book. He will improve the questions and add some more from his collections of flashcards and will make sure to produce an unbeatable guide for frontend inteviews.
 
-## 1. Difference between `undefined` and `not defined` in JavaScript
+## Question 1. Difference between `undefined` and `not defined` in JavaScript
 > In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
 Before starting further discussion let's understand the difference between declaration and definition.
@@ -37,7 +37,7 @@ console.log(y);  // Output: ReferenceError: y is not defined
 [http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration](http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration)
 
 
-## 2. What will be the output of the following code?
+## Question 2. What will be the output of the following code?
 
 ```javascript
 var y = 1;
@@ -70,7 +70,7 @@ console.log(k); // output 1function
 ```
 
 
-## 3. What is the drawback of creating true private in JavaScript?
+## Question 3. What is the drawback of creating true private in JavaScript?
 > One of the drawback of creating a true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
 ```javascript
@@ -103,7 +103,7 @@ Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalar
 
 So as recommendation don't go for a private method unless it's necessary.
 
-## 4.What is “closure” in javascript? Provide an example?
+## Question 4. What is “closure” in javascript? Provide an example?
 > A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
 
 The closure has access to variable in three scopes:
@@ -146,7 +146,7 @@ innerFuncVar = y
 globalVar = abc
 ```
 
-## 5. Write a mul function which will properly when invoked as below syntax.
+## Question 5. Write a mul function which will properly when invoked as below syntax.
 
 ```javascript
 console.log(mul(2)(3)(4)); // output : 24
@@ -174,7 +174,7 @@ In Javascript function defined inside has access to outer function variable and 
 - Function can be pass as a parameter to another function
 - Function can be returned from function
 
-### 6. How to empty an array in JavaScript?
+## Question 6. How to empty an array in JavaScript?
 For instance:
 
 ```javascript
@@ -245,7 +245,7 @@ while(arrayList.length) {
 Above implementation can also empty the array. But not recommended to use often.
 
 
-### 7. How to check if an object is an array or not?
+## Question 7. How to check if an object is an array or not?
 > The best way to find whether an object is instance of a particular class or not using `toString` method from `Object.prototype`
 
 ```javascript
@@ -307,7 +307,7 @@ Array.isArray(arrayList);
 `Array.isArray` is supported by Chrome 5, Firefox 4.0, IE 9, Opera 10.5 and Safari 5
 
 
-#### 8. What will be the output of the following code?
+## Question 8. What will be the output of the following code?
 
 ```javascript
 var output = (function(x) {
@@ -321,7 +321,7 @@ console.log(output);
 > Above code will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
 
 
-#### 9. What will be the output of the following code?
+## Question 9. What will be the output of the following code?
 
 ```javascript
 var x = 1;
@@ -336,7 +336,7 @@ console.log(output);
 > Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
 
 
-#### 10. What will be the output of the following code?
+## Question 10. What will be the output of the following code?
 
 ```javascript
 var x = { foo : 1};
@@ -351,7 +351,7 @@ console.log(output);
 > Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
 
 
-#### 11. What will be the output of the following code?
+## Question 11. What will be the output of the following code?
 
 ```javascript
 var Employee = {
@@ -367,7 +367,7 @@ console.log(emp1.company);
 `emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
 
-#### 12. What is `undefined x 1` in JavaScript
+## Question 12. What is `undefined x 1` in JavaScript
 
 ```javascript
 var trees = ["redwood", "bay", "cedar", "oak", "maple"];
@@ -380,7 +380,7 @@ when you run above code and do `console.log(trees);` in chrome developer console
 
 
 
-#### 13. What will be the output of the following code?
+## Question 13. What will be the output of the following code?
 
 ```javascript
 var trees = ["xyz", "xxxx", "test", "ryan", "apple"];
@@ -394,7 +394,7 @@ So when delete operator removes an array element that deleted element is not lon
 
 
 
-#### 14. What will be the output of the following code?
+## Question 14. What will be the output of the following code?
 
 ```javascript
 var bar = true;
@@ -412,8 +412,7 @@ console.log(bar + false);
   - String + String  -> Concatenation
   
 
-
-#### 15. What will be the output of the following code?
+## Question 15. What will be the output of the following code?
 
 ```javascript
 var z = 1, y = z = typeof y;
@@ -424,7 +423,7 @@ console.log(y);
 
 
 
-#### 16. What will be the output of the following code?
+## Question 16. What will be the output of the following code?
 
 ```javascript
 // NFE (Named Function Expression
@@ -466,7 +465,7 @@ var foo = function bar() {
 
 
 
-#### 17. What is the difference between declaring a function in below format?
+## Question 17. What is the difference between declaring a function in below format?
 
 ```javascript
 var foo = function() {
@@ -534,7 +533,7 @@ if(testCondition) {// If testCondition is true then
  </script>
 ```
 
-#### 18. what is function hoisting in JavaScript?
+## Question 18. what is function hoisting in JavaScript?
 **Function Expression**
 
 ```javascript
@@ -570,7 +569,7 @@ foo = function foo() {
 foo(); // Now foo is defined here
 ```
 
-#### 19. What will be the output of the following code?
+## Question 19. What will be the output of the following code?
 
 ```javascript
 var salary = "1000$";
@@ -599,7 +598,7 @@ var salary = "1000$";
 })();
 ```
 
-#### 20. What is the `instanceof` operator in JavaScript? what would be the output of the following code?
+## Question 20. What is the `instanceof` operator in JavaScript? what would be the output of the following code?
 
 ```javascript
 function foo() {
@@ -647,7 +646,7 @@ So the `new foo() instanceof foo` return `false`;
 
 Ref Link: [http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript](http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript)
 
-#### 21. If we have JavaScript associative array as below code:
+## Question 21. If we have JavaScript associative array as below code:
 
 ```javascript
 var counterArray = {
@@ -696,8 +695,7 @@ console.log(Object.length(counterArray));
 
 **Bonus**: We can also use `Underscore` (recommended, as it's lightweight) to calculate object length.
 
-## Question 22
-### Difference between `Function`, `Method` and `Constructor` calls in JavaScript.
+## Question 22. Difference between `Function`, `Method` and `Constructor` calls in JavaScript.
 If your are familiar with Object-oriented programming, More likely familiar to thinking of functions, methods, and class constructors as three separate things. But In JavaScript, these are just three different usage patterns of one single construct.
 
 functions : The simplest usages of function call:
@@ -752,11 +750,7 @@ Unlike function calls and method calls, a constructor call `new Employee('John D
 The primary role of the constructor function is to initialize the object.
 
 
-
-
-
-## Question 23
-### What would be the output of the following code?
+## Question 23. What would be the output of the following code?
 
 ```javascript
 function User(name) {
@@ -771,8 +765,7 @@ The output of above code would be `USA`. Here `new User("xyz")` creates a brand 
 
 Let say `new User("xyz")` crated a object called `foo` and returned now `foo["location"]` would be assigned value as `USA` and `person` is referencing to `foo["location"]`.
 
-## Question 24
-### Write a mul function which will output when invoked as below syntax.
+## Question 24. Write a mul function which will output when invoked as below syntax.
 
 ```javascript
 console.log(mul(2)(3)(4)); // output : 24
@@ -804,8 +797,7 @@ In Javascript function defined inside has access to outer function variable and 
 
 
 
-## Question 25
-### What is the difference between a method and a function in javascript?
+## Question 25. What is the difference between a method and a function in javascript?
 A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
 
 ```javascript
@@ -859,8 +851,7 @@ Here methodObject is an object and display is a method which is associated with 
 
 
 
-## Question 26
-### What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
+## Question 26. What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
 A `self-invoking` anonymous function also called `self-executing anonymous function` runs immediately or automatically when we define it and self-invoking anonymous function doesn't have any name at all. Self-Invoking anonymous function syntax:
 
 ```javascript
@@ -894,8 +885,7 @@ testCallBack(display); // Here display function is being passed as callback
 
 
 
-## Question 27
-### Describe Singleton Pattern In JavaScript?
+## Question 27. Describe Singleton Pattern In JavaScript?
 The singleton pattern is the most commonly used design pattern and one that you will probably is more than any others. It provides a great way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application.
 
 In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
@@ -1000,8 +990,7 @@ The singleton implemented above is easy to understand. The singleton class maint
 
 
 
-## Question 28
-##### What are the way by which we can create object in JavaScript ?
+## Question 28. What are the way by which we can create object in JavaScript ?
 
 **Method 1:** `Function Based`
 
@@ -1064,8 +1053,7 @@ employee.getName = function(){
 ```
 **Note:** As a best practices object literal way is used to create object over this method.
 
-## Question 29
-##### Write a function called deepClone which takes an object and creates a object copy of it.
+## Question 29. Write a function called deepClone which takes an object and creates a object copy of it.
 
 ``` javascript
 var newObject = deepClone(obj);
@@ -1103,8 +1091,7 @@ var personalDetail = {
 ```
 So when we do deep clone then we should copy every property (including the nested object).
 
-## Question 30
-##### Best way to detect `undefined` object property in JavaScript.
+## Question 30. Best way to detect `undefined` object property in JavaScript.
 
 > Suppose we have given an object `person`
 
@@ -1132,8 +1119,7 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
-## Question 31
-##### Write a function called `Clone` which takes an object and creates a object copy of it but not copy deep property of object. 
+## Question 31. Write a function called `Clone` which takes an object and creates a object copy of it but not copy deep property of object. 
 
 ```javascript
    var objectLit = {foo : 'Bar'}; 
@@ -1153,8 +1139,7 @@ function Clone(object){
 }
 ```
 
-## Question 32
-##### Best way to detect `undefined` object property in JavaScript.
+## Question 32. Best way to detect `undefined` object property in JavaScript.
 
 > Suppose we have given an object `person`
 
@@ -1182,8 +1167,7 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
-## Question 33
-##### How to check whether a key exist in a JavaScript object or not.
+## Question 33. How to check whether a key exist in a JavaScript object or not.
 
 >Let say we have `person` object with property **name** and **age**
 
@@ -1220,8 +1204,7 @@ console.log(person.hasOwnProperty('name')); // print true
 console.log(person.hasOwnProperty('salary')); // print false
 ```
 
-## Question 34
-##### Best way to detect `undefined` object property in JavaScript.
+## Question 34. Best way to detect `undefined` object property in JavaScript.
 
 > Suppose we have given an object `person`
 
@@ -1249,8 +1232,7 @@ if(typeof person.salary === 'undefined'){
 	console.log("salary is undefined here because we haven't declared");
 }
 ```
-## Question 35
-##### How to check whether a key exist in a JavaScript object or not.
+## Question 35. How to check whether a key exist in a JavaScript object or not.
 
 >Let say we have `person` object with property **name** and **age**
 
@@ -1287,8 +1269,7 @@ console.log(person.hasOwnProperty('name')); // print true
 console.log(person.hasOwnProperty('salary')); // print false
 ```
 
-## Question 36
-##### What is best way to detect an arrays object on JavaScript ?
+## Question 36. What is best way to detect an arrays object on JavaScript ?
 
 >We always encounter in such situation where we need to know whether value is type of array or not.
 
@@ -1355,8 +1336,7 @@ function(value){
 }
 ```
 
-## Question 37
-##### Best way to detect reference values of any type in JavaScript ?
+## Question 37. Best way to detect reference values of any type in JavaScript ?
 
 > In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as **Object**, **Array**, **Function**, **Date**, **null** and **Error**.
 
@@ -1398,8 +1378,7 @@ console.log(emp1 instanceof Employee); // true
 console.log(emp1 instanceof Object); // true
 ```
 
-## Question 38
-##### Describe Object-Based inheritance in JavaScript.
+## Question 38. Describe Object-Based inheritance in JavaScript.
 
 > Object-based inheritance also called prototypal inheritance in which we one object inherit from another object without invoking a constructor function.
 
@@ -1450,8 +1429,7 @@ In above example, emp1 is created with it's own value for name, so calling **dis
 
 >Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
 
-## Question 39
-##### Describe Type-Based inheritance in JavaScript.
+## Question 39. Describe Type-Based inheritance in JavaScript.
 
 >Type-based inheritance works with constructor function instead of object, It means we need to call constructor function of the object from which you  want to inherit.
 
@@ -1512,8 +1490,7 @@ console.log(name in obj); // true
 ```
 Type-based inheritance is best used with developer defined constructor function rather than natively in JavaScript. In addition to this also allows flexibility in how we create similar type of object.
 
-## Question 40
-##### How we can prevent modification of object in JavaScript ?.
+## Question 40. How we can prevent modification of object in JavaScript ?.
 
 > ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object.
 
@@ -1623,8 +1600,7 @@ delete employee.name;  // fails silently unless it's in strict mode
 ``` 
 
 
-## Question 44
-##### Write a log function which will add prefix `(your message)` to every message you log using console.log ? 
+## Question 44. Write a log function which will add prefix `(your message)` to every message you log using console.log ? 
 > For example, If you log `console.log("Some message")` then output should be **(your message) Some message**
 
 Logging error message or some informative message is always required when you dealing with client side JavaScript using console.log method. Some time you want to add some prefix to identify message generated log from your application hence you would like to prefix your app name in every console.log. 
@@ -1649,8 +1625,7 @@ console.log(appLog("Some error message"));
 //output of above console: 'your app name Some error message'
 ```
 
-## Question 45 
-##### Write a function which will test string as a literal and as an object ?
+## Question 45 . Write a function which will test string as a literal and as an object ?
 
 For example: We can create string using string literal and using String constructor function. 
 
@@ -1672,8 +1647,7 @@ For example: We can create string using string literal and using String construc
  console.log(isString(ltrlStr)); // true
  console.log(isString(objStr)); // true
 ``` 
-## Question 46 
-##### What is typical use case for anonymous function in JavaScript ?
+## Question 46 . What is typical use case for anonymous function in JavaScript ?
 
 > Anonymous functions basically used in following scenario.
 
@@ -1736,8 +1710,7 @@ If your answer is yes then go and create named function rather anonymous functio
 1. It can reduce a bit of code, particularly in recursive function and in callback function.
 2.  Avoid needless global namespace pollutions.
 
-## Question 47 
-##### How to set a default parameter value ?
+## Question 47 . How to set a default parameter value ?
 
 > If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For Instance : 
 
@@ -1796,8 +1769,7 @@ sentEmail({
 }, 'Yahoo Mail');
 ```
 
-## Question 48 
-##### Write code for merge two JavaScript Object dynamically.
+## Question 48. Write code for merge two JavaScript Object dynamically.
 > Let say you have two object 
 
 ```javascript
@@ -1846,8 +1818,7 @@ function merge(toObj, fromObj) {
   }
 }
 ```
-## Question 49 
-##### What is non-enumerable property in JavaScript and how can create ?
+## Question 49. What is non-enumerable property in JavaScript and how can create ?
 
 >Object can have properties that don't show up when you iterate through object using for...in loop or using Object.keys() to get an array of property names. This properties is know as non-enumerable properties.
 
@@ -1894,8 +1865,7 @@ Changing non-enumerable property value will return error in `strict mode`. In no
 
 **Object.defineProperty()** is also let you create read-only properties as we saw above, we are not able to modify phoneNo value of a person object.
 
-## Question 50 
-##### What is Function binding ?
+## Question 50. What is Function binding ?
 
 > Function binding falls in advance JavaScript category and this is very popular technique to use in conjunction with event handler and callback function to preserve code execution context while passing function as a parameter.
 
@@ -1936,11 +1906,11 @@ btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
 `bind` method is available to all the function similar to call and apply method which take argument value of `this`.
 
 
-#Objective Question 
+# Coding Questions
 
 ## Hoisting 
 
-###1. console.log(employeeId);
+### 1. console.log(employeeId);
 
 1.  Some Value
 2.  Undefined 
@@ -1949,7 +1919,7 @@ btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
 
 Answer: 4) ReferenceError: employeeId is not defined 
 
-###2. What would be the output of following code?
+### 2. What would be the output of following code?
 
 ```javascript
 console.log(employeeId);
@@ -1963,7 +1933,7 @@ var employeeId = '19000';
 
 Answer: 2) undefined 
 
-###3. What would be the output of following code?
+### 3. What would be the output of following code?
 
 ```javascript
 var employeeId = '1234abe';
@@ -1980,7 +1950,7 @@ var employeeId = '1234abe';
 
 Answer: 2) undefined 
 
-###4. What would be the output of following code?
+### 4. What would be the output of following code?
 
 ```javascript
 var employeeId = '1234abe';
@@ -2000,7 +1970,7 @@ var employeeId = '1234abe';
 
 Answer: 2) undefined 
 
-###5. What would be the output of following code?
+### 5. What would be the output of following code?
 
 ```javascript
 (function() {
@@ -2018,7 +1988,7 @@ Answer: 2) undefined
 
 Answer: 1) undefined 
 
-###6. What would be the output of following code?
+### 6. What would be the output of following code?
 
 ```javascript
 var employeeId = 'abc123';
@@ -2037,7 +2007,7 @@ console.log(employeeId);
 
 Answer: 2) '123bcd' 
 
-###7. What would be the output of following code?
+### 7. What would be the output of following code?
 
 ```javascript
 var employeeId = 'abc123';
@@ -2059,7 +2029,7 @@ console.log(employeeId);
 
 Answer: 3) 'abc123' 
 
-###8. What would be the output of following code?
+### 8. What would be the output of following code?
 
 ```javascript
 var employeeId = 'abc123';
@@ -2082,7 +2052,7 @@ foo();
 
 Answer: 2) 'function'
 
-###9. What would be the output of following code?
+### 9. What would be the output of following code?
 
 ```javascript
 function foo() {
@@ -2104,7 +2074,7 @@ foo();
 
 Answer: 1) undefined
 
-###10. What would be the output of following code?
+### 10. What would be the output of following code?
 
 ```javascript
 (function foo() {
@@ -2130,7 +2100,7 @@ Answer: 3) function function
 
 ## Object
 
-###1. What would be the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2157,7 +2127,7 @@ Answer: 3) function function
 	
 Answer: 3) ["name", "salary", "country", "phoneNo"]
 
-###2. What would be the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2184,7 +2154,7 @@ Answer: 3) ["name", "salary", "country", "phoneNo"]
 	
 Answer: 4) ["name", "salary", "country"]
 
-###3. What would be the output of following code ?
+### 3. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2207,7 +2177,7 @@ Answer: 4) ["name", "salary", "country"]
 	
 Answer: 2) false false
 
-###4. What would be the output of following code ?
+### 4. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2224,7 +2194,7 @@ Answer: 2) false false
 	
 Answer: 2) false false
 
-###5. What would be the output of following code ?
+### 5. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2245,7 +2215,7 @@ Answer: 2) false false
 	
 Answer: 2) false false
 
-###6. What would be the output of following code ?
+### 6. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2264,7 +2234,7 @@ Answer: 2) false false
 	
 Answer: 2) false false
 
-###7. What would be the output of following code ?
+### 7. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2283,7 +2253,7 @@ Answer: 2) false false
 	
 Answer: 4) true true
 
-###8. What would be the output of following code ?
+### 8. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2304,7 +2274,7 @@ Answer: 4) true true
 	
 Answer: 3) true true true true
 
-###9. What would be the output of following code ?
+### 9. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2324,7 +2294,7 @@ Answer: 3) true true true true
 	
 Answer: 2) bar bar
 
-###10. What would be the output of following code ?
+### 10. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2346,7 +2316,7 @@ Answer: 2) bar bar
 	
 Answer: 3) foo foo
 
-###11. What would be the output of following code ?
+### 11. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2370,7 +2340,7 @@ Answer: 2) undefined undefined
 
 ## Array
 
-###1. What would be the output of following code?
+### 1. What would be the output of following code?
 
 ```javascript
 (function() {
@@ -2387,7 +2357,7 @@ Answer: 2) undefined undefined
 
 Answer: 3) ["100"] 1
 
-###2. What would be the output of following code?
+### 2. What would be the output of following code?
 
 ```javascript
 (function() {
@@ -2408,7 +2378,7 @@ Answer: 3) ["100"] 1
 
 Answer: 1) [] [] [Array[5]] 1
 
-###3. What would be the output of following code?
+### 3. What would be the output of following code?
 
 ```javascript
 (function () {
@@ -2426,7 +2396,7 @@ Answer: 1) [] [] [Array[5]] 1
 
 Answer: 1) 11
 
-###4. What would be the output of following code?
+### 4. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2444,7 +2414,7 @@ Answer: 1) 11
 
 Answer: 3) 6
 
-###5. What would be the output of following code?
+### 5. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2462,7 +2432,7 @@ Answer: 3) 6
 
 Answer: 1) [ 'dog', 'rat', 'goat', 'cow', 'horse', 'cat' ]
 
-###6. What would be the output of following code?
+### 6. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2481,7 +2451,7 @@ Answer: 1) [ 'dog', 'rat', 'goat', 'cow', 'horse', 'cat' ]
 
 Answer: 1) 1 -1 -1 4
 
-###7. What would be the output of following code?
+### 7. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2499,7 +2469,7 @@ Answer: 1) 1 -1 -1 4
 
 Answer: 2) 1 6 -1
 
-###8. What would be the output of following code?
+### 8. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2524,7 +2494,7 @@ Answer: 2) 1 6 -1
 
 Answer: 3) [ 2, 4, 8, 12, 16 ] true 
 
-###9. What would be the output of following code?
+### 9. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2563,7 +2533,7 @@ Answer: 1) [ 2, '12', true ]
 			 [ 2, '12', true ]
 			 [ 2, '12', true ]
 			 
-###10. What would be the output of following code?
+### 10. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2603,7 +2573,7 @@ Answer: 1) [ 'bar', 'john', 'ritz' ]
            []
            [ 'foo', 'bar', 'john', 'ritz' ]		
 
-###11. What would be the output of following code?
+### 11. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2621,7 +2591,7 @@ Answer: 1) [ 'bar', 'john', 'ritz' ]
 
 Answer: 1.  [ 'bar', 'john' ] [] [ 'foo' ] 
 
-###12. What would be the output of following code?
+### 12. What would be the output of following code?
 
 ```javascript
 (function(){
@@ -2640,7 +2610,7 @@ Answer: 3.  [ 15, 16, 2, 23, 42, 8 ]
 
 ## Function: 
 
-###1. What would be the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 function funcA(){
@@ -2665,7 +2635,7 @@ console.log(funcA());
 	
 Answer: 1) 
 
-###2. What would be the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 var obj = {
@@ -2685,7 +2655,7 @@ console.log(obj.innerMessage);
 	
 Answer: 4) undefined true
 
-###3. What would the output of following code ?
+### 3. What would the output of following code ?
 
 ```javascript
 var obj = {
@@ -2705,7 +2675,7 @@ console.log(obj.innerMessage());
 	
 Answer: 1) Hello
 
-###4. What would the output of following code ?
+### 4. What would the output of following code ?
 
 ```javascript
 var obj = {
@@ -2726,7 +2696,7 @@ console.log(obj.innerMessage());
 	
 Answer: 3) undefined
 	
-###5. What would the output of following code ?
+### 5. What would the output of following code ?
 
 ```javascript
 var obj = {
@@ -2748,7 +2718,7 @@ console.log(obj.innerMessage());
 	
 Answer: 2) 'Hello'
 
-###6. What would the output of following code ?
+### 6. What would the output of following code ?
 
 ```javascript
 function myFunc(){
@@ -2766,7 +2736,7 @@ console.log(myFunc());
 	
 Answer: 3) undefined
 
-###7. What would the output of following code ?
+### 7. What would the output of following code ?
 
 ```javascript
 function myFunc(){
@@ -2784,7 +2754,7 @@ console.log(myFunc());
 	
 Answer: 2) 'Hi John'
 
-###8. What would the output of following code ?
+### 8. What would the output of following code ?
 
 ```javascript
 function myFunc() {
@@ -2801,7 +2771,7 @@ console.log(myFunc());
 	
 Answer: 2) 'Hi John'
 
-###9. What would the output of following code ?
+### 9. What would the output of following code ?
 
 ```javascript
 function myFunc(param1,param2) {
@@ -2819,7 +2789,7 @@ console.log(myFunc("a","b","c","d"));
 	
 Answer: a) 2 2 2 
 
-###10. What would the output of following code ?
+### 10. What would the output of following code ?
 
 ```javascript
 function myFunc() {
@@ -2839,7 +2809,7 @@ Answer: 2) 0 2 4
 
 ## Object Oriented
 
-###1. What would the output of following code ?
+### 1. What would the output of following code ?
 
 ```javascript
 function Person(name, age){
@@ -2869,7 +2839,7 @@ Answer: 1) John Person
 
 ## Scopes
 
-###1. What would the output of following code ?
+### 1. What would the output of following code ?
 
 ```javascript
 function passWordMngr() {
@@ -2892,7 +2862,7 @@ console.log(userInfo.userName);
 	
 Answer: 3) 12345678 undefined 
 
-###2. What would the output of following code ?
+### 2. What would the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2909,7 +2879,7 @@ console.log(Employee.employeeId);
 	
 Answer: 4) undefined 
 
-###3. What would the output of following code ?
+### 3. What would the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2931,7 +2901,7 @@ console.log(new Employee().employeeId);
 	
 Answer: 2) bq1uy 1BJKSJ bq1uy 
 
-###4. What would the output of following code ?
+### 4. What would the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2954,7 +2924,7 @@ Answer: 1) foo123 aq123
 
 ## Call, Apply, Bind
 
-###1. What would the output of following code ?
+### 1. What would the output of following code ?
 
 ```javascript
 (function() {
@@ -2973,7 +2943,7 @@ Answer: 1) foo123 aq123
 	
 Answer: 4) [ 'W', 'o', 'r', 'l', 'd' ]  
 
-###2. What would the output of following code ?
+### 2. What would the output of following code ?
 
 ```javascript
 (function() {
@@ -3004,7 +2974,7 @@ Answer: 4) [ 'W', 'o', 'r', 'l', 'd' ]
 	
 Answer: 1) Total amount left in account: 5600 Total amount left in account: 5300 
 
-###3. What would the output of following code ?
+### 3. What would the output of following code ?
 
 ```javascript
 (function() {
@@ -3036,7 +3006,7 @@ Answer: 1) Total amount left in account: 5600 Total amount left in account: 5300
 	
 Answer: 1) 5600 5300 5100
 
-###4. What would the output of following code ?
+### 4. What would the output of following code ?
 
 ```javascript
 (function() {
@@ -3068,7 +3038,7 @@ Answer: 1) 5600 5300 5100
 	
 Answer: 2) 3600 3300 3100
 
-###5. What would the output of following code ?
+### 5. What would the output of following code ?
 
 ```javascript
 (function greetNewCustomer() {
@@ -3085,7 +3055,7 @@ Answer: 2) 3600 3300 3100
 	
 Answer: 1) Hello John
 
-###6. What would the output of following code ?
+### 6. What would the output of following code ?
 
 ```javascript
 (function greetNewCustomer() {
@@ -3104,7 +3074,7 @@ Answer: 1) Hello John
 
 ## Callback Function
 
-###1. What would the output of following code ?
+### 1. What would the output of following code ?
 
 ```javascript
 function getDataFromServer(apiUrl){
@@ -3129,7 +3099,7 @@ getDataFromServer('www.google.com').then(function(name){
 	
 Answer: 1) John
 
-###2. What would the output of following code ?
+### 2. What would the output of following code ?
 
 ```javascript
 (function(){
@@ -3177,7 +3147,7 @@ Answer: 1) [ 2, 8, 15, 16, 23, 42 ]
 			
 ## Return Statement
 
-###1. What would the output of following code ?
+### 1. What would the output of following code ?
 
 ```javascript
 (function(){
@@ -3199,7 +3169,7 @@ Answer: 1) [ 2, 8, 15, 16, 23, 42 ]
 	
 Answer: 4) Uncaught TypeError: Cannot read property 'fullName' of undefined
 
-###2. What would the output of following code ?
+### 2. What would the output of following code ?
 
 ```javascript
 function getNumber(){
@@ -3217,7 +3187,7 @@ console.log(numb);
 	
 Answer: 1) 5
 
-###3. What would the output of following code ?
+### 3. What would the output of following code ?
 
 ```javascript
 function getNumber(){
@@ -3235,7 +3205,7 @@ console.log(numb);
 	
 Answer: 2) undefined
 
-###4**. What would the output of following code ?
+### 4**. What would the output of following code ?
 
 ```javascript
 function mul(x){
@@ -3257,7 +3227,7 @@ console.log(mul(2)(3)[1](4));
 	
 Answer: 1) 6, 10
 
-###5**. What would the output of following code ?
+### 5**. What would the output of following code ?
 
 ```javascript
 function mul(x) {
@@ -3281,7 +3251,7 @@ console.log(mul(2)(3).sum(4));
 	
 Answer: 1) 6, 10
 
-###6. What would the output of following code ?
+### 6. What would the output of following code ?
 
 ```javascript
 function mul(x) {
@@ -3310,17 +3280,12 @@ Answer: 1) 720
 
 
 
-##Contributing
+## Contributing
 
-I'm always welcome to feedback on how the book can be improved, and more questions can be added. If you think you have some question then please add that and open a pull request. 
-
-####Note: All contributor to this book will be added as contributor in Book Last page by default, So if you have contributed and don't wanted to be included then please write an email to me at nihantanu@gmail.com 
-
-##For any other query: 
+We always appreciate your feedback on how the book can be improved, and more questions can be added. If you think you have some question then please add that and open a pull request. 
 
 
-
-##License
+## License
 
 This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
 
