@@ -2,12 +2,12 @@
 
 # 123-JavaScript-Interview-Question
 
-##Great news!
+## Great news!
 
 Even though the book is yet to be published, you can get something physical with carefully chosen interview questions. [Flashcards.js](http://flashcardsjs.com) is a deck of learning cards that will help you to ace you job interview. Yuri Katkov will work on enriching the book with the qustions from his flashcards collection and to create an unbeatable guide to pass any interview.
 
 
-##License
+## License
 
 This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
 
