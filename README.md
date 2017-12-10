@@ -1,11 +1,13 @@
 ![](coverPage.png)
 
-#Great news!
+# 123-JavaScript-Interview-Question
+
+##Great news!
 
 Even though the book is yet to be published, you can get something physical with carefully chosen interview questions. [Flashcards.js](http://flashcardsjs.com) is a deck of learning cards that will help you to ace you job interview. Yuri Katkov will work on enriching the book with the qustions from his flashcards collection and to create an unbeatable guide to pass any interview.
 
 
-#License
+##License
 
 This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
 
@@ -14,7 +16,6 @@ What this means it that the project is free to read and use, but the license doe
 Copyright Iurii Katkov and Nishant Kumar, 2017.
 
 
-# 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
 > In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
