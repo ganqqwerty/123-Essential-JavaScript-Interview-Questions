@@ -1,12 +1,11 @@
 ![](coverPage.png)
 
-##Great news!
+#Great news!
 
 Even though the book is yet to be published, you can get something physical with carefully chosen interview questions. [Flashcards.js](http://flashcardsjs.com) is a deck of learning cards that will help you to ace you job interview. Yuri Katkov will work on enriching the book with the qustions from his flashcards collection and to create an unbeatable guide to pass any interview.
 
-[![Join the chat at https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question](https://badges.gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question.svg)](https://gitter.im/nishant8BITS/123-Essential-JavaScript-Interview-Question?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-##License
+#License
 
 This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
 
@@ -14,7 +13,6 @@ What this means it that the project is free to read and use, but the license doe
 
 Copyright Iurii Katkov and Nishant Kumar, 2017.
 
-## Have question for me ?
 
 # 123-JavaScript-Interview-Question
 ## 1. Difference between `undefined` and `not defined` in JavaScript
