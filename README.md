@@ -1400,15 +1400,15 @@ console.log(emp1.displayName());  // output "Nishant"
 
 Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as emp1's prototype is set to employee. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
 
-**For Instance:** Defining displayName() method on emp1 automatically override the employee displayName.
+**For Instance:** Defining displayName() method on emp1 will not automatically override the employee displayName.
 
 ```javascript
 emp1.displayName = function() {
 	console.log('xyz-Anonymous');
 };
 
-employee.displayName();// "xyz-Anonymous"
-emp1.displayName(); // "Nishant"
+employee.displayName();// "Nishant"
+emp1.displayName(); // "xyz-Anonymous"
 ``` 
 
 In addition to this **Object.create()** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
