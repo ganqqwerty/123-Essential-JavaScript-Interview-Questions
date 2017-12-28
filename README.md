@@ -2,6 +2,9 @@
 
 # 123-JavaScript-Interview-Questions
 
+This Book will be completed by June 2018 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
+
+
 ## Great news!
 
 Yuri Katkov from [Flashcards.js](http://flashcardsjs.com) became a co-author and the rights holder of the book. He will improve the questions and add some more from his collections of flashcards and will make sure to produce an unbeatable guide for frontend inteviews.
