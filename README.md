@@ -768,35 +768,7 @@ The output of above code would be `USA`. Here `new User("xyz")` creates a brand 
 
 Let say `new User("xyz")` crated a object called `foo` and returned now `foo["location"]` would be assigned value as `USA` and `person` is referencing to `foo["location"]`.
 
-## Question 24. Write a mul function which will output when invoked as below syntax.
-
-```javascript
-console.log(mul(2)(3)(4)); // output : 24
-console.log(mul(4)(3)(4)); // output : 48
-```
-
-Below is code followed by an explanation how it works:
-
-```javascript
-function mul (x) {
-  return function (y) { // anonymous function
-    return function (z) { // anonymous function
-      return x * y * z;
-    };
-  };
-}
-```
-
-Here `mul` function accept the first argument and return anonymous function which take the second parameter and return anonymous function which take the third parameter and return multiplication of arguments which is being passed in successive.
-
-In Javascript function defined inside has access to outer function variable and function is a first class object so it can be returned by a function as well and passed as the argument in another function.
-- A function is an instance of the Object type
-- A function can have properties and has a link back to its constructor method
-- Function can be stored as variable
-- Function can be pass as a parameter to another function
-- Function can be returned from function
-
-
+## Question 24. Suggest your question!
 
 
 
@@ -1207,70 +1179,8 @@ console.log(person.hasOwnProperty('name')); // print true
 console.log(person.hasOwnProperty('salary')); // print false
 ```
 
-## Question 34. Best way to detect `undefined` object property in JavaScript.
-
-> Suppose we have given an object `person`
-
-```javascript
-var person = {
-	name: 'Nishant',
-	age : 24
-}
-```
-here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
-
-**Explanation:**
-
-We can use `typeof` operator to check undefined 
-
-```javascript
-if(typeof someProperty === 'undefined'){
-	console.log('something is undefined here');
-}
-```
-Now we are trying to access salary property of person object.
-
-```javascript
-if(typeof person.salary === 'undefined'){
-	console.log("salary is undefined here because we haven't declared");
-}
-```
-## Question 35. How to check whether a key exist in a JavaScript object or not.
-
->Let say we have `person` object with property **name** and **age**
-
-```javascript
-var person = {
-	name: 'Nishant',
-	age: 24
-}
-```
-Now we want to check whether `name` property exist in `person` object or not ?
-
-In JavaScript object can have own property, in above example name and age is own property of person object. Object also have some of inherited property of base object like toString is inherited property of person object.
-
-So how we will check whether property is own property or inherited property. 
-
-Method 1: We can use `in` operator on objet to check own property or inherited property. 
-
-```javascript
-console.log('name' in person); // checking own property print true 
-console.log('salary' in person); // checking undefined property print false
-```
-`in` operator also look into inherited property if it doesn't find property defined as own property. For instance If I check existence of toString property as we know that we haven't declared this property on person object so `in` operator look into there base property.
-
-Here 
-
-```javascript
-console.log('toString' in person); // Will print true
-```
-If we want to test property of object instance not inherited properties then we will use `hasOwnProperty` method of object instance.
-
-```javascript
-console.log(person.hasOwnProperty('toString')); // print false
-console.log(person.hasOwnProperty('name')); // print true
-console.log(person.hasOwnProperty('salary')); // print false
-```
+## Question 34. Suggest your question!
+## Question 35. Suggest your question!
 
 ## Question 36. What is best way to detect an arrays object on JavaScript ?
 
