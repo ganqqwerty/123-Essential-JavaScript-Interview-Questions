@@ -1114,34 +1114,9 @@ function Clone(object){
 }
 ```
 
-## Question 32. Best way to detect `undefined` object property in JavaScript.
+## Question 32. Suggest your question!
 
-> Suppose we have given an object `person`
 
-```javascript
-var person = {
-	name: 'Nishant',
-	age : 24
-}
-```
-here `person` object has `name` and `age` property. Now we are trying to access **salary** property which we haven't declared on person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it.
-
-**Explanation:**
-
-We can use `typeof` operator to check undefined 
-
-```javascript
-if(typeof someProperty === 'undefined'){
-	console.log('something is undefined here');
-}
-```
-Now we are trying to access salary property of person object.
-
-```javascript
-if(typeof person.salary === 'undefined'){
-	console.log("salary is undefined here because we haven't declared");
-}
-```
 ## Question 33. How to check whether a key exist in a JavaScript object or not.
 
 >Let say we have `person` object with property **name** and **age**
