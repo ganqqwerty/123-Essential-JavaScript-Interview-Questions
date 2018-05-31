@@ -2943,22 +2943,7 @@ Answer: 2) 3600 3300 3100
 	
 Answer: 1) Hello John
 
-### 6. What would the output of following code ?
-
-```javascript
-(function greetNewCustomer() {
-	console.log('Hello ' + this.name);
-}.bind({
-	name: 'John'
-})());
-```
-
-1. Hello John
-2. Reference Error
-3. Window
-4. undefined
-	
-Answer: 1) Hello John
+### 6. Suggest your question!
 
 ## Callback Function
 
