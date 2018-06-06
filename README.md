@@ -684,11 +684,11 @@ function getSize(object) {
 > We can also add `length` method directly on `Object` see below code.
 
 ```javascript
-Object.length = function() {
+Object.size = function(obj) {
   var count = 0;
-  for(key in object) {
+  for(key in obj) {
     // hasOwnProperty method check own property of object
-    if(object.hasOwnProperty(key)) count++;
+    if(obj.hasOwnProperty(key)) count++;
   }
   return count;
 }
