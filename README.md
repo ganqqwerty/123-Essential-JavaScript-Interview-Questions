@@ -1288,7 +1288,7 @@ console.log(emp1.displayName());  // output "Nishant"
 
 Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as emp1's prototype is set to employee. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
 
-**For Instance:** Defining displayName() method on emp1 automatically override the employee displayName.
+**For Instance:** Defining `displayName()` method on `emp1` will not automatically override the employee `displayName`.
 
 ```javascript
 emp1.displayName = function() {
