@@ -73,36 +73,35 @@ console.log(k); // output 1function
 ```
 
 
-## Question 3. What is the drawback of creating true private in JavaScript?
-> One of the drawback of creating a true private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
+## Question 3. What is the drawback of having private methods in JavaScript object?
+> One of the drawback of creating a private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
 ```javascript
 var Employee = function (name, company, salary) {
-  this.name = name || "";       //Public attribute default value is null
-  this.company = company || ""; //Public attribute default value is null
-  this.salary = salary || 5000; //Public attribute default value is null
+  this.name = name || "";       
+  this.company = company || "";
+  this.salary = salary || 5000;
 
   // Private method
   var increaseSalary = function () {
     this.salary = this.salary + 1000;
   };
 
-  // Public method
-  this.dispalyIncreasedSalary = function() {
-    increaseSalary();
-    console.log(this.salary);
-  };
 };
 
-// Create Employee class object
+// adding the method to Employee's prototype
+Employee.prototype.displayIncreasedSalary = function() {
+  increaseSalary();
+  console.log(this.salary);
+};
+  
+// Creating three Employee objects
 var emp1 = new Employee("John","Pluto",3000);
-// Create Employee class object
 var emp2 = new Employee("Merry","Pluto",2000);
-// Create Employee class object
 var emp3 = new Employee("Ren","Pluto",2500);
 ```
 
-Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalary private method.
+Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalary private method. However the `displayIncreasedSalary` will only be added once to an object `Employee.prototype`.
 
 So as recommendation don't go for a private method unless it's necessary.
 
