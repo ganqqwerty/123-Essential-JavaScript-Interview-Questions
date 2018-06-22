@@ -771,8 +771,23 @@ console.log(person);
 
 The output of above code would be `USA`. Here `new User("xyz")` creates a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by the person.
 
-Let say `new User("xyz")` crated a object called `foo` and returned now `foo["location"]` would be assigned value as `USA` and `person` is referencing to `foo["location"]`.
+Let say `new User("xyz")` created a object called `foo`. The value `"USA"` will be assigned to `foo["location"]`, but according to [ECMAScript Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-assignment-operators-runtime-semantics-evaluation) , pt 12.14.4 the assignment will itself return the rightmost value: in our case it's `"USA"`.
+ Then it will be assigned to person. 
+ 
+ To better understand what's going on here, try to execute this code in console, line by line:
+ ```javascript
+function User(name) {
+  this.name = name || "JsGeeks";
+}
 
+var person;
+var foo = User("xyz");
+foo["location"] = "USA";
+// the console will show you that the result of this is "USA"
+
+```
+ 
+ 
 ## Question 24. Suggest your question!
 
 
