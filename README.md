@@ -1666,7 +1666,7 @@ var person = {
 	age  : 24
 }
 
-var location = {
+var address = {
 	addressLine1 : 'Some Location x',
 	addressLine2 : 'Some Location y',
 	city : 'NewYork'
@@ -1675,7 +1675,7 @@ var location = {
 Write merge function which will take two object and add all the own property of second object into first object.
 
 ```javascript
-merge(person , location); 
+merge(person , address); 
  
 /* Now person should have 5 properties 
 name , age , addressLine1 , addressLine2 , city */
