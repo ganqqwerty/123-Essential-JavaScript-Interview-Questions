@@ -9,8 +9,11 @@ This Book will be completed by September 2018 and available to buy. If you want 
 
 Yuri Katkov from [Flashcards.js](http://flashcardsjs.com) became a co-author and the rights holder of the book. He will improve the questions and add some more from his collections of flashcards and will make sure to produce an unbeatable guide for frontend inteviews.
 
-## Question 1. Difference between `undefined` and `not defined` in JavaScript
-> In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
+## Question 1. What's the difference between `undefined` and `not defined` in JavaScript
+
+### Answer
+
+In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
 Before starting further discussion let's understand the difference between declaration and definition.
 
@@ -23,14 +26,14 @@ console.log(x); //output: undefined
 
 `var x = 1` is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it's declared then assignment happen in order this term is called `hoisting`.
 
-> A variable that is declared but not define and when we try to access it, It will result `undefined`.
+A variable can be declared but not defined. When we try to access it, It will result `undefined`.
 
 ```javascript
 var x; // Declaration
 if(typeof x === 'undefined') // Will return true
 ```
 
-> A variable that neither declared nor defined when we try to reference such variable then It result `not defined`.
+A variable can be neither declared nor defined. When we try to reference such variable then the result will be `not defined`.
 
 ```javascript
 console.log(y);  // Output: ReferenceError: y is not defined
@@ -49,21 +52,27 @@ if (function f() {}) {
 }
 console.log(y);
 ```
+### Answer 
 
-> The code above would give output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
-> As a reminder, function expression is something like this: 
+The code above would give the output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
+
+As a reminder, function expression is something like this: 
 ```javascript
 var myFunc1 = new function() {}
 var myFunc2 = new function whatever() {} // whatever is not a variable here
 ```
-> A function statement is something like this: 
+
+A function statement is something like this: 
 ```javascript
 function myFunc3() {}
 ```
 You can read about [function expressions](https://developer.mozilla.org/en-US/docs/web/JavaScript/Reference/Operators/function) and [function statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) on MDN.
 
 ## Question 3. What is the drawback of having private methods in a JavaScript object?
-> One of the drawback of creating a private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
+
+### Answer 
+
+One of the drawback of creating a private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
 ```javascript
 var Employee = function (name, company, salary) {
@@ -94,8 +103,11 @@ Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalar
 
 So as recommendation don't go for a private method unless it's necessary.
 
-## Question 4. What is “closure” in javascript? Provide an example?
-> A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
+## Question 4. What is “closure” in javascript? Can you provide an example?
+
+### Answer 
+
+A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
 
 The closure has access to the variable in three scopes:
 - Variable declared in his own scope
@@ -143,8 +155,9 @@ globalVar = abc
 console.log(mul(2)(3)(4)); // output : 24
 console.log(mul(4)(3)(4)); // output : 48
 ```
+### Answer 
 
-> Below is code followed by an explanation how it works:
+Below is the code followed by the explanation of how it works:
 
 ```javascript
 function mul (x) {
@@ -172,11 +185,13 @@ For instance:
 var arrayList =  ['a', 'b', 'c', 'd', 'e', 'f'];
 ```
 
-How can we empty above array?
+How can we empty the array above?
 
-> There are a couple of ways by which we can empty an array, So let's discuss all the possible way by which we can empty an array.
+### Answer 
 
-### Method 1
+There are a couple of ways by which we can empty an array, So let's discuss all the possible way by which we can empty an array.
+
+#### Method 1
 
 ```javascript
 arrayList = [];
@@ -193,7 +208,7 @@ arrayList = []; // Empty the array
 console.log(anotherArrayList); // Output ['a', 'b', 'c', 'd', 'e', 'f']
 ```
 
-### Method 2
+#### Method 2
 
 ```javascript
 arrayList.length = 0;
@@ -210,7 +225,7 @@ arrayList.length = 0; // Empty the array by setting length to 0
 console.log(anotherArrayList); // Output []
 ```
 
-### Method 3
+#### Method 3
 
 ```javascript
 arrayList.splice(0, arrayList.length);
@@ -225,7 +240,7 @@ arrayList.splice(0, arrayList.length); // Empty the array by setting length to 0
 console.log(anotherArrayList); // Output []
 ```
 
-### Method 4
+#### Method 4
 
 ```javascript
 while(arrayList.length) {
@@ -237,7 +252,10 @@ Above implementation can also empty the array. But not recommended to use often.
 
 
 ## Question 7. How to check if an object is an array or not?
-> The best way to find whether an object is instance of a particular class or not using `toString` method from `Object.prototype`
+
+### Answer 
+
+The best way to find whether an object is instance of a particular class or not using `toString` method from `Object.prototype`
 
 ```javascript
 var arrayList = [1 , 2, 3];
@@ -457,10 +475,6 @@ var foo = function bar() {
 // foo is visible here
 // bar is undefined here
 ```
-
-
-
-
 
 ## Question 17. What is the difference between declaring a function in the formats listed below?
 
