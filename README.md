@@ -50,28 +50,17 @@ if (function f() {}) {
 console.log(y);
 ```
 
-> Above code would give output `1undefined`. If condition statement evaluate using `eval` so `eval(function f() {})` which return `function f() {}` which is true so inside if statement code execute. `typeof f` return undefined because if statement code execute at run time, so statement inside `if` condition evaluated at run time.  
-
+> Above code would give output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
+> As a reminder, function expression is something like this: 
 ```javascript
-var k = 1;
-if (1) {
-  eval(function foo() {});
-  k += typeof foo;
-}
-console.log(k);
+var myFunc1 = new function() {}
+var myFunc2 = new function whatever() {} // whatever is not a variable here
 ```
-
-Above code will also output `1undefined`.
-
+> A function statement is something like this: 
 ```javascript
-var k = 1;
-if (1) {
-  function foo() {};
-  k += typeof foo;
-}
-console.log(k); // output 1function
+function myFunc3() {}
 ```
-
+You can read about [function expressions](https://developer.mozilla.org/en-US/docs/web/JavaScript/Reference/Operators/function) and [function statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) on MDN.
 
 ## Question 3. What is the drawback of having private methods in JavaScript object?
 > One of the drawback of creating a private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
