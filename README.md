@@ -462,7 +462,7 @@ var foo = function bar() {
 
 
 
-## Question 17. What is the difference between declaring a function in below format?
+## Question 17. What is the difference between declaring a function in the formats listed below?
 
 ```javascript
 var foo = function() {
