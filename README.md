@@ -1136,7 +1136,7 @@ function Clone(object){
 
 ## Question 32. Suggest your question! What are promises and how they are useful?
 
-We use promises for handling asynchronous interactions in a sequential manner. The promise represents the future value. It has an internal state (`pending`, `fulfilled` and `rejected`) and works like a state machine.
+We use promises for handling asynchronous interactions in a sequential manner. They are especially useful when we need to do an async operation and THEN do another async operation based on the results of the first one. For example, if you want to request the list of all flights and then for each flight you want to request some details about it. The promise represents the future value. It has an internal state (`pending`, `fulfilled` and `rejected`) and works like a state machine.
 
 A promise object has `then` method, where you can specify what to do when the promise is fulfilled or rejected.
 
