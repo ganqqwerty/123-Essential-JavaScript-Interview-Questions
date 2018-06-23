@@ -786,6 +786,7 @@ Service Workers actively use promises. A Service Worker has to be installed,acti
 As of 2017, Service Workers are not supported in IE and Safari.
 
 ## Question 25. What is the difference between a method and a function in javascript?
+
 A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
 
 ```javascript
@@ -816,7 +817,7 @@ A function can be self-invoking anonymous function or named self-invoking functi
 
 In a case of named self-invoking anonymous function or anonymous self-invoking function, there is no need of call function explicitly.
 
-A method is a piece of code that is called by name and that is associated with the object. In most respects it is identical to function call except for some key difference:
+A method is a piece of code that is called by name and that is associated with the object. Methods are funtions. In most respects it is identical to function call except for some key difference:
 - It is implicitly passed for the object for which it was called.
 - It is able to operate on data that is contained within the class (remembering that an object is an instance of a class- the class is the definition, the object is an instance of that)
 - Method call is always associated with object
