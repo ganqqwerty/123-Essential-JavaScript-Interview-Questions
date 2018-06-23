@@ -1197,8 +1197,34 @@ NaN > 2 // false
 NaN === 2 // false
 ```
 
-To check if the current value of the variable is NaN, you have to use the `isNaN` function.
-## Question 35. Suggest your question!
+To check if the current value of the variable is NaN, you have to use the `isNaN` function. This is why we can often see NaN in the webpages: it requires special check which a lot of developers forget to do. 
+
+## Question 35. Fix the bug using ES5 only
+
+```javascript
+var arr = [10, 32, 65, 2];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log('The index of this number is: ' + i);
+  }, 3000);
+}
+```
+For ES6, you can just replace `var i` with `let i`. 
+
+For ES5, you need to create a function scope like here:
+
+```javascript 
+var arr = [10, 32, 65, 2];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function(j) {
+    return function () {
+      console.log('The index of this number is: ' + j)
+    };
+  }(i), 3000);
+}
+```
+
+
 
 ## Question 36. What is best way to detect an arrays object on JavaScript ?
 
