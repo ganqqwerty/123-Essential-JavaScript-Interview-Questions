@@ -1318,7 +1318,7 @@ var emp1 = Object.create(employee);
 console.log(emp1.displayName());  // output "Nishant"
 ```
 
-Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as emp1's prototype is set to employee. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
+Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as `emp1`'s prototype is set to `employee`. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
 
 **For Instance:** Defining `displayName()` method on `emp1` will not automatically override the employee `displayName`.
 
@@ -1331,7 +1331,7 @@ employee.displayName(); //Nishant
 emp1.displayName();//xyz-Anonymous
 ``` 
 
-In addition to this **Object.create()** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
+In addition to this **`Object.create(`)** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
 
 **For Example**
 
@@ -1345,7 +1345,7 @@ var emp1 = Object.create(employee, {
 emp1.displayName(); // "John"
 employee.displayName(); // "Nishant"
 ```
-In above example, emp1 is created with it's own value for name, so calling **displayName()** method display `"John"` instead of `"Nishant"`.
+In above example, `emp1` is created with it's own value for name, so calling **displayName()** method display `"John"` instead of `"Nishant"`.
 
 >Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
 
