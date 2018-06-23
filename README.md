@@ -1134,7 +1134,19 @@ function Clone(object){
 }
 ```
 
-## Question 32. Suggest your question!
+## Question 32. Suggest your question! What are promises and how they are useful?
+
+We use promises for handling asynchronous interactions in a sequential manner. The promise represents the future value. It has an internal state (`pending`, `fulfilled` and `rejected`) and works like a state machine.
+
+A promise object has `then` method, where you can specify what to do when the promise is fulfilled or rejected.
+
+You can chain `then()` blocks, thus avoiding the callback hell. You can handle errors in the `catch()` block.  After a promise is set to fulfilled or rejected state, it becomes immutable.
+
+Also mention that you know about more sophisticated concepts: 
+ - `async/await` which makes the code appear even more linear
+ - RxJS observables can be viewed as the recyclable promises
+
+Be sure that you can implement the promise, read [one of the articles on a topic](https://opensourceconnections.com/blog/2014/02/16/a-simple-promise-implementation-in-about-20-lines-of-javascript/), and learn the source code of the [simplest promise implementation](https://gist.github.com/softwaredoug/9044640). 
 
 
 ## Question 33. How to check whether a key exist in a JavaScript object or not.
