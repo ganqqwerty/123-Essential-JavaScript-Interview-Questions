@@ -777,9 +777,13 @@ foo["location"] = "USA";
 ```
  
  
-## Question 24. Suggest your question!
+## Question 24. What are Service Workers and when can you use them?
 
+It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly known as Offline First.
 
+Service Workers actively use promises. A Service Worker has to be installed,activated and then it can react on fetch, push and sync events.
+
+As of 2017, Service Workers are not supported in IE and Safari.
 
 ## Question 25. What is the difference between a method and a function in javascript?
 A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
