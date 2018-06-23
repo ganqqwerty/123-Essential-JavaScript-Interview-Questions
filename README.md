@@ -2,7 +2,7 @@
 
 # 123-JavaScript-Interview-Questions
 
-This Book will be completed by June 2018 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
+This Book will be completed by September 2018 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
 
 
 ## Great news!
