@@ -50,7 +50,7 @@ if (function f() {}) {
 console.log(y);
 ```
 
-> Above code would give output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
+> The code above would give output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
 > As a reminder, function expression is something like this: 
 ```javascript
 var myFunc1 = new function() {}
@@ -182,7 +182,7 @@ How can we empty above array?
 arrayList = [];
 ```
 
-Above code will set the variable `arrayList` to a new empty array. This is recommended if you don't have **references to the original array** `arrayList` anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable `arrayList`.
+The code above will set the variable `arrayList` to a new empty array. This is recommended if you don't have **references to the original array** `arrayList` anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable `arrayList`.
 
 For Instance:
 
@@ -199,7 +199,7 @@ console.log(anotherArrayList); // Output ['a', 'b', 'c', 'd', 'e', 'f']
 arrayList.length = 0;
 ```
 
-Above code will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array. 
+The code above will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array. 
 
 For Instance:
 
@@ -309,7 +309,7 @@ var output = (function(x) {
 console.log(output);
 ```
 
-> Above code will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
+> The code above will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
 
 
 ## Question 9. What will be the output of the following code?
@@ -324,7 +324,7 @@ var output = (function() {
 console.log(output);
 ```
 
-> Above code will output `1` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **global variable** of type `number`.
+> The code above will output `1` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **global variable** of type `number`.
 
 
 ## Question 10. What will be the output of the following code?
@@ -339,7 +339,7 @@ var output = (function() {
 console.log(output);
 ```
 
-> Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from a self-invoking function, we are deleting the `foo` property of object `x` and after deletion, we are trying to reference deleted property `foo` which result `undefined`.
+> The code above will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from a self-invoking function, we are deleting the `foo` property of object `x` and after deletion, we are trying to reference deleted property `foo` which result `undefined`.
 
 
 ## Question 11. What will be the output of the following code?
@@ -353,7 +353,7 @@ delete emp1.company
 console.log(emp1.company);
 ```
 
-> Above code will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property.
+> The code above will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property.
 
 `emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
@@ -379,7 +379,7 @@ delete trees[3];
 console.log(trees.length);
 ```
 
-> Above code will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using `delete` operator.
+> The code above will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using `delete` operator.
 
 So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
 
@@ -395,7 +395,7 @@ console.log(bar + true);
 console.log(bar + false);
 ```
 
-> Above code will output `1, "truexyz", 2, 1` as output. General guideline  for addition of operator:
+> The code above will output `1, "truexyz", 2, 1` as output. General guideline  for addition of operator:
   - Number + Number  -> Addition
   - Boolean + Number -> Addition
   - Number + String  -> Concatenation
@@ -410,7 +410,7 @@ var z = 1, y = z = typeof y;
 console.log(y);
 ```
 
-> Above code will output string `"undefined"` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
+> The code above will output string `"undefined"` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
 
 ```javascript
 var z;
@@ -428,7 +428,7 @@ var foo = function bar() { return 12; };
 typeof bar();
 ```
 
-> Above code will output `Reference Error` as output. For making above code work you can re-write above code as follow:
+> The code above will output `Reference Error` as output. For making above code work you can re-write above code as follow:
 
 **Sample 1**
 
@@ -548,7 +548,7 @@ var foo = function foo() {
 };
 ```
 
-Above code behind the scene look something like below code:
+The code above behind the scene look something like below code:
 
 ```javascript
 var foo = undefined;
@@ -580,7 +580,7 @@ var salary = "1000$";
 })();
 ```
 
-> Above code will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of the following code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
+> The code above will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of the following code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
 
 ```javascript
 var salary = "1000$";
