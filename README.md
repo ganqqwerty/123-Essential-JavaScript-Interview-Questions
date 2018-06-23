@@ -261,7 +261,7 @@ The best way to find whether an object is instance of a particular class or not 
 var arrayList = [1 , 2, 3];
 ```
 
-One of the best use cases of type checking of an object is when we do method overloading in JavaScript. For understanding this let say we have a method called `greet` which take one single string and also a list of string, so making our `greet` method workable in both situation we need to know what kind of parameter is being passed, is it single value or list of value?
+One of the best use cases of type checking of an object is when we do method overloading in JavaScript. To understand this, let's say we have a method called `greet` which can take a single string and also a list of strings. To make our `greet` method workable in both situation we need to know what kind of parameter is being passed: is it single value or list of values?
 
 ```javascript
 function greet(param) {
@@ -273,7 +273,7 @@ function greet(param) {
 }
 ```
 
-However, in above implementation it might not necessary to check the type of the array, we can check for single value string and put array logic code in else block, let see below code for the same.
+However, in the above implementation it might not necessary to check the type of the array, we can check for single value string and put array logic code in else block, let see below code for the same.
 
 ```javascript
  function greet(param) {
@@ -285,7 +285,7 @@ However, in above implementation it might not necessary to check the type of the
  }
 ```
 
-Now it's fine we can go with above two implementations, but when we have a situation like a parameter can be `single value`, `array`, and `object` type then we will be in trouble.
+Now it's fine we can go with the previous two implementations, but when we have a situation like a parameter can be `single value`, `array`, and `object` type then we will be in trouble.
 
 Coming back to checking the type of an object, As we mentioned that we can use `Object.prototype.toString`
 
