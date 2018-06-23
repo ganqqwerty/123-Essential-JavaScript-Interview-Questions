@@ -14,7 +14,7 @@ Yuri Katkov from [Flashcards.js](http://flashcardsjs.com) became a co-author and
 
 Before starting further discussion let's understand the difference between declaration and definition.
 
-`var x` is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need of memory allocation.
+`var x` is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need for memory allocation.
 
 ```javascript
 var x; // declaring x
@@ -62,7 +62,7 @@ function myFunc3() {}
 ```
 You can read about [function expressions](https://developer.mozilla.org/en-US/docs/web/JavaScript/Reference/Operators/function) and [function statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) on MDN.
 
-## Question 3. What is the drawback of having private methods in JavaScript object?
+## Question 3. What is the drawback of having private methods in a JavaScript object?
 > One of the drawback of creating a private method in JavaScript is that they are very memory inefficient because a new copy of the method would be created for each instance.
 
 ```javascript
@@ -97,10 +97,10 @@ So as recommendation don't go for a private method unless it's necessary.
 ## Question 4. What is “closure” in javascript? Provide an example?
 > A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
 
-The closure has access to variable in three scopes:
+The closure has access to the variable in three scopes:
 - Variable declared in his own scope
 - Variable declared in parent function scope
-- Variable declared in global namespace
+- Variable declared in the global namespace
 
 ```javascript
 var globalVar = "abc";
@@ -125,7 +125,7 @@ var globalVar = "abc";
 })(7); // Pass 7 as parameter
 ```
 
-`innerFunction` is closure which is defined inside `outerFunction` and has access to all variable which is declared and defined in outerFunction scope. In addition to this function defined inside function as closure has access to variable which is declared in `global namespace`.
+`innerFunction` is closure which is defined inside `outerFunction` and has access to all variable which is declared and defined in outerFunction scope. In addition to this function defined inside the function as closure has access to the variable which is declared in `global namespace`.
 
 Output of above code would be:
 
@@ -156,14 +156,14 @@ function mul (x) {
 }
 ```
 
-Here `mul` function accept the first argument and return anonymous function which take the second parameter and return anonymous function which take the third parameter and return multiplication of arguments which is being passed in successive
+Here the `mul` function accepts the first argument and returns the anonymous function which takes the second parameter and returns the anonymous function which takes the third parameter and returns the multiplication of arguments which is being passed in successive
 
-In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by function as well and passed as argument in another function.
+In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by the function as well and passed as an argument in another function.
 - A function is an instance of the Object type
 - A function can have properties and has a link back to its constructor method
-- Function can be stored as variable
-- Function can be pass as a parameter to another function
-- Function can be returned from function
+- A function can be stored as variable
+- A function can be pass as a parameter to another function
+- A function can be returned from another function
 
 ## Question 6. How to empty an array in JavaScript?
 For instance:
@@ -199,7 +199,7 @@ console.log(anotherArrayList); // Output ['a', 'b', 'c', 'd', 'e', 'f']
 arrayList.length = 0;
 ```
 
-Above code will clear the existing array by setting its length to 0. This way of empty the array also update all the reference variable which pointing to the original array. This way of empty the array is useful when you want to update all the another reference variable which pointing to `arrayList`.
+Above code will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array. 
 
 For Instance:
 
@@ -255,7 +255,7 @@ function greet(param) {
 }
 ```
 
-However, in above implementation it might not necessary to check type for array, we can check for single value string and put array logic code in else block, let see below code for the same.
+However, in above implementation it might not necessary to check the type of the array, we can check for single value string and put array logic code in else block, let see below code for the same.
 
 ```javascript
  function greet(param) {
@@ -269,7 +269,7 @@ However, in above implementation it might not necessary to check type for array,
 
 Now it's fine we can go with above two implementations, but when we have a situation like a parameter can be `single value`, `array`, and `object` type then we will be in trouble.
 
-Coming back to checking type of object, As we mentioned that we can use `Object.prototype.toString`
+Coming back to checking the type of an object, As we mentioned that we can use `Object.prototype.toString`
 
 ```javascript
 if(Object.prototype.toString.call(arrayList) === '[object Array]') {
@@ -324,7 +324,7 @@ var output = (function() {
 console.log(output);
 ```
 
-> Above code will output `1` as output. `delete` operator is used to delete property from object. Here `x` is not an object it's **global variable** of type `number`.
+> Above code will output `1` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **global variable** of type `number`.
 
 
 ## Question 10. What will be the output of the following code?
@@ -339,7 +339,7 @@ var output = (function() {
 console.log(output);
 ```
 
-> Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from self-invoking function we are deleting foo property of object `x` and after deletion we are trying to reference deleted property `foo` which result `undefined`.
+> Above code will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from a self-invoking function, we are deleting the `foo` property of object `x` and after deletion, we are trying to reference deleted property `foo` which result `undefined`.
 
 
 ## Question 11. What will be the output of the following code?
@@ -367,7 +367,7 @@ delete trees[3];
 
 when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialized index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
 
-**Note:** Please remember you need not check for uninitialized index of array in  `trees[3] === 'undefined × 1'` it will give an error, Because `'undefined × 1'` this is just way of displaying uninitialized index of array in chrome.
+**Note:** Please remember that you need not check for the uninitialized index of the array in  `trees[3] === 'undefined × 1'` it will give an error because `'undefined × 1'` this is just way of displaying an uninitialized index of an array in chrome.
 
 
 
@@ -379,7 +379,7 @@ delete trees[3];
 console.log(trees.length);
 ```
 
-> Above code will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected from this. This holds even if you deleted all the element of array using `delete` operator.
+> Above code will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using `delete` operator.
 
 So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
 
