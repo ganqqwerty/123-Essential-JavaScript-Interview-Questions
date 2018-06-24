@@ -827,27 +827,23 @@ Service Workers actively use promises. A Service Worker has to be installed,acti
 As of 2017, Service Workers are not supported in IE and Safari.
 
 ## Question 25. What is the difference between a method and a function in javascript?
-A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
+In JS, that difference is quite subtle. A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
 
 ```javascript
-// Function definition
+// Function statement
 function myFunc() {
   // Do some stuff;
 }
 
-// Calling function
+// Calling the function
 myFunc();
 ```
 
 Here myFunc() function call is not associated with object hence not invoked through any object.
 
-A function can be self-invoking anonymous function or named self-invoking function
+A function can take a form of immediately invoked function expression (IIFE):
 
 ```javascript
-// Named Self-invoking Function
-(function myFunc() {
-  // Do some stuff;
-})();
 
 // Anonymous Self-invoking Function
 (function() {
@@ -855,7 +851,13 @@ A function can be self-invoking anonymous function or named self-invoking functi
 })();
 ```
 
-In a case of named self-invoking anonymous function or anonymous self-invoking function, there is no need of call function explicitly.
+Finally there are also arrow functions: 
+
+```javascript
+const myFunc (arg) => {
+    console.log("hello", arg)
+} 
+```
 
 A method is a piece of code that is called by its name and that is associated with the object. Methods are functions. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`. 
 
@@ -975,6 +977,8 @@ code, it helps to prevent polluting the global scope and provide the module inte
 
 
 ## Question 27. Describe Singleton Pattern In JavaScript?
+### Answer 
+
 The singleton pattern is the most commonly used JavaScript design pattern and one that you will probably be aware of more than any others. It provides a great way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application.
 
 In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
@@ -1075,11 +1079,7 @@ console.log(MyNamespace.Singleton.getInstance().publicMethod());
 
 The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.
 
-
-
-
-
-## Question 28. What are the way by which we can create object in JavaScript ?
+## Question 28. What are the ways of creating objects in JavaScript ?
 
 **Method 1:** `Function Based`
 
