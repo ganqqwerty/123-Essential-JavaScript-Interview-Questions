@@ -1059,9 +1059,11 @@ The singleton implemented above is easy to understand. The singleton class maint
 
 ## Question 28. What are the ways of creating objects in JavaScript ?
 
-**Method 1:** `Function Based`
+### Answer 
 
-If we want to create several similar `objects`. In below code sample, `Employee` which is called *constructor function*. This is similar to classes in object oriented languages.
+#### Method 1: Function based
+
+This method is useful if we want to create several similar objects. In the code sample below, we wrote the function `Employee` and used it as a constructor by calling it with the `new` operator. 
 
 ```javascript
 
@@ -1078,7 +1080,7 @@ If we want to create several similar `objects`. In below code sample, `Employee`
   var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
 ```
 
-**Method 2:** `Object Literal`
+#### Method 2: Object Literal
 
 Object Literal is best way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.
 
@@ -1091,7 +1093,7 @@ var employee = {
 	}
 }
 ```
-Below code sample is Nested Object Literal, Here address is an object inside employee object.
+The code sample below is Nested Object Literal, Here address is an object inside employee object.
 
 ```javascript
 var employee = {
@@ -1107,9 +1109,9 @@ var employee = {
 	}
 }
 ```
-**Method 3:** `Using JavaScript new keyword`
+#### Method 3: From `Object` using `new` keyword
 
-In below code sample object has been created using Object constructor function.
+In the code below, a sample object has been created using `Object`'s constructor function.
 
 ```javascript
 var employee = new Object(); // Created employee object using new keywords and Object()
@@ -1118,7 +1120,10 @@ employee.getName = function(){
 	return this.name;
 }
 ```
-**Note:** As a best practices object literal way is used to create object over this method.
+
+#### Method 4:** Using `Object.create`
+
+`Object.create(obj)` will create a new object and set the `obj` as its prototype. It’s a modern way to create objects that inherit properties from other objects. `Object.create` function doesn’t run the constructor. You can use `Object.create(null)` when you don’t want your object to inherit the properties of `Object`.
 
 ## Question 29. Write a function called deepClone which takes an object and creates a object copy of it.
 
