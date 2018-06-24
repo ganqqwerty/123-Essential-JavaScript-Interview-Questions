@@ -2,12 +2,12 @@
 
 # 123-JavaScript-Interview-Questions
 
-This Book will be completed by September 2018 and available to buy. If you want me to sent early copy of this book then please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
+It's a book about frontend interview question. We hope that it will help all javascript developers to prepare for a technical job interview. 
 
+## If you want to buy a book in paper form
 
-## Great news!
-
-Yuri Katkov from [Flashcards.js](http://flashcardsjs.com) became a co-author and the rights holder of the book. He will improve the questions and add some more from his collections of flashcards and will make sure to produce an unbeatable guide for frontend inteviews.
+ - This Book will be completed by September 2018 and then it will be available to buy. If you want me to sent an early copy of this book, please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
+ - If you don't want to wait, you can buy [Yuri's JavaScript Flashcards](http://flashcardsjs.com), a set of frontend interview questions sorted by popularity among the interviewers printed on beautiful poker-size flashcards.
 
 ## Question 1. What's the difference between `undefined` and `not defined` in JavaScript
 
