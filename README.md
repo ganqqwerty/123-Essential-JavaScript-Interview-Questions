@@ -326,8 +326,9 @@ var output = (function(x) {
 
 console.log(output);
 ```
+### Answer 
 
-> The code above will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variable.
+The code above will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variables.
 
 
 ## Question 9. What will be the output of the following code?
@@ -341,8 +342,9 @@ var output = (function() {
 
 console.log(output);
 ```
+### Answer 
 
-> The code above will output `1` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **global variable** of type `number`.
+The code above will output `1` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **global variable** of type `number`.
 
 
 ## Question 10. What will be the output of the following code?
@@ -356,8 +358,9 @@ var output = (function() {
 
 console.log(output);
 ```
+### Answer 
 
-> The code above will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from a self-invoking function, we are deleting the `foo` property of object `x` and after deletion, we are trying to reference deleted property `foo` which result `undefined`.
+The code above will output `undefined` as output. `delete` operator is used to delete a property from an object. Here `x` is an object which has foo as a property and from a self-invoking function, we are deleting the `foo` property of object `x` and after deletion, we are trying to reference deleted property `foo` which result `undefined`.
 
 
 ## Question 11. What will be the output of the following code?
@@ -371,7 +374,8 @@ delete emp1.company
 console.log(emp1.company);
 ```
 
-> The code above will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property.
+### Answer 
+The code above will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property.
 
 `emp1` object doesn't have **company** as its own property. you can test it `console.log(emp1.hasOwnProperty('company')); //output : false` However, we can delete company property directly from `Employee` object using `delete Employee.company` or we can also delete from `emp1` object using `__proto__` property `delete emp1.__proto__.company`.
 
@@ -383,7 +387,12 @@ var trees = ["redwood", "bay", "cedar", "oak", "maple"];
 delete trees[3];
 ```
 
-when you run above code and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]` and when you run above code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]` so from these it's cleared that chrome has its own way of displaying uninitialized index in array. But when you check `trees[3] === undefined` in both of the browser you will get similar output as `true`.
+### Answer 
+ - When you run the code above and do `console.log(trees);` in chrome developer console then you will get `["redwood", "bay", "cedar", undefined × 1, "maple"]`.
+ - In the recent versions of Chrome you will see the word `empty` of `undefined x 1`.
+ - When you run the same code in Firefox browser console then you will get `["redwood", "bay", "cedar", undefined, "maple"]`
+  
+Clearly we can see that Chrome has its own way of displaying uninitialized index in arrays. However when you check `trees[3] === undefined` in any browser you will get similar output as `true`.
 
 **Note:** Please remember that you need not check for the uninitialized index of the array in  `trees[3] === 'undefined × 1'` it will give an error because `'undefined × 1'` this is just way of displaying an uninitialized index of an array in chrome.
 
@@ -396,10 +405,10 @@ var trees = ["xyz", "xxxx", "test", "ryan", "apple"];
 delete trees[3];
 console.log(trees.length);
 ```
+### Answer 
+The code above will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using `delete` operator.
 
-> The code above will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using `delete` operator.
-
-So when delete operator removes an array element that deleted element is not longer present in array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
+So when delete operator removes an array element that deleted element is no longer present in the array. In place of value at deleted index `undefined x 1` in **chrome** and `undefined` is placed at the index. If you do `console.log(trees)` output `["xyz", "xxxx", "test", undefined × 1, "apple"]` in Chrome and in Firefox `["xyz", "xxxx", "test", undefined, "apple"]`.
 
 
 
@@ -412,8 +421,9 @@ console.log(bar + "xyz");
 console.log(bar + true);  
 console.log(bar + false);
 ```
+### Answer 
 
-> The code above will output `1, "truexyz", 2, 1` as output. General guideline  for addition of operator:
+The code above will output `1, "truexyz", 2, 1` as output. Here's a general guideline  for the plus operator:
   - Number + Number  -> Addition
   - Boolean + Number -> Addition
   - Number + String  -> Concatenation
@@ -427,8 +437,9 @@ console.log(bar + false);
 var z = 1, y = z = typeof y;
 console.log(y);
 ```
+### Answer 
 
-> The code above will output string `"undefined"` as output. According to `associativity` rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
+The code above will output string `"undefined"` as output. According to associativity rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
 
 ```javascript
 var z;
@@ -446,7 +457,9 @@ var foo = function bar() { return 12; };
 typeof bar();
 ```
 
-> The code above will output `Reference Error` as output. For making above code work you can re-write above code as follow:
+### Answer 
+
+The output will be `Reference Error`. To fix the bug we can try to rewrite the code a little bit: 
 
 **Sample 1**
 
@@ -489,6 +502,7 @@ function bar() {
   // Some code
 };
 ```
+### Answer 
 
 The main difference is function `foo` is defined at `run-time` whereas function `bar` is defined at parse time. For understanding It in better way let see below code :
 
@@ -512,7 +526,7 @@ function bar() {
 </script>
 ```
 
-The another advantage of first-one way of declaration that you can declare function based on certain condition for example:
+Another advantage of first-one way of declaration that you can declare function based on certain condition for example:
 
 ```javascript
 <script>
