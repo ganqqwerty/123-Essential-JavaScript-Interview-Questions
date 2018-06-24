@@ -687,7 +687,7 @@ counterArray["C"] = 1;
 ```
 ### Answer 
 
-First of all, in case of JavaScript an associative array is the same as an object. There is no built-in function or property available to calculate the length an object, however we can write such a function ourselves.
+First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.
 
 #### Method 1
 
@@ -742,7 +742,7 @@ function helloWorld(name) {
 helloWorld("JS Geeks"); // "hello world JS Geeks"
 ```
 
-Methods in JavaScript are nothing more than object properties that reference to a function.
+Methods in JavaScript are nothing more than object properties that are functions.
 
 ```javascript
 var obj = {
@@ -779,7 +779,7 @@ emp1.name; // "John Doe"
 emp1.age; // 28
 ```
 
-Unlike function calls and method calls, a constructor call `new Employee('John Doe', 28)` create a brand new object and passes it as the value of `this`, and implicitly returns the new object as its result.
+Unlike function calls and method calls, a constructor call `new Employee('John Doe', 28)` creates a brand new object and passes it as the value of `this`, and implicitly returns the new object as its result.
 
 The primary role of the constructor function is to initialize the object.
 
@@ -795,7 +795,9 @@ var person = new User("xyz")["location"] = "USA";
 console.log(person);
 ```
 
-The output of above code would be `USA`. Here `new User("xyz")` creates a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by the person.
+### Answer 
+
+The output of above code would be `"USA"`. Here `new User("xyz")` creates a brand new object and created property `location` on that and `USA` has been assigned to object property location and that has been referenced by the person.
 
 Let say `new User("xyz")` created a object called `foo`. The value `"USA"` will be assigned to `foo["location"]`, but according to [ECMAScript Specification](http://www.ecma-international.org/ecma-262/6.0/#sec-assignment-operators-runtime-semantics-evaluation) , pt 12.14.4 the assignment will itself return the rightmost value: in our case it's `"USA"`.
  Then it will be assigned to person. 
@@ -816,6 +818,8 @@ foo["location"] = "USA";
  
 ## Question 24. What are Service Workers and when can you use them?
 
+### Answer 
+
 It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly known as Offline First.
 
 Service Workers actively use promises. A Service Worker has to be installed,activated and then it can react on fetch, push and sync events.
@@ -823,7 +827,6 @@ Service Workers actively use promises. A Service Worker has to be installed,acti
 As of 2017, Service Workers are not supported in IE and Safari.
 
 ## Question 25. What is the difference between a method and a function in javascript?
-
 A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).
 
 ```javascript
@@ -854,28 +857,56 @@ A function can be self-invoking anonymous function or named self-invoking functi
 
 In a case of named self-invoking anonymous function or anonymous self-invoking function, there is no need of call function explicitly.
 
-A method is a piece of code that is called by name and that is associated with the object. Methods are funtions. In most respects it is identical to function call except for some key difference:
-- It is implicitly passed for the object for which it was called.
-- It is able to operate on data that is contained within the class (remembering that an object is an instance of a class- the class is the definition, the object is an instance of that)
-- Method call is always associated with object
+A method is a piece of code that is called by its name and that is associated with the object. Methods are functions. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`. 
 
+Here are some examples of methods: 
+
+##### Example 1
 ```javascript
-var methodObject = {
+var obj1 = {
   attribute: "xyz",
-  display: function () {  // Method
+  myMethod: function () {  // Method
     console.log(this.attribute);
   }
 };
 
-// Call method
-methodObject.display();
+// Call the method
+obj1.display();
 ```
 
-Here methodObject is an object and display is a method which is associated with methodObject.
+Here `obj1` is an object and `myMethod` is a method which is associated with `obj1`.
 
+##### Example 2
+In ES6 we have classes. There the methods will look like this:
 
+```javascript
+class MyAwesomeClass {
+  myMethod() {
+        console.log("hi there");
+  }
+}
 
+const obj1 = new MyAwesomeClass();
+obj1.myMethod();
+```
 
+Understand: the method is not some kind of special type of a function, and it's not about how you declare a function. It's the way we **call** a function. Look at that: 
+
+```javascript
+var obj1 = {
+    prop1: "buddy"
+}; 
+var myFunc = function () {
+    console.log("Hi there", this);
+};
+// let's call myFunc as a function: 
+myFunc(); // will output "Hi there undefined" or "Hi there Window"
+ 
+obj1.myMethod = myFunc;
+//now we're calling myFunc as a method of obj1, so this will point to obj1
+obj1.myMethod(); // will print "Hi there" following with obj1. 
+
+```
 
 ## Question 26. What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
 A `self-invoking` anonymous function also called `self-executing anonymous function` runs immediately or automatically when we define it and self-invoking anonymous function doesn't have any name at all. Self-Invoking anonymous function syntax:
