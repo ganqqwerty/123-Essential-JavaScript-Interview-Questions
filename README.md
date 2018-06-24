@@ -439,7 +439,7 @@ console.log(y);
 ```
 ### Answer 
 
-The code above will output string `"undefined"` as output. According to associativity rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
+The code above will print string `"undefined"` as output. According to associativity rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is `Right to Left` so first `typeof y` will evaluate first which is string `"undefined"` and assigned to `z` and then `y` would be assigned the value of z. The overall sequence will look like that: 
 
 ```javascript
 var z;
@@ -452,7 +452,7 @@ y = z;
 ## Question 16. What will be the output of the following code?
 
 ```javascript
-// NFE (Named Function Expression
+// NFE (Named Function Expression)
 var foo = function bar() { return 12; };
 typeof bar();
 ```
@@ -477,13 +477,13 @@ function bar() { return 12; };
 typeof bar();
 ```
 
-The function definition can have only one reference variable as a function name, In above code **sample 1** bar is reference variable which is pointing to `anonymous function` and in **sample 2** function definition is name function.
+The function definition can have only one reference variable as a function name, In **sample 1** `bar` is reference variable which is pointing to `anonymous function` and in **sample 2** we have function statement and `bar` is the function name.
 
 ```javascript
 var foo = function bar() {
   // foo is visible here
   // bar is visible here
-  console.log(typeof bar()); // Work here :)
+  console.log(typeof bar()); // Works here :)
 };
 // foo is visible here
 // bar is undefined here
@@ -498,13 +498,13 @@ var foo = function() {
 ```
 
 ```javascript
-function bar() {
+function bar () {
   // Some code
 };
 ```
 ### Answer 
 
-The main difference is function `foo` is defined at `run-time` whereas function `bar` is defined at parse time. For understanding It in better way let see below code :
+The main difference is function `foo` is defined at `run-time` and is called function expression, whereas function `bar` is defined at parse time and is called function statement. To understand in better, let's see below code :
 
 ```javascript
 // Run-Time function declaration
@@ -526,7 +526,7 @@ function bar() {
 </script>
 ```
 
-Another advantage of first-one way of declaration that you can declare function based on certain condition for example:
+Another advantage of declaring the function using function expressions is that you can declare function based on certain condition, for example:
 
 ```javascript
 <script>
@@ -542,11 +542,11 @@ if(testCondition) { // If testCondition is true then
  </script>
 ```
 
-But If you try to run similar code in the following format, it would give an error
+But If you try to run similar code in the following format, it would result in an error
 
 ```javascript
 <script>
-if(testCondition) {// If testCondition is true then
+if (testCondition) {
    var foo = function() {
       console.log("inside Foo with testCondition True value");
    };
@@ -567,7 +567,9 @@ if(testCondition) {// If testCondition is true then
  };
 ```
 
-> In JavaScript variable and functions are `hoisted`. Let's take function `hoisting` first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it's declared. For Example:
+### Answer 
+
+In JavaScript `var`-declared variables and functions are `hoisted`. Let's take function `hoisting` first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it's declared. For Example:
 
 ```javascript
 foo(); // Here foo is still undefined
@@ -607,8 +609,9 @@ var salary = "1000$";
   console.log("My New Salary " + salary);
 })();
 ```
+### Answer 
 
-> The code above will output: `undefined, 5000$`. JavaScript has hoisting concept where newbie gets tricked. In above code, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of the following code, here `salary` variable is hoisted and declared at the top in function scope and while doing console.log it's result `undefined` and after that it's been redeclared and assigned `5000$`.
+The code above will output: `undefined, 5000$` because of hoisting. In the code presented above, you might be expecting `salary` to retain it values from outer scope until the point that `salary` was re-declared in the inner scope. But due to `hoisting` salary value was `undefined` instead. To understand it better have a look of the following code, here `salary` variable is hoisted and declared at the top in function scope. When we print its value using `console.log` the result is `undefined`. Afterwards the variable is redeclared and the new value `"5000$"` is assigned to it.
 
 ```javascript
 var salary = "1000$";
@@ -632,7 +635,9 @@ function foo() {
 new foo() instanceof foo;
 ```
 
-> `instanceof` operator checks the current object and return true if the object is of the specified type.
+### Answer 
+
+The `instanceof` operator checks the current object and returns true if the object is of the specified type.
 
 For Example:
 
@@ -648,7 +653,7 @@ var name = new String("xyz");
 name instanceof String; // Output : true
 ```
 
-Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand the working of the following code
+Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand how the following code works:
 
 ```javascript
 function foo() {
@@ -657,21 +662,21 @@ function foo() {
 new foo() instanceof foo;
 ```
 
-Here function `foo` is returning `foo` which is again pointer to function `foo`
+Here the function `foo` is returning `foo` which is again points to the function `foo`
 
 ```javascript
 function foo() {
   return foo;
 }
 var bar = new foo();
-// here bar is pointer to function foo() {return foo}.
+// here bar is a pointer to function foo() {return foo}.
 ```
 
 So the `new foo() instanceof foo` return `false`;
 
 Ref Link: [http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript](http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript)
 
-## Question 21. If we have JavaScript associative array as below code:
+## Question 21. Calculate the lengh of the associative array
 
 ```javascript
 var counterArray = {
@@ -680,9 +685,11 @@ var counterArray = {
 };
 counterArray["C"] = 1;
 ```
+### Answer 
 
-#### How we will calculate length of the above associative array `counterArray`
-> There are no built-in function and property available to calculate length of associative array object. However, there are ways by which we can calculate the length of associative array object, In addition to this we can also extend `Object` by adding method or property on prototype for calculating length but extending object might break enumeration in various libraries or might create cross-browser issue, so it's not recommended unless it's necessary. There is various ways by which we can calculate length.
+First of all, in case of JavaScript an associative array is the same as an object. There is no built-in function or property available to calculate the length an object, however we can write such a function ourselves.
+
+#### Method 1
 
 `Object` has `keys` method which can we used to calculate the length of object.
 
@@ -690,10 +697,12 @@ counterArray["C"] = 1;
 Object.keys(counterArray).length; // Output 3
 ```
 
-We can also calculate length of object by iterating through the object and by doing a count of own property of object.  
+#### Method 2
+
+We can also calculate the length of object by iterating through the object and by doing a count of own property of object. This way we will ignoge the properties that came from the object's prototype chain:  
 
 ```javascript
-function getSize(object) {
+function getLength(object) {
   var count = 0;
   for(key in object) {
     // hasOwnProperty method check own property of object
@@ -703,22 +712,22 @@ function getSize(object) {
 }
 ```
 
-> We can also add `length` method directly on `Object` see below code.
+#### Method 3 
+
+All modern browsers (including IE9+) support the [`getOwnPropertyNames`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames) method, so we can calculate the length using the following code: 
 
 ```javascript
-Object.size = function(obj) {
-  var count = 0;
-  for(key in obj) {
-    // hasOwnProperty method check own property of object
-    if(obj.hasOwnProperty(key)) count++;
-  }
-  return count;
-}
-//Get the size of any object using
-console.log(Object.length(counterArray));
+Object.getOwnPropertyNames(counterArray).length; // Output 3
 ```
 
-**Bonus**: We can also use `Underscore` (recommended, as it's lightweight) to calculate object length.
+#### Method 4
+
+[Underscore](https://underscorejs.org/#size) and [lodash](https://lodash.com/docs/4.17.10#size) libraries have the method `size` dedicated to calculate the object length. We don't recommend to include one of these libraries just to use the `size` method, but if it's already used in your project - why not? 
+
+```javascript
+_.size({one: 1, two: 2, three: 3});
+=> 3
+```
 
 ## Question 22. Difference between `Function`, `Method` and `Constructor` calls in JavaScript.
 If your are familiar with Object-oriented programming, More likely familiar to thinking of functions, methods, and class constructors as three separate things. But In JavaScript, these are just three different usage patterns of one single construct.
