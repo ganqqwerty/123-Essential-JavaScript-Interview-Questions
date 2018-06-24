@@ -1300,6 +1300,8 @@ NaN === 2 // false
 
 To check if the current value of the variable is NaN, you have to use the `isNaN` function. This is why we can often see NaN in the webpages: it requires special check which a lot of developers forget to do. 
 
+Further reading: [great blogpost on ariya.io](https://ariya.io/2014/05/the-curious-case-of-javascript-nan)
+
 ## Question 35. Fix the bug using ES5 only
 
 ```javascript
