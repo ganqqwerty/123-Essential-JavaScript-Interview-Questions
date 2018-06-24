@@ -908,38 +908,70 @@ obj1.myMethod(); // will print "Hi there" following with obj1.
 
 ```
 
-## Question 26. What is JavaScript Self-Invoking anonymous function or Self-Executing anonymous function.
-A `self-invoking` anonymous function also called `self-executing anonymous function` runs immediately or automatically when we define it and self-invoking anonymous function doesn't have any name at all. Self-Invoking anonymous function syntax:
+## Question 26. What is IIFE (Immediately Invoked Function Expression) and how it can be useful?
+### Answer 
+#### Definition
+IIFE a function that runs as soon as it's defined. Usually it's anonymous (doesn't have a function name), but it also can be named. Here's an exmaple of IIFE:
 
 ```javascript
 (function() {
-  console.log("Self-Invoking function code logic ");
+  console.log("Hi, I'm IIFE!");
 })();
-Output: Self-Invoking function code logic
+// outputs "Hi, I'm IIFE!"
 ```
+#### Explanation
 
-We must have to know the fact that JavaScript functions run immediately when we put `()` after their names.
+So, here's how it works. Remember the difference between function statements (`function a () {}`) and function expressions (`var a = function() {}`)? So, IIFE is a function expression. To make it an expression we surround our function declaration into the parens. We do it to explicitly tell the parser that it's an expression, not a statement (JS doesn't allow statements in parens).
 
-```javascript
-function display() {
-  console.log("Display me");
-}
-display();  // This will run immediately
+After the function you can see the two `()` braces, this is how we run the function we just declared. 
 
-Output: "Display me"
-/*
-This will not run immediately as we haven't put () after function
-name, function name is use full when we want to pass it as
-callback to another function or method.
-*/
-display;
+That's it. The rest is details.  
+- The function inside IIFE doesn't have to be anonymous. This one will work perfectly fine and will help to detect your function in a stacktrace during debugging: 
+  ```javascript
+  (function myIIFEFunc() {
+    console.log("Hi, I'm IIFE!");
+  })();
+  // outputs "Hi, I'm IIFE!"
+  ```
+- It can take some parameters:
+  ```javascript
+  (function myIIFEFunc(param1) {
+    console.log("Hi, I'm IIFE, " + param1);
+  })("Yuri");
+  // outputs "Hi, I'm IIFE, Yuri!"
+  ```
+  Here there value `"Yuri"` is passed to the `param1` of the function.
+- It can return a value: 
+  ```javascript
+  var result = (function myIIFEFunc(param1) {
+    console.log("Hi, I'm IIFE, " + param1);
+    return 1;
+  })("Yuri");
+  // outputs "Hi, I'm IIFE, Yuri!"
+  // result variable will contain 1
+  ```
+- You don't have to surround the function declaration into parens, although it's the most common way to define IIFE. Instead you can use any of the following forms: 
+  - `~function(){console.log("hi I'm IIFE")}()`
+  - `!function(){console.log("hi I'm IIFE")}()`
+  - `+function(){console.log("hi I'm IIFE")}()`
+  - `-function(){console.log("hi I'm IIFE")}()`
+  - `(function(){console.log("hi I'm IIFE")}());`
+  - `var i = function(){console.log("hi I'm IIFE")}();`
+  - `true && function(){ console.log("hi I'm IIFE") }();`
+  - `0, function(){ console.log("hi I'm IIFE") }();`
+  - `new function(){ console.log("hi I'm IIFE") }`
+  - `new function(){ console.log("hi I'm IIFE") }()`
+  
+  Please don't use all these forms to impress colleagues, but be prepared that you can encounter them in someone's code. 
 
-function testCallBack(callback) {
-  callback ();  // This will be call display method immediately if callback parameter is being set method display
-}
-testCallBack(display); // Here display function is being passed as callback
-```
+#### Applications and usefulness
 
+Variables and functions that you declare inside an IIFE are not visible to the outside world, so you can:
+ - Use the IIFE for isolating parts of the code to hide details of implementation.
+ - Specify the input interface of your code by passing commonly used global objects (window, document, jQuery, etc.) IIFE’s parameters, and then reference these global objects within the IIFE via a local scope.
+ - Use it in closures, when you use closures in loops.
+ - IIFE is the basis of in the module pattern in ES5
+code, it helps to prevent polluting the global scope and provide the module interface to the outside.
 
 
 ## Question 27. Describe Singleton Pattern In JavaScript?
