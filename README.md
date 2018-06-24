@@ -626,20 +626,17 @@ var salary = "1000$";
 })();
 ```
 
-## Question 20. What is the `instanceof` operator in JavaScript? what would be the output of the following code?
-
-```javascript
-function foo() {
-  return foo;
-}
-new foo() instanceof foo;
-```
+## Question 20. What’s the difference between `typeof` and `instanceof`?
 
 ### Answer 
 
-The `instanceof` operator checks the current object and returns true if the object is of the specified type.
+`typeof` is an operator that returns a string with the type of whatever you pass.
 
-For Example:
+The `typeof` operator checks if a value belongs to one of the six basic types: `number`, `string`, `boolean`, `object`, `function` or `undefined`.
+
+`typeof(null)` will return `object`.
+
+`instanceof` is much more intelligent: it works on the level of prototypes. In particular, it tests to see if the right operand appears anywhere in the prototype chain of the left. `instanceof` doesn’t work with primitive types. It `instanceof` operator checks the current object and returns true if the object is of the specified type, for example:
 
 ```javascript
 var dog = new Animal();
@@ -653,26 +650,6 @@ var name = new String("xyz");
 name instanceof String; // Output : true
 ```
 
-Here `name instanceof String` is true since `name` inherits from `String.prototype`. Now let's understand how the following code works:
-
-```javascript
-function foo() {
-  return foo;
-}
-new foo() instanceof foo;
-```
-
-Here the function `foo` is returning `foo` which is again points to the function `foo`
-
-```javascript
-function foo() {
-  return foo;
-}
-var bar = new foo();
-// here bar is a pointer to function foo() {return foo}.
-```
-
-So the `new foo() instanceof foo` return `false`;
 
 Ref Link: [http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript](http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript)
 
@@ -976,15 +953,16 @@ Variables and functions that you declare inside an IIFE are not visible to the o
 code, it helps to prevent polluting the global scope and provide the module interface to the outside.
 
 
-## Question 27. Describe Singleton Pattern In JavaScript?
+## Question 27. Describe Singleton Pattern In JavaScriptю
 ### Answer 
 
-The singleton pattern is the most commonly used JavaScript design pattern and one that you will probably be aware of more than any others. It provides a great way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application.
+The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application. In JavaScript, Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages.
 
-In JavaScript, there is a different way to achieve singleton object than any other object oriented supported language (Java, C++). In JavaScript Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages. There are two important points in the traditional definition of Singleton pattern:
+There are two important points in the traditional definition of Singleton pattern:
 - There should be only one instance allowed for a class and
 - We should allow global point of access to that single instance
-- Let me define singleton pattern in JavaScript context:
+
+Let me define singleton pattern in JavaScript context:
 
 > It is an object that is used to create namespace and group together a related set of methods and attributes (encapsulation) and if we allow to initiate then it can be initiated only once.
 
