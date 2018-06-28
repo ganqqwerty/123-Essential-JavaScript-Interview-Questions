@@ -953,7 +953,7 @@ Variables and functions that you declare inside an IIFE are not visible to the o
 code, it helps to prevent polluting the global scope and provide the module interface to the outside.
 
 
-## Question 27. Describe Singleton Pattern In JavaScriptю
+## Question 27. Describe Singleton Pattern In JavaScript
 ### Answer 
 
 The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application. In JavaScript, Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages.
