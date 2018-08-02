@@ -786,7 +786,7 @@ function User(name) {
 }
 
 var person;
-var foo = User("xyz");
+var foo = new User("xyz");
 foo["location"] = "USA";
 // the console will show you that the result of this is "USA"
 
