@@ -21,7 +21,7 @@ Before starting further discussion let's understand the difference between decla
 
 ```javascript
 var x; // declaring x
-console.log(x); //output: undefined
+console.log(x); // output: undefined
 ```
 
 `var x = 1` is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it's declared then assignment happen in order this term is called `hoisting`.
@@ -30,7 +30,7 @@ A variable can be declared but not defined. When we try to access it, It will re
 
 ```javascript
 var x; // Declaration
-if(typeof x === 'undefined') // Will return true
+typeof x === 'undefined'; // Will return true
 ```
 
 A variable can be neither declared nor defined. When we try to reference such variable then the result will be `not defined`.
@@ -94,9 +94,9 @@ Employee.prototype.displayIncreasedSalary = function() {
 };
   
 // Creating three Employee objects
-var emp1 = new Employee("John","Pluto",3000);
-var emp2 = new Employee("Merry","Pluto",2000);
-var emp3 = new Employee("Ren","Pluto",2500);
+var emp1 = new Employee("John", "Pluto", 3000);
+var emp2 = new Employee("Merry", "Pluto", 2000);
+var emp3 = new Employee("Ren", "Pluto", 2500);
 ```
 
 Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalary private method. However the `displayIncreasedSalary` will only be added once to an object `Employee.prototype`.
@@ -831,7 +831,7 @@ A function can take a form of immediately invoked function expression (IIFE):
 Finally there are also arrow functions: 
 
 ```javascript
-const myFunc (arg) => {
+const myFunc = arg => {
     console.log("hello", arg)
 } 
 ```
@@ -850,7 +850,7 @@ var obj1 = {
 };
 
 // Call the method
-obj1.display();
+obj1.myMethod();
 ```
 
 Here `obj1` is an object and `myMethod` is a method which is associated with `obj1`.
@@ -861,7 +861,7 @@ In ES6 we have classes. There the methods will look like this:
 ```javascript
 class MyAwesomeClass {
   myMethod() {
-        console.log("hi there");
+    console.log("hi there");
   }
 }
 
@@ -873,10 +873,10 @@ Understand: the method is not some kind of special type of a function, and it's 
 
 ```javascript
 var obj1 = {
-    prop1: "buddy"
+  prop1: "buddy"
 }; 
 var myFunc = function () {
-    console.log("Hi there", this);
+  console.log("Hi there", this);
 };
 // let's call myFunc as a function: 
 myFunc(); // will output "Hi there undefined" or "Hi there Window"
