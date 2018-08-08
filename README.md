@@ -1946,6 +1946,19 @@ btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
 
 `bind` method is available to all the function similar to call and apply method which take argument value of `this`.
 
+## Question 51. What would be the output of following code?
+
+```javascript
+for(
+  let i = (setTimeout(() => console.log(i)), 0);
+  i < 2;
+  i++
+){
+  i++
+}
+```
+
+### Answer: 0
 
 # Coding Questions
 
