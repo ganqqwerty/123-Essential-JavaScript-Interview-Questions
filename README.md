@@ -632,7 +632,7 @@ var salary = "1000$";
 
 `typeof` is an operator that returns a string with the type of whatever you pass.
 
-The `typeof` operator checks if a value belongs to one of the six basic types: `number`, `string`, `boolean`, `object`, `function` or `undefined`.
+The `typeof` operator checks if a value belongs to one of the seven basic types: `number`, `string`, `boolean`, `object`, `function`, `undefined` or `Symbol`.
 
 `typeof(null)` will return `object`.
 
