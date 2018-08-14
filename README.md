@@ -653,7 +653,7 @@ name instanceof String; // Output : true
 
 Ref Link: [http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript](http://stackoverflow.com/questions/2449254/what-is-the-instanceof-operator-in-javascript)
 
-## Question 21. Calculate the lengh of the associative array
+## Question 21. Calculate the length of the associative array
 
 ```javascript
 var counterArray = {
