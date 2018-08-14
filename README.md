@@ -80,23 +80,13 @@ var Employee = function (name, company, salary) {
   this.company = company || "";
   this.salary = salary || 5000;
 
-  // Private method
+  // We can create a private method like this
   var increaseSalary = function () {
     this.salary = this.salary + 1000;
   };
 
 };
 
-// adding the method to Employee's prototype
-Employee.prototype.displayIncreasedSalary = function() {
-  increaseSalary();
-  console.log(this.salary);
-};
-  
-// Creating three Employee objects
-var emp1 = new Employee("John", "Pluto", 3000);
-var emp2 = new Employee("Merry", "Pluto", 2000);
-var emp3 = new Employee("Ren", "Pluto", 2500);
 ```
 
 Here each instance variable `emp1`, `emp2`, `emp3` has own copy of increaseSalary private method. However the `displayIncreasedSalary` will only be added once to an object `Employee.prototype`.
