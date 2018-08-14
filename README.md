@@ -43,30 +43,21 @@ console.log(y);  // Output: ReferenceError: y is not defined
 [http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration](http://stackoverflow.com/questions/20822022/javascript-variable-definition-declaration)
 
 
-## Question 2. What will be the output of the following code?
+## Question 2. For which value of `x` the results of the following statements are not the same?
+
 
 ```javascript
-var y = 1;
-if (function f() {}) {
-  y += typeof f;
-}
-console.log(y);
+//  if( x <= 100 ) {...}
+if( !(x > 100) ) {...}
 ```
 ### Answer 
 
-The code above would give the output `1undefined`. inside `if` statement we have `function f(){}`. Here's it's a function expression, not function statement, which is why f is not a variable. 
+`NaN <= 100` is `false` and `NaN > 100` is also `false`, so if the
+value of `x` is `NaN`, the statements are not the same.
 
-As a reminder, function expression is something like this: 
-```javascript
-var myFunc1 = new function() {}
-var myFunc2 = new function whatever() {} // whatever is not a variable here
-```
+The same holds true for any value of x that being converted to Number, returns NaN, e.g.: `undefined`, `[1,2,5]`, `{a:22}` , etc.
 
-A function statement is something like this: 
-```javascript
-function myFunc3() {}
-```
-You can read about [function expressions](https://developer.mozilla.org/en-US/docs/web/JavaScript/Reference/Operators/function) and [function statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) on MDN.
+This is why you need to pay attention when you deal with numeric variables. `NaN` can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is `NaN`, is to use `isNaN()` function.
 
 ## Question 3. What is the drawback of having private methods in a JavaScript object?
 
