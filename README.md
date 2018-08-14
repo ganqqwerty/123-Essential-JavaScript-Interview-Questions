@@ -516,38 +516,6 @@ function bar() {
 </script>
 ```
 
-Another advantage of declaring the function using function expressions is that you can declare function based on certain condition, for example:
-
-```javascript
-<script>
-if(testCondition) { // If testCondition is true then
-  function foo() {
-    console.log("inside Foo with testCondition True value");
-  };
- } else {
-  function foo() {
-    console.log("inside Foo with testCondition false value");
-  };
- }
- </script>
-```
-
-But If you try to run similar code in the following format, it would result in an error
-
-```javascript
-<script>
-if (testCondition) {
-   var foo = function() {
-      console.log("inside Foo with testCondition True value");
-   };
- } else {
-    var foo = function() {
-      console.log("inside Foo with testCondition false value");
-   };
- }
- </script>
-```
-
 ## Question 18. what is function hoisting in JavaScript?
 **Function Expression**
 
