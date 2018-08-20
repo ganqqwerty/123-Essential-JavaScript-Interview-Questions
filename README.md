@@ -130,7 +130,7 @@ innerFuncVar = y
 globalVar = abc
 ```
 
-## Question 5. Write a mul function which will properly when invoked as below syntax.
+## Question 5. Write a mul function which will work properly when invoked with following syntax.
 
 ```javascript
 console.log(mul(2)(3)(4)); // output : 24
