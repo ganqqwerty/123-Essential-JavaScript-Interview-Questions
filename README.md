@@ -2645,7 +2645,7 @@ console.log(obj.innerMessage);
 	
 Answer: 4) undefined true
 
-### 3. What would the output of following code ?
+### 3. What would be the output of following code ?
 
 ```javascript
 var obj = {
@@ -2665,7 +2665,7 @@ console.log(obj.innerMessage());
 	
 Answer: 1) Hello
 
-### 4. What would the output of following code ?
+### 4. What would be the output of following code ?
 
 ```javascript
 var obj = {
@@ -2686,7 +2686,7 @@ console.log(obj.innerMessage());
 	
 Answer: 3) undefined
 	
-### 5. What would the output of following code ?
+### 5. What would be the output of following code ?
 
 ```javascript
 var obj = {
@@ -2708,7 +2708,7 @@ console.log(obj.innerMessage());
 	
 Answer: 2) 'Hello'
 
-### 6. What would the output of following code ?
+### 6. What would be the output of following code ?
 
 ```javascript
 function myFunc(){
@@ -2726,7 +2726,7 @@ console.log(myFunc());
 	
 Answer: 3) undefined
 
-### 7. What would the output of following code ?
+### 7. What would be the output of following code ?
 
 ```javascript
 function myFunc(){
@@ -2744,7 +2744,7 @@ console.log(myFunc());
 	
 Answer: 2) 'Hi John'
 
-### 8. What would the output of following code ?
+### 8. What would be the output of following code ?
 
 ```javascript
 function myFunc() {
@@ -2761,7 +2761,7 @@ console.log(myFunc());
 	
 Answer: 2) 'Hi John'
 
-### 9. What would the output of following code ?
+### 9. What would be the output of following code ?
 
 ```javascript
 function myFunc(param1,param2) {
@@ -2779,7 +2779,7 @@ console.log(myFunc("a","b","c","d"));
 	
 Answer: a) 2 2 2 
 
-### 10. What would the output of following code ?
+### 10. What would be the output of following code ?
 
 ```javascript
 function myFunc() {
@@ -2799,7 +2799,7 @@ Answer: 2) 0 2 4
 
 ## Object Oriented
 
-### 1. What would the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 function Person(name, age){
@@ -2829,7 +2829,7 @@ Answer: 1) John Person
 
 ## Scopes
 
-### 1. What would the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 function passWordMngr() {
@@ -2852,7 +2852,7 @@ console.log(userInfo.userName);
 	
 Answer: 3) 12345678 undefined 
 
-### 2. What would the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2869,7 +2869,7 @@ console.log(Employee.employeeId);
 	
 Answer: 4) undefined 
 
-### 3. What would the output of following code ?
+### 3. What would be the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2891,7 +2891,7 @@ console.log(new Employee().employeeId);
 	
 Answer: 2) bq1uy 1BJKSJ bq1uy 
 
-### 4. What would the output of following code ?
+### 4. What would be the output of following code ?
 
 ```javascript
 var employeeId = 'aq123';
@@ -2914,7 +2914,7 @@ Answer: 1) foo123 aq123
 
 ## Call, Apply, Bind
 
-### 1. What would the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2933,7 +2933,7 @@ Answer: 1) foo123 aq123
 	
 Answer: 4) [ 'W', 'o', 'r', 'l', 'd' ]  
 
-### 2. What would the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2964,7 +2964,7 @@ Answer: 4) [ 'W', 'o', 'r', 'l', 'd' ]
 	
 Answer: 1) Total amount left in account: 5600 Total amount left in account: 5300 
 
-### 3. What would the output of following code ?
+### 3. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -2996,7 +2996,7 @@ Answer: 1) Total amount left in account: 5600 Total amount left in account: 5300
 	
 Answer: 1) 5600 5300 5100
 
-### 4. What would the output of following code ?
+### 4. What would be the output of following code ?
 
 ```javascript
 (function() {
@@ -3028,7 +3028,7 @@ Answer: 1) 5600 5300 5100
 	
 Answer: 2) 3600 3300 3100
 
-### 5. What would the output of following code ?
+### 5. What would be the output of following code ?
 
 ```javascript
 (function greetNewCustomer() {
@@ -3049,7 +3049,7 @@ Answer: 1) Hello John
 
 ## Callback Function
 
-### 1. What would the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 function getDataFromServer(apiUrl){
@@ -3074,7 +3074,7 @@ getDataFromServer('www.google.com').then(function(name){
 	
 Answer: 1) John
 
-### 2. What would the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 (function(){
@@ -3122,7 +3122,7 @@ Answer: 1) [ 2, 8, 15, 16, 23, 42 ]
 			
 ## Return Statement
 
-### 1. What would the output of following code ?
+### 1. What would be the output of following code ?
 
 ```javascript
 (function(){
@@ -3144,7 +3144,7 @@ Answer: 1) [ 2, 8, 15, 16, 23, 42 ]
 	
 Answer: 4) Uncaught TypeError: Cannot read property 'fullName' of undefined
 
-### 2. What would the output of following code ?
+### 2. What would be the output of following code ?
 
 ```javascript
 function getNumber(){
@@ -3162,7 +3162,7 @@ console.log(numb);
 	
 Answer: 1) 5
 
-### 3. What would the output of following code ?
+### 3. What would be the output of following code ?
 
 ```javascript
 function getNumber(){
@@ -3180,7 +3180,7 @@ console.log(numb);
 	
 Answer: 2) undefined
 
-### 4**. What would the output of following code ?
+### 4**. What would be the output of following code ?
 
 ```javascript
 function mul(x){
@@ -3202,7 +3202,7 @@ console.log(mul(2)(3)[1](4));
 	
 Answer: 1) 6, 10
 
-### 5**. What would the output of following code ?
+### 5**. What would be the output of following code ?
 
 ```javascript
 function mul(x) {
@@ -3226,7 +3226,7 @@ console.log(mul(2)(3).sum(4));
 	
 Answer: 1) 6, 10
 
-### 6. What would the output of following code ?
+### 6. What would be the output of following code ?
 
 ```javascript
 function mul(x) {
