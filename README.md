@@ -489,22 +489,18 @@ The main difference is function `foo` is defined at `run-time` and is called fun
 
 ```javascript
 // Run-Time function declaration
-<script>
   foo(); // Call foo function here, It will give an error
   var foo = function() {
     console.log("Hi I am inside Foo");
   };
-</script>
 ```
 
 ```javascript
 // Parse-Time function declaration
-<script>
 bar(); // Call bar function here, It will not give an Error
 function bar() {
   console.log("Hi I am inside Foo");
 };
-</script>
 ```
 
 ## Question 18. what is function hoisting in JavaScript?
@@ -1177,7 +1173,7 @@ Be sure that you can implement the promise, read [one of the articles on a topic
 
 ## Question 33. How to check whether a key exist in a JavaScript object or not.
 
->Let say we have `person` object with property **name** and **age**
+Let say we have `person` object with property **name** and **age**
 
 ```javascript
 var person = {
@@ -1263,7 +1259,7 @@ for (var i = 0; i < arr.length; i++) {
 
 ## Question 36. What is best way to detect an arrays object on JavaScript ?
 
->We always encounter in such situation where we need to know whether value is type of array or not.
+We always encounter in such situation where we need to know whether value is type of array or not.
 
 For Instance : Below code perform some operation based value type
 
@@ -1279,9 +1275,21 @@ function(value){
 
 Let's discuss some way to detect an array in JavaScript.
 
-**Method 1 :** 
+**Method 1:**
 
-Duck typing test for array type detection 
+Juriy Zaytsev (Also known as kangax) proposed an elegant solution to this.
+
+```javascript
+	function isArray(value){
+		return Object.prototype.toString.call(value) === '[object Array]';
+	}
+```
+This approach is most popular way to detecting a value of type array in JavaScript and recommended to use. This approach relies on the fact that, native toString() method on a given value produce a standard string in all browser. 
+
+
+**Method 2:** 
+
+Duck typing test for array type detection
 
 ```javascript
  // Duck typing arrays
@@ -1300,20 +1308,11 @@ As we can see above isArray method will return true if value object have `sort` 
 ```
 Now when you check `isArray(bar)` then it will return true because bar object has sort method, But the fact is bar is not an array.
 
-So method 1 is not a best way to detect an array as you can see it's not handle the case when some object has sort method.
+So this method is not a best way to detect an array as you can see it's not handle the case when some object has sort method.
 
-**Method 2:**
+**Method 3:** 
 
-Juriy Zaytsev (Also known as kangax) proposed an elegant solution to this.
-
-```javascript
-	function isArray(value){
-		return Object.prototype.toString.call(value) === '[object Array]';
-	}
-```
-This approach is most popular way to detecting a value of type array in JavaScript and recommended to use. This approach relies on the fact that, native toString() method on a given value produce a standard string in all browser.
-
->ECMAScript 5 has introduced **Array.isArray()** method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.
+ECMAScript 5 has introduced **Array.isArray()** method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.
 
 In many JavaScript libraries you may see below code for detecting an value of type array.
 
@@ -1330,7 +1329,7 @@ function(value){
 
 ## Question 37. Best way to detect reference values of any type in JavaScript ?
 
-> In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as **Object**, **Array**, **Function**, **Date**, **null** and **Error**.
+ In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as **Object**, **Array**, **Function**, **Date**, **null** and **Error**.
 
 Detecting object using `typeof` operator
 
@@ -1372,7 +1371,7 @@ console.log(emp1 instanceof Object); // true
 
 ## Question 38. Describe Object-Based inheritance in JavaScript.
 
-> Object-based inheritance also called prototypal inheritance in which we one object inherit from another object without invoking a constructor function.
+ Object-based inheritance also called prototypal inheritance in which we one object inherit from another object without invoking a constructor function.
 
 The ECMAScript 5 **Object.create()** method is the easiest way for one object to inherit from another. 
 
@@ -1419,11 +1418,11 @@ employee.displayName(); // "Nishant"
 ```
 In above example, `emp1` is created with it's own value for name, so calling **displayName()** method display `"John"` instead of `"Nishant"`.
 
->Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
+Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
 
 ## Question 39. Describe Type-Based inheritance in JavaScript.
 
->Type-based inheritance works with constructor function instead of object, It means we need to call constructor function of the object from which you  want to inherit.
+Type-based inheritance works with constructor function instead of object, It means we need to call constructor function of the object from which you  want to inherit.
 
 Let say we have `Person` class which has name, age, salary properties and **incrementSalary()** method.
 
@@ -1484,7 +1483,7 @@ Type-based inheritance is best used with developer defined constructor function 
 
 ## Question 40. How we can prevent modification of object in JavaScript ?.
 
-> ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object.
+ ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object.
 
 There are three levels of preventing modification: 
 
@@ -1510,7 +1509,7 @@ employee.age = 24; // fails silently unless it's inside the strict mode
 ```
 **2: Seal :**
 
->It is same as prevent extension, in addition to this also prevent existing properties and methods from being deleted.
+It is same as prevent extension, in addition to this also prevent existing properties and methods from being deleted.
 
 To seal an object, we use **Object.seal()** method. you can check whether an object is sealed or not using **Object.isSealed();**
 
@@ -1535,7 +1534,7 @@ when an object is sealed, its existing properties and methods can't be removed. 
 
 **3: Freeze :**
 
->Same as seal, In addition to this prevent existing properties methods from being modified (All properties and methods are read only).
+Same as seal, In addition to this prevent existing properties methods from being modified (All properties and methods are read only).
 
 To freeze an object, use Object.freeze() method. We can also determine whether an object is frozen using Object.isFrozen();
 
@@ -1593,7 +1592,7 @@ delete employee.name;  // fails silently unless it's in strict mode
 
 
 ## Question 44. Write a log function which will add prefix `(your message)` to every message you log using console.log ? 
-> For example, If you log `console.log("Some message")` then output should be **(your message) Some message**
+ For example, If you log `console.log("Some message")` then output should be **(your message) Some message**
 
 Logging error message or some informative message is always required when you dealing with client side JavaScript using console.log method. Some time you want to add some prefix to identify message generated log from your application hence you would like to prefix your app name in every console.log. 
 
@@ -1627,7 +1626,7 @@ For example: We can create string using string literal and using String construc
  // using String constructor function 
  var objStr = new String("Hi I am string object");
 ```
-> We can use typeof operator to test string literal and instanceof operator to test String object.
+ We can use typeof operator to test string literal and instanceof operator to test String object.
 
 ```javascript
  function isString(str) {
@@ -1641,7 +1640,7 @@ For example: We can create string using string literal and using String construc
 ``` 
 ## Question 46 . What is typical use case for anonymous function in JavaScript ?
 
-> Anonymous functions basically used in following scenario.
+ Anonymous functions basically used in following scenario.
 
 1. No name is needed if function is only used in one place, then there is no need to add a name to function.
 
@@ -1691,9 +1690,9 @@ For example: We can create string using string literal and using String construc
 		alert("Hi I am anonymous callback function");
 	});
 	```
-The best way to take decision for using anonymous function is to asked.
+The best way to make a decision for using anonymous function is to ask the following question:
 
-> Will the function which I am going to define will use anywhere else.
+ Will the function which I am going to define, be used anywhere else?
 
 If your answer is yes then go and create named function rather anonymous function.
 
@@ -1704,7 +1703,7 @@ If your answer is yes then go and create named function rather anonymous functio
 
 ## Question 47 . How to set a default parameter value ?
 
-> If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For Instance : 
+ If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For Instance : 
 
 ```python
 // Define sentEmail function 
@@ -1762,7 +1761,7 @@ sentEmail({
 ```
 
 ## Question 48. Write code for merge two JavaScript Object dynamically.
-> Let say you have two object 
+Let say you have two objects 
 
 ```javascript
 var person = {
@@ -1787,7 +1786,7 @@ name , age , addressLine1 , addressLine2 , city */
 **Method 1: Using ES6, Object assign method**
 
 ```javascript
-const merge = (toObj, fromObj) => Object.assign(toObj, fromObj);
+const merge = (toObj, fromObj) = Object.assign(toObj, fromObj);
 ```
  
 **Method 2: Without using in-built function**
@@ -1810,7 +1809,7 @@ function merge(toObj, fromObj) {
 ```
 ## Question 49. What is non-enumerable property in JavaScript and how can create ?
 
->Object can have properties that don't show up when you iterate through object using for...in loop or using Object.keys() to get an array of property names. This properties is know as non-enumerable properties.
+Object can have properties that don't show up when you iterate through object using for...in loop or using Object.keys() to get an array of property names. This properties is know as non-enumerable properties.
 
 Let say we have following object
 
@@ -1857,7 +1856,7 @@ Changing non-enumerable property value will return error in `strict mode`. In no
 
 ## Question 50. What is Function binding ?
 
-> Function binding falls in advance JavaScript category and this is very popular technique to use in conjunction with event handler and callback function to preserve code execution context while passing function as a parameter.
+ Function binding falls in advance JavaScript category and this is very popular technique to use in conjunction with event handler and callback function to preserve code execution context while passing function as a parameter.
 
 Let's consider the following example:
 
@@ -1897,6 +1896,126 @@ btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
 
 
 # Coding Questions
+
+## Passing values by reference vs by value
+For a JS developer, it's crucially important to understand which values are passed by reference,
+and which ones are passed by value. Remember that objects, including arrays are passed by reference
+while strings, booleans and numbers are passed by value. 
+
+### 1. What would be the output of following code?
+
+```javascript
+var strA = "hi there";
+var strB = strA;
+strB="bye there!";
+console.log (strA)
+```
+
+The output will `'hi there'` because we're dealing with strings here. Strings are 
+passed by value, that is, copied. 
+ 
+### 2. What would be the output of following code?
+```javascript
+var objA = {prop1: 42};
+var objB = objA; 
+objB.prop1 = 90;
+console.log(objA) 
+```
+The output will `{prop1: 90}` because we're dealing with objects here. Objects are 
+passed by reference, that is, `objA` and `objB` point to the same object in memory. 
+
+### 3. What would be the output of following code?
+
+```javascript
+var objA = {prop1: 42};
+var objB = objA;
+objB = {};
+console.log(objA)
+```
+
+The output will `{prop1: 42}`. 
+
+When we assign `objA` to `objB`, the `objB` variable will point
+to the same object as the `objB` variable.
+
+However, when we reassign `objB` to an empty object, we simply change where `objB` variable references to.
+This doesn't affect where `objA` variable references to. 
+
+### 4. What would be the output of following code?
+
+```javascript
+var arrA = [0,1,2,3,4,5];
+var arrB = arrA;
+arrB[0]=42;
+console.log(arrA)
+```
+
+The output will be `[42,1,2,3,4,5]`. 
+
+Arrays are object in JavaScript and they are passed and assigned by reference. This is why
+both `arrA` and `arrB` point to the same array `[0,1,2,3,4,5]`. That's why changing the first
+element of the `arrB` will also modify `arrA`: it's the same array in the memory.
+
+### 5. What would be the output of following code?
+```javascript
+var arrA = [0,1,2,3,4,5];
+var arrB = arrA.slice();
+arrB[0]=42;
+console.log(arrA)
+```
+
+The output will be `[0,1,2,3,4,5]`. 
+
+The `slice` function copies all the elements of the array returning the new array. That's why
+`arrA` and `arrB` reference two completely different arrays. 
+
+### 5. What would be the output of following code?
+
+```javascript
+var arrA = [{prop1: "value of array A!!"},  {someProp: "also value of array A!"}, 3,4,5];
+var arrB = arrA;
+arrB[0].prop1=42;
+console.log(arrA);
+```
+The output will be `[{prop1: 42},  {someProp: "also value of array A!"}, 3,4,5]`. 
+
+Arrays are object in JS, so both varaibles arrA and arrB point to the same array. Changing
+`arrB[0]` is the same as changing `arrA[0]`
+
+
+### 6. What would be the output of following code?
+
+```javascript
+var arrA = [{prop1: "value of array A!!"},  {someProp: "also value of array A!"}];
+var arrB = arrA.slice();
+arrB[0].prop1=42;
+console.log(arrA);
+```
+
+The output will be `[{prop1: 42},  {someProp: "also value of array A!"}, 3,4,5]`. 
+
+The `slice` function copies all the elements of the array returning the new array. However,
+it doesn't do deep copying. Instead it does shallow copying. You can imagine slice implemented like this: 
+ 
+ ```javascript
+function slice(arr) {
+    var result = [];
+    for (i = 0; i< arr.length; i++) {
+        result.push(arr[i]);
+    }
+    return result; 
+}
+```
+
+Look at the line with `result.push(arr[i])`. If `arr[i]` happens to be a number or string, 
+it will be passed by value, in other words, copied. If `arr[i]` is an object, it will be passed by reference. 
+
+In case of our array `arr[0]` is an object `{prop1: "value of array A!!"}`. Only the reference
+to this object will be copied. This effectively means that arrays arrA and arrB share first
+two elements. 
+
+This is why changing the property of `arrB[0]` in `arrB` will also change the `arrA[0]`.
+
 
 ## Hoisting 
 
@@ -2088,7 +2207,7 @@ Answer: 1) undefined
 
 Answer: 3) function function
 
-## Object
+## Objects
 
 ### 1. What would be the output of following code ?
 
@@ -2328,7 +2447,7 @@ Answer: 3) foo foo
 	
 Answer: 2) undefined undefined 
 
-## Array
+## Arrays
 
 ### 1. What would be the output of following code?
 
@@ -2598,7 +2717,7 @@ Answer: 1.  [ 'bar', 'john' ] [] [ 'foo' ]
 
 Answer: 3.  [ 15, 16, 2, 23, 42, 8 ]
 
-## Function: 
+## Functions
 
 ### 1. What would be the output of following code ?
 
@@ -3047,7 +3166,8 @@ Answer: 1) Hello John
 
 ### 6. Suggest your question!
 
-## Callback Function
+
+## Callback Functions
 
 ### 1. What would be the output of following code ?
 
