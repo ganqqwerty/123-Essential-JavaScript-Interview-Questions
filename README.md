@@ -180,7 +180,7 @@ arrayList = [];
 
 The code above will set the variable `arrayList` to a new empty array. This is recommended if you don't have **references to the original array** `arrayList` anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable `arrayList`.
 
-For Instance:
+For instance:
 
 ```javascript
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -197,7 +197,7 @@ arrayList.length = 0;
 
 The code above will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array. 
 
-For Instance:
+For instance:
 
 ```javascript
 var arrayList = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
@@ -1257,11 +1257,11 @@ for (var i = 0; i < arr.length; i++) {
 
 
 
-## Question 36. What is best way to detect an arrays object on JavaScript ?
+## Question 36. How to check if the value of a variable in an array?
 
 We always encounter in such situation where we need to know whether value is type of array or not.
 
-For Instance : Below code perform some operation based value type
+For instance : the code below perform some operation based value type
 
 ```javascript
 function(value){
@@ -1314,7 +1314,7 @@ So this method is not a best way to detect an array as you can see it's not hand
 
 ECMAScript 5 has introduced **Array.isArray()** method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.
 
-In many JavaScript libraries you may see below code for detecting an value of type array.
+In many JavaScript libraries you may see the code below for detecting an value of type array.
 
 ```javascript
 function(value){
@@ -1375,7 +1375,7 @@ console.log(emp1 instanceof Object); // true
 
 The ECMAScript 5 **Object.create()** method is the easiest way for one object to inherit from another. 
 
-**For Instance:** 
+**For instance:** 
 
 ```javascript
 var employee = {
@@ -1391,7 +1391,7 @@ console.log(emp1.displayName());  // output "Nishant"
 
 Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as `emp1`'s prototype is set to `employee`. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
 
-**For Instance:** Defining `displayName()` method on `emp1` will not automatically override the employee `displayName`.
+**For instance:** Defining `displayName()` method on `emp1` will not automatically override the employee `displayName`.
 
 ```javascript
 emp1.displayName = function() {
@@ -1703,7 +1703,7 @@ If your answer is yes then go and create named function rather anonymous functio
 
 ## Question 47 . How to set a default parameter value ?
 
- If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For Instance : 
+ If you are coming from python/c# you might be using default value for function parameter incase value(formal parameter) has not been passed. For instance : 
 
 ```python
 // Define sentEmail function 
@@ -1716,7 +1716,7 @@ def sentEmail(configuration, provider = 'Gmail'):
 
 There are a lot of ways by which you can achieve this in pre ES2015.
 
-Let's understand below code by which we achieved setting default parameter value.
+Let's understand the code below by which we achieved setting default parameter value.
 
 **Method 1: Setting default parameter value** 
 
