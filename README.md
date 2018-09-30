@@ -407,9 +407,11 @@ console.log(bar + false);
 The code above will output `1, "truexyz", 2, 1` as output. Here's a general guideline  for the plus operator:
   - Number + Number  -> Addition
   - Boolean + Number -> Addition
+  - Boolean + Boolean -> Addition
   - Number + String  -> Concatenation
   - String + Boolean -> Concatenation
   - String + String  -> Concatenation
+  
   
 
 ## Question 15. What will be the output of the following code?
