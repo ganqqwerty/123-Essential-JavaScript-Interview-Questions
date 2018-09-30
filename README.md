@@ -4,7 +4,7 @@
 
 It's a book about frontend interview question. We hope that it will help all javascript developers to prepare for a technical job interview. 
 
-## Want to by a book in paper form? Want some badass flashcards?
+## Want to buy a book in paper form? Want some badass flashcards?
 
  - This Book will be completed by September 2018 and then it will be available to buy. If you want me to sent an early copy of this book, please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
  - If you don't want to wait, you can buy [Yuri's JavaScript Flashcards](http://flashcardsjs.com), a set of frontend interview questions sorted by popularity among the interviewers printed on beautiful poker-size flashcards.
