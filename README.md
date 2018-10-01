@@ -837,7 +837,7 @@ obj1.myMethod(); // will print "Hi there" following with obj1.
 ## Question 26. What is IIFE (Immediately Invoked Function Expression) and how it can be useful?
 ### Answer 
 #### Definition
-IIFE a function that runs as soon as it's defined. Usually it's anonymous (doesn't have a function name), but it also can be named. Here's an exmaple of IIFE:
+IIFE a function that runs as soon as it's defined. Usually it's anonymous (doesn't have a function name), but it also can be named. Here's an example of IIFE:
 
 ```javascript
 (function() {
