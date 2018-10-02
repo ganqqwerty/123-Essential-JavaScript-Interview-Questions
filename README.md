@@ -276,6 +276,13 @@ if(Object.prototype.toString.call(arrayList) === '[object Array]') {
 }
 ```
 
+You can also check with array's  length property. When you will try to access length property of an array it will return a number(0 for empty array) while if you try to access the length property of object it will return undefined.
+
+```javascript
+if(arrayList.length > -1){
+  console.log('Array!');
+}
+```
 If you are using `jQuery` then you can also used jQuery `isArray` method:
 
 ```javascript
