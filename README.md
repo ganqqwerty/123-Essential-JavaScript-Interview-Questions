@@ -477,13 +477,13 @@ var foo = function bar() {
 ```javascript
 var foo = function() {
   // Some code
-};
+}
 ```
 
 ```javascript
 function bar () {
   // Some code
-};
+}
 ```
 ### Answer 
 
@@ -502,21 +502,23 @@ The main difference is function `foo` is defined at `run-time` and is called fun
 bar(); // Call bar function here, It will not give an Error
 function bar() {
   console.log("Hi I am inside Foo");
-};
+}
 ```
 
-## Question 18. what is function hoisting in JavaScript?
-**Function Expression**
+## Question 18. In which case the function definition is not hoisted in JavaScript?
+
+
+### Answer 
+
+Let's take the following **function expression**
 
 ```javascript
  var foo = function foo() {
      return 12;
- };
+ }
 ```
 
-### Answer 
-
-In JavaScript `var`-declared variables and functions are `hoisted`. Let's take function `hoisting` first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it's declared. For Example:
+In JavaScript `var`-declared variables and functions are `hoisted`. Let's take function `hoisting` first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it's declared. For example:
 
 ```javascript
 foo(); // Here foo is still undefined
@@ -525,7 +527,7 @@ var foo = function foo() {
 };
 ```
 
-The code above behind the scene look something like below code:
+The code above behind the scene look something like this:
 
 ```javascript
 var foo = undefined;
@@ -1371,11 +1373,9 @@ console.log(emp1 instanceof Employee); // true
 console.log(emp1 instanceof Object); // true
 ```
 
-## Question 38. Describe Object-Based inheritance in JavaScript.
+## Question 38. How does Object.create method works JavaScript?
 
- Object-based inheritance also called prototypal inheritance in which we one object inherit from another object without invoking a constructor function.
-
-The ECMAScript 5 **Object.create()** method is the easiest way for one object to inherit from another. 
+The ECMAScript 5 **Object.create()** method is the easiest way for one object to inherit from another, without invoking a constructor function. 
 
 **For instance:** 
 
@@ -1391,7 +1391,7 @@ var emp1 = Object.create(employee);
 console.log(emp1.displayName());  // output "Nishant"
 ```
 
-Above example create a new object `emp1` that inherits from `employee`. Here the inheritance occur as `emp1`'s prototype is set to `employee`. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
+In the example above, we create a new object `emp1` that inherits from `employee`. In other words `emp1`'s prototype is set to `employee`. After this emp1 is able to access the same properties and method on employee until new properties or method with the same name are defined.
 
 **For instance:** Defining `displayName()` method on `emp1` will not automatically override the employee `displayName`.
 
@@ -1406,7 +1406,7 @@ emp1.displayName();//xyz-Anonymous
 
 In addition to this **`Object.create(`)** method also allows to specify a second argument which is an object containing additional properties and methods to add to the new object.
 
-**For Example**
+**For example**
 
 ```javascript
 var emp1 = Object.create(employee, {
@@ -1418,13 +1418,11 @@ var emp1 = Object.create(employee, {
 emp1.displayName(); // "John"
 employee.displayName(); // "Nishant"
 ```
-In above example, `emp1` is created with it's own value for name, so calling **displayName()** method display `"John"` instead of `"Nishant"`.
+In the example above, `emp1` is created with it's own value for name, so calling **displayName()** method will display `"John"` instead of `"Nishant"`.
 
 Object created in this manner give you full control over newly created object. You are free to add, remove any properties and method you want.
 
-## Question 39. Describe Type-Based inheritance in JavaScript.
-
-Type-based inheritance works with constructor function instead of object, It means we need to call constructor function of the object from which you  want to inherit.
+## Question 39. How to use constructor functions for inheritance in JavaScript?
 
 Let say we have `Person` class which has name, age, salary properties and **incrementSalary()** method.
 
@@ -1449,7 +1447,7 @@ function Employee(company){
 //Prototypal Inheritance 
 Employee.prototype = new Person("Nishant", 24,5000);
 ```
-In above example, **Employee** type inherits from **Person**, which is called super types. It does so by assigning a new instance of Person to Employee prototype. After that, every instance of Employee inherits it's properties and methods from Person.
+In the example above, **Employee** type inherits from **Person**. It does so by assigning a new instance of `Person` to `Employee` prototype. After that, every instance of `Employee` inherits its properties and methods from `Person`.
 
 ```javascript
 //Prototypal Inheritance 
@@ -1493,7 +1491,7 @@ There are three levels of preventing modification:
 
 No new properties or methods can be added to the object, but one can change the existing properties and method.
 
-For Example: 
+For example: 
 
 ```javascript
 var employee = {
@@ -1567,7 +1565,7 @@ Frozen objects are considered both non-extensible and sealed.
 
 If you are decided to prevent modification, sealed, freeze the object then use in strict mode so that you can catch the error.
 
-For Example: 
+For example: 
 
 ```javascript
 "use strict";
@@ -1791,7 +1789,7 @@ name , age , addressLine1 , addressLine2 , city */
 const merge = (toObj, fromObj) = Object.assign(toObj, fromObj);
 ```
  
-**Method 2: Without using in-built function**
+**Method 2: Without using built-in function**
 
 ```javascript
 function merge(toObj, fromObj) {
@@ -1809,7 +1807,7 @@ function merge(toObj, fromObj) {
   }
 }
 ```
-## Question 49. What is non-enumerable property in JavaScript and how can create ?
+## Question 49. What is non-enumerable property in JavaScript and how you can create one?
 
 Object can have properties that don't show up when you iterate through object using for...in loop or using Object.keys() to get an array of property names. This properties is know as non-enumerable properties.
 
@@ -1843,7 +1841,7 @@ Object.defineProperty(person, 'phoneNo',{
 
 Object.keys(person); // ['name', 'salary', 'country']
 ```
-In above example `phoneNo` property didn't show up because we made it non-enumerable by setting **enumerable:false**
+In the example above `phoneNo` property didn't show up because we made it non-enumerable by setting **enumerable:false**
 
 Now let's try to change value of `phoneNo`
 
