@@ -3377,9 +3377,18 @@ console.log(mul(2)(3)(4)(5)(6));
 Answer: 1) 720
 
 
+## 7. Write a function that would allow you to do this multiply(5)(6);  ?
 
+### Answer 
 
+```javascript
+function multiply(5) {
+	return function(6){
+	return 5*6;
+}
+};
 
+It is also one of good example of closure when multiply(5) will be entered, its output shud be a function again so that it takes care of (6) when it executes.
 
 ## Contributing
 
