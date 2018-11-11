@@ -1618,7 +1618,7 @@ function appLog() {
   console.log.apply(console, args);
 }
 
-console.log(appLog("Some error message")); 
+appLog("Some error message"); 
 //output of above console: 'your app name Some error message'
 ```
 
