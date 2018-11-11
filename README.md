@@ -2776,7 +2776,7 @@ Answer: 4) undefined true
 var obj = {
 	message: "Hello",
 	innerMessage: function() {
-		console.log(this.message);
+		return this.message;
 	}
 };
 	
