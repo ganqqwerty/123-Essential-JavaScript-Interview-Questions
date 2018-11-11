@@ -1792,7 +1792,7 @@ name , age , addressLine1 , addressLine2 , city */
 **Method 1: Using ES6, Object assign method**
 
 ```javascript
-const merge = (toObj, fromObj) = Object.assign(toObj, fromObj);
+const merge = (toObj, fromObj) => Object.assign(toObj, fromObj);
 ```
  
 **Method 2: Without using built-in function**
