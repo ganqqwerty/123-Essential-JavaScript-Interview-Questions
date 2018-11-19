@@ -165,7 +165,7 @@ In Javascript function defined inside has access to outer function variable and 
 - A function can be pass as a parameter to another function
 - A function can be returned from another function
 
-### Mul V2 Question: Write function that works for all the next cases:
+### Mul V2 Question - Write function that works for all the next cases:
 
 ```javascript
 // notice the `
@@ -175,7 +175,8 @@ console.log(`${mul(1)(2)(3)(4)(5)(6)(7)(8)(8)(10)(11)(12)(13)(14)(15)(16)(17)}`)
 ```
 
 ### Mul v2 Answer
-In javascript, any object can override `toString` method, we can return a closure with `toString` method
+In javascript, any object can override `toString` method.
+We can return a closure with custom `toString` method and `${obj}` will call `obj.toString()`
 
 ```javascript
 function mul(x) {
