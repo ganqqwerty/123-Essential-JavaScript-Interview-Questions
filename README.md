@@ -165,6 +165,33 @@ In Javascript function defined inside has access to outer function variable and 
 - A function can be pass as a parameter to another function
 - A function can be returned from another function
 
+### Mul V2 Question: Write function that works for all the next cases:
+
+```javascript
+// notice the `
+console.log(`${mul(3)(2)(3)(12)(64)}`);
+console.log(`${mul(3)(2)(3)(12)(64)(98)(12)}`);
+console.log(`${mul(1)(2)(3)(4)(5)(6)(7)(8)(8)(10)(11)(12)(13)(14)(15)(16)(17)}`);
+```
+
+### Mul v2 Answer
+In javascript, any object can override `toString` method, we can return a closure with `toString` method
+
+```javascript
+function mul(x) {
+  let res = x;
+  const fn = function(n) {
+    res*=n;
+    return fn;
+  }
+
+  fn.toString = function() {
+    return res.toString();
+  }
+  return fn;
+}
+```
+
 ## Question 6. How to empty an array in JavaScript?
 For instance:
 
