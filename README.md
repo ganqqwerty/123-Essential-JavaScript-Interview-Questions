@@ -13,7 +13,7 @@ It's a book about frontend interview question. We hope that it will help all jav
 
 ### Answer
 
-In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop execute thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
+In JavaScript if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error `var name is not defined` and the script will stop executing thereafter. But If you use `typeof undeclared_variable` then it will return `undefined`.
 
 Before starting further discussion let's understand the difference between declaration and definition.
 
