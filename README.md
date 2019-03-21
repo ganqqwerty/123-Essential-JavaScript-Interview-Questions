@@ -1992,9 +1992,10 @@ Arrays are object in JS, so both varaibles arrA and arrB point to the same array
 ### 6. What would be the output of following code?
 
 ```javascript
-var arrA = [{prop1: "value of array A!!"},  {someProp: "also value of array A!"}];
+var arrA = [{prop1: "value of array A!!"}, {someProp: "also value of array A!"},3,4,5];
 var arrB = arrA.slice();
 arrB[0].prop1=42;
+arrB[3] = 20;
 console.log(arrA);
 ```
 
