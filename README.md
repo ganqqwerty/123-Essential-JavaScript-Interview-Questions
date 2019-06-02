@@ -493,7 +493,7 @@ function bar () {
 ```
 ### Answer 
 
-The main difference is function `foo` is defined at `run-time` and is called function expression, whereas function `bar` is defined at parse time and is called function statement. To understand in better, let's see below code :
+The main difference is that function `foo` is defined at `run-time` and is called a function expression, whereas function `bar` is defined at `parse time` and is called a function statement. To understand it better, let's take a look at the code below :
 
 ```javascript
 // Run-Time function declaration
