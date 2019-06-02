@@ -478,7 +478,7 @@ var foo = function bar() {
 // bar is undefined here
 ```
 
-## Question 17. What is the difference between declaring a function in the formats listed below?
+## Question 17a. What is the difference between declaring a function in the formats listed below?
 
 ```javascript
 var foo = function() {
@@ -510,6 +510,21 @@ function bar() {
   console.log("Hi I am inside Foo");
 }
 ```
+## Question 17b. What is the output of the following?
+
+```javascript
+bar();
+(function abc(){console.log('something')})();
+function bar(){console.log('bar got called')};
+```
+### Answer 
+
+The output will be :
+``` 
+bar got called
+something
+```
+Since the function is called first and defined during parse time the JS engine will try to find any possible parse time definitions and start the execution loop which will mean function is called first even if the definition is post another function.
 
 ## Question 18. In which case the function definition is not hoisted in JavaScript?
 
