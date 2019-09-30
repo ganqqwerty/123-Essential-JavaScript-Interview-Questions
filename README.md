@@ -2038,6 +2038,19 @@ two elements.
 
 This is why changing the property of `arrB[0]` in `arrB` will also change the `arrA[0]`.
 
+### 6. What would be the output of following code?
+Assuming d is an “empty” object in scope, say:
+```javascript
+var d = {};
+[ 'zebra', 'horse' ].forEach(function(k) {
+	d[k] = undefined;
+});
+```
+
+The snippet of code shown above sets two properties on the object d. Ideally, any lookup performed on a JavaScript object with an unset key evaluates to undefined. But running this code marks those properties as “own properties” of the object.
+
+This is a useful strategy for ensuring that an object has a given set of properties. Passing this object to Object.keys will return an array with those set keys as well (even if their values are undefined).
+
 
 ## Hoisting 
 
