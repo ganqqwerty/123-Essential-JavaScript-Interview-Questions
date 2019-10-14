@@ -1864,16 +1864,15 @@ Object.keys(person); // ['name', 'salary', 'country']
 ```
 In the example above `phoneNo` property didn't show up because we made it non-enumerable by setting **enumerable:false**
 
+**Bonus**
+
 Now let's try to change value of `phoneNo`
 
 ```javascript
 person.phoneNo = '7777777777'; 
 ```
-Changing non-enumerable property value will return error in `strict mode`. In non-strict mode it won't through any error but it won't change the value of phoneNo.
 
-**Bonus**
-
-**Object.defineProperty()** is also let you create read-only properties as we saw above, we are not able to modify phoneNo value of a person object.
+**Object.defineProperty()** also lets you create read-only properties as we saw above, we are not able to modify phoneNo value of a person object. This is because descriptor has **writable** property, which is `false` by default. Changing non-writable property value will return error in strict mode. In non-strict mode it won't through any error but it won't change the value of phoneNo.
 
 ## Question 50. What is Function binding ?
 
