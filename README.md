@@ -3391,7 +3391,32 @@ console.log(mul(2)(3)(4)(5)(6));
 	
 Answer: 1) 720
 
+### 6. What would be the output of following code ?
 
+```javascript
+function getName1(){
+	console.log(this.name);
+}
+
+Object.prototype.getName2 = () =>{
+	console.log(this.name)
+}
+
+let personObj = {
+	name:"Tony",
+	print:getName1
+}
+
+personObj.print();
+personObj.getName2();
+```
+
+1. undefined undefined
+2. Tony undefined
+3. undefined Tony
+4. Tony Tony
+
+Answer: 2) Tony undefined
 
 
 
