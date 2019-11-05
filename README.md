@@ -3391,7 +3391,7 @@ console.log(mul(2)(3)(4)(5)(6));
 	
 Answer: 1) 720
 
-### 6. What would be the output of following code ?
+### 7. What would be the output of following code ?
 
 ```javascript
 function getName1(){
