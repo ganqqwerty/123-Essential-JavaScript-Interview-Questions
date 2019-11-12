@@ -1352,6 +1352,18 @@ function(value){
 }
 ```
 
+**Method 4:**
+
+You can query the constructor name:
+
+```javascript
+function isArray(value) {
+	return value.constructor.name === "Array";
+}
+
+```
+
+
 ## Question 37. Best way to detect reference values of any type in JavaScript ?
 
  In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as **Object**, **Array**, **Function**, **Date**, **null** and **Error**.
