@@ -1363,6 +1363,15 @@ function isArray(value) {
 
 ```
 
+**Method 5:**
+
+You check  if a given value is an `instanceof Array`:
+
+```javascript
+function isArray(value) {
+	return value instanceof Array;
+}
+```
 
 ## Question 37. Best way to detect reference values of any type in JavaScript ?
 
