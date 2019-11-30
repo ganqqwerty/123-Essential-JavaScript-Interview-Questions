@@ -1802,6 +1802,27 @@ sentEmail({
 }, 'Yahoo Mail');
 ```
 
+**Method 3: Setting default parameter value in ES6**
+```javascript
+function sendEmail(configuration, provider = "Gmail") {
+  // Set default value if user has not passed value for provider
+  
+  // Value of provider can be accessed directly
+  console.log(`Provider: ${provider}`);
+}
+
+// In this call we are not passing provider parameter value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+});
+// Here we are passing Yahoo Mail as a provider value
+sentEmail({
+  from: 'xyz@gmail.com',
+  subject: 'Test Email'
+}, 'Yahoo Mail');
+```
+
 ## Question 48. Write code for merge two JavaScript Object dynamically.
 Let say you have two objects 
 
