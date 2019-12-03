@@ -3418,7 +3418,26 @@ personObj.getName2();
 
 Answer: 2) Tony undefined
 
+Explaination: **getName1()** function works fine because it's being called from ***personObj***, so it has access to *this.name* property. But when while calling **getnName2** which is defined under *Object.prototype* doesn't have any proprty named *this.name*. There should be *name* property under prototype. Following is the code:
 
+```javascript
+function getName1(){
+	console.log(this.name);
+}
+
+Object.prototype.getName2 = () =>{
+  console.log(Object.getPrototypeOf(this).name);
+}
+
+let personObj = {
+	name:"Tony",
+	print:getName1
+}
+
+personObj.print();
+Object.prototype.name="Steve";
+personObj.getName2();
+```
 
 
 ## Contributing
