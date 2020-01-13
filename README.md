@@ -1280,7 +1280,16 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
+This can also achieve by forEach (allows you to keep that variable within the forEach’s scope)
 
+```javascript 
+var arr = [10, 32, 65, 2];
+arr.forEach(function(i) {
+  setTimeout(function() {
+    console.log('The index of this number is: ' + i);
+  }, 3000);
+})
+```
 
 ## Question 36. How to check if the value of a variable in an array?
 
