@@ -1280,7 +1280,16 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
+This can also achieve by forEach (allows you to keep that variable within the forEach’s scope)
 
+```javascript 
+var arr = [10, 32, 65, 2];
+arr.forEach(function(i) {
+  setTimeout(function() {
+    console.log('The index of this number is: ' + i);
+  }, 3000);
+})
+```
 
 ## Question 36. How to check if the value of a variable in an array?
 
@@ -3412,9 +3421,53 @@ console.log(mul(2)(3)(4)(5)(6));
 	
 Answer: 1) 720
 
+### 7. What would be the output of following code ?
 
+```javascript
+function getName1(){
+	console.log(this.name);
+}
 
+Object.prototype.getName2 = () =>{
+	console.log(this.name)
+}
 
+let personObj = {
+	name:"Tony",
+	print:getName1
+}
+
+personObj.print();
+personObj.getName2();
+```
+
+1. undefined undefined
+2. Tony undefined
+3. undefined Tony
+4. Tony Tony
+
+Answer: 2) Tony undefined
+
+Explaination: **getName1()** function works fine because it's being called from ***personObj***, so it has access to *this.name* property. But when while calling **getnName2** which is defined under *Object.prototype* doesn't have any proprty named *this.name*. There should be *name* property under prototype. Following is the code:
+
+```javascript
+function getName1(){
+	console.log(this.name);
+}
+
+Object.prototype.getName2 = () =>{
+  console.log(Object.getPrototypeOf(this).name);
+}
+
+let personObj = {
+	name:"Tony",
+	print:getName1
+}
+
+personObj.print();
+Object.prototype.name="Steve";
+personObj.getName2();
+```
 
 
 ## Contributing
