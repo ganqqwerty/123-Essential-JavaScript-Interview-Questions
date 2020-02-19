@@ -1046,8 +1046,8 @@ This method is useful if we want to create several similar objects. In the code 
 
   // Creating multiple object which have similar property but diff value assigned to object property.
   var employee1 = new Employee('John', 'Moto', 24, '5000$');
-  var employee1 = new Employee('Ryan', 'Jor', 26, '3000$');
-  var employee1 = new Employee('Andre', 'Salt', 26, '4000$');
+  var employee2 = new Employee('Ryan', 'Jor', 26, '3000$');
+  var employee3 = new Employee('Andre', 'Salt', 26, '4000$');
 ```
 
 #### Method 2: Object Literal
