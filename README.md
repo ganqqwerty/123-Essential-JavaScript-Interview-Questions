@@ -1284,7 +1284,7 @@ This can also achieve by forEach (allows you to keep that variable within the fo
 
 ```javascript 
 var arr = [10, 32, 65, 2];
-arr.forEach(function(i) {
+arr.forEach(function(ele, i) {
   setTimeout(function() {
     console.log('The index of this number is: ' + i);
   }, 3000);
