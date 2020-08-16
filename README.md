@@ -24,7 +24,7 @@ var x; // declaring x
 console.log(x); // output: undefined
 ```
 
-`var x = 1` is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it's declared then assignment happen in order this term is called `hoisting`.
+`var x = 1` is both declaration and definition (what we are doing is called "initialisation"), Here declaration and assignment of value happen inline for variable x, In JavaScript both variable declarations and function declarations go to the top of the scope in which they are declared, then assignment happens—this series of events is called `hoisting`.
 
 A variable can be declared but not defined. When we try to access it, It will result `undefined`.
 
@@ -644,7 +644,7 @@ The `typeof` operator checks if a value belongs to one of the seven basic types:
 
 `typeof(null)` will return `object`.
 
-`instanceof` is much more intelligent: it works on the level of prototypes. In particular, it tests to see if the right operand appears anywhere in the prototype chain of the left. `instanceof` doesn’t work with primitive types. It `instanceof` operator checks the current object and returns true if the object is of the specified type, for example:
+`instanceof` is much more intelligent: it works on the level of prototypes. In particular, it tests to see if the right operand appears anywhere in the prototype chain of the left. `instanceof` doesn’t work with primitive types. The `instanceof` operator checks the current object and returns true if the object is of the specified type, for example:
 
 ```javascript
 var dog = new Animal();
@@ -674,11 +674,11 @@ counterArray["C"] = 1;
 ```
 <details><summary><b>Answer</b></summary>
 
-First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.
+First of all, in the case of JavaScript an associative array is the same as an object. Secondly, even though there is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.
 
 #### Method 1
 
-`Object` has `keys` method which can we used to calculate the length of object.
+`Object` has `keys` method which can be used to calculate the length of object.
 
 ```javascript
 Object.keys(counterArray).length; // Output 3
