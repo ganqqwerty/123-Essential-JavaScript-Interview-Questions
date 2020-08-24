@@ -2,12 +2,12 @@
 
 # 123-JavaScript-Interview-Questions
 
-It's a book about frontend interview question. We hope that it will help all javascript developers to prepare for a technical job interview. 
+This book's goal is to help javascript frontend developers prepare for technical job interviews through a collection of carefully compiled questions.
 
 ## Want to buy a book in paper form? Want some badass flashcards?
 
- - This Book will be soon completed and then it will be available to buy in a paper form. If you want me to sent an early copy of this book, please add your name and email address in google form here [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
- - If you don't want to wait, you can buy [Yuri's JavaScript Flashcards](http://flashcardsjs.com), a set of frontend interview questions sorted by popularity among the interviewers printed on beautiful poker-size flashcards.
+ - This Book will be soon completed and then it will be available to buy in paper form. If you want me to send you an early copy of this book, please add your name and email address in this [Google Form](https://goo.gl/forms/c8ubV1tWBBdz6fJP2).
+ - If you don't want to wait, you can buy [Yuri's JavaScript Flashcards](http://flashcardsjs.com), a set of frontend interview questions sorted by popularity among interviewers printed on beautiful poker-size flashcards.
 
 ## Question 1. What's the difference between `undefined` and `not defined` in JavaScript
 
@@ -17,14 +17,14 @@ In JavaScript if you try to use a variable that doesn't exist and has not been d
 
 Before starting further discussion let's understand the difference between declaration and definition.
 
-`var x` is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need for memory allocation.
+`var x` is a declaration because we are not defining what value it holds yet, but we are declaring its existence and the need for memory allocation.
 
 ```javascript
 var x; // declaring x
 console.log(x); // output: undefined
 ```
 
-`var x = 1` is both declaration and definition (what we are doing is called "initialisation"), Here declaration and assignment of value happen inline for variable x, In JavaScript both variable declarations and function declarations go to the top of the scope in which they are declared, then assignment happens—this series of events is called `hoisting`.
+`var x = 1` is both declaration and definition, here declaration and assignment of value happen inline for variable x—what we are doing is called "initialisation". In JavaScript both variable declarations and function declarations go to the top of the scope in which they are declared, then assignment happens—this series of events is called "hoisting".
 
 A variable can be declared but not defined. When we try to access it, It will result `undefined`.
 
@@ -48,7 +48,7 @@ console.log(y);  // Output: ReferenceError: y is not defined
 
 
 ```javascript
-//  if( x <= 100 ) {...}
+if( x <= 100 ) {...}
 if( !(x > 100) ) {...}
 ```
 <details><summary><b>Answer</b></summary>
@@ -56,9 +56,9 @@ if( !(x > 100) ) {...}
 `NaN <= 100` is `false` and `NaN > 100` is also `false`, so if the
 value of `x` is `NaN`, the statements are not the same.
 
-The same holds true for any value of x that being converted to Number, returns NaN, e.g.: `undefined`, `[1,2,5]`, `{a:22}` , etc.
+The same holds true for any value of x that being converted to type Number, returns `NaN`, e.g.: `undefined`, `[1,2,5]`, `{a:22}` , etc.
 
-This is why you need to pay attention when you deal with numeric variables. `NaN` can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is `NaN`, is to use `isNaN()` function.
+This is why you need to pay attention when you deal with numeric variables. `NaN` can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is `NaN`, is to use the `isNaN()` function.
 
 </details>
 
@@ -66,7 +66,7 @@ This is why you need to pay attention when you deal with numeric variables. `NaN
 
 <details><summary><b>Answer</b></summary>
 
-One of the drawback of declaring methods directly in JavaScript objects is that they are very memory inefficient.  When you do that, a new copy of the method is created for each instance of an object. Let's see it on example:
+One of the drawbacks of declaring methods directly in JavaScript objects is that they are very memory inefficient.  When you do that, a new copy of the method is created for each instance of an object. Here's an example:
 
 ```javascript
 var Employee = function (name, company, salary) {
@@ -80,7 +80,7 @@ var Employee = function (name, company, salary) {
   };
 };
 
-// we can also create method in Employee's prototype:
+// Alternatively we can add the method to Employee's prototype:
 Employee.prototype.formatSalary2 = function() {
     return "$ " + this.salary;
 }
@@ -91,7 +91,7 @@ var emp2 = new Employee('Dinesh Gupta', 'Company 2', 1039999);
 var emp3 = new Employee('Erich Fromm', 'Company 3', 1299483);
 ```
 
-Here each instance variable `emp1`, `emp2`, `emp3` has own copy of `formatSalary` method. However the `formatSalary2` will only be added once to an object `Employee.prototype`.
+In this case each instance variable `emp1`, `emp2`, `emp3` has its own copy of the`formatSalary` method. However the `formatSalary2` will only be added once to `Employee.prototype`.
 
 </details>
 
@@ -99,39 +99,45 @@ Here each instance variable `emp1`, `emp2`, `emp3` has own copy of `formatSalary
 
 <details><summary><b>Answer</b></summary>
 
-A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.
+A closure is a function defined inside another function (called parent function) and as such it has access to the variables declared and defined within its parent function's scope.
 
-The closure has access to the variable in three scopes:
+The closure has access to the variables in three scopes:
+
 - Variable declared in his own scope
-- Variable declared in parent function scope
+- Variable declared in its parent function's scope
 - Variable declared in the global namespace
 
 ```javascript
-var globalVar = "abc";
+var globalVar = "abc"; //Global variable
 
-// Parent self invoking function
-(function outerFunction (outerArg) { // begin of scope outerFunction
-  // Variable declared in outerFunction function scope
-  var outerFuncVar = 'x';    
+// Parent self-invoking function
+(function outerFunction (outerArg) { // start of outerFunction's scope
+
+  var outerFuncVar = 'x'; // Variable declared in outerFunction's function scope   
+  
   // Closure self-invoking function
-  (function innerFunction (innerArg) { // begin of scope innerFunction
-    // variable declared in innerFunction function scope
-    var innerFuncVar = "y";
+  (function innerFunction (innerArg) { // start of innerFunction's scope
+
+    var innerFuncVar = "y"; // variable declared in innerFunction's function scope
     console.log(         
       "outerArg = " + outerArg + "\n" +
       "outerFuncVar = " + outerFuncVar + "\n" +
       "innerArg = " + innerArg + "\n" +
       "innerFuncVar = " + innerFuncVar + "\n" +
       "globalVar = " + globalVar);
-  // end of scope innerFunction
-  })(5); // Pass 5 as parameter
-// end of scope outerFunction
-})(7); // Pass 7 as parameter
+  	
+  // end of innerFunction's scope
+  
+  })(5); // Pass 5 as parameter to our Closure
+
+// end of outerFunction's scope
+
+})(7); // Pass 7 as parameter to the Parent function
 ```
 
-`innerFunction` is closure which is defined inside `outerFunction` and has access to all variable which is declared and defined in outerFunction scope. In addition to this function defined inside the function as closure has access to the variable which is declared in `global namespace`.
+`innerFunction` is a closure which is defined inside `outerFunction` and consequently has access to all the variables which have been declared and defined within `outerFunction`'s scope as well as any variables residing in the program's global scope.
 
-Output of above code would be:
+The output of the code above would be:
 
 ```javascript
 outerArg = 7
@@ -151,8 +157,6 @@ console.log(mul(4)(3)(4)); // output : 48
 ```
 <details><summary><b>Answer</b></summary>
 
-Below is the code followed by the explanation of how it works:
-
 ```javascript
 function mul (x) {
   return function (y) { // anonymous function
@@ -163,14 +167,15 @@ function mul (x) {
 }
 ```
 
-Here the `mul` function accepts the first argument and returns the anonymous function which takes the second parameter and returns the anonymous function which takes the third parameter and returns the multiplication of arguments which is being passed in successive
+Here the `mul` function accepts the first argument and returns an anonymous function which then takes the second parameter and returns one last anonymous function which finally takes the third and final parameter; the last function then multiplies `x`, `y` and `z`, and returns the result of the operation.
 
-In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by the function as well and passed as an argument in another function.
+In Javascript, a function defined inside another function has access to the outer function's scope and can consequently return, interact with or pass on to other functions, the variables belonging to the scopes that incapsulate it.
+
 - A function is an instance of the Object type
-- A function can have properties and has a link back to its constructor method
-- A function can be stored as variable
-- A function can be pass as a parameter to another function
-- A function can be returned from another function
+- A function can have properties and has a link to its constructor method
+- A function can be stored as a variable
+- A function can be passed as a parameter to another function
+- A function can be returned by another function
 
 </details>
 
