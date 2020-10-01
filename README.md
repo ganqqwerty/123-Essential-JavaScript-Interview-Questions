@@ -3776,7 +3776,7 @@ console.log(numb);
 
 </details>
 
-### 4**. What would be the output of following code ?
+### 4. What would be the output of following code ?
 
 ```javascript
 function mul(x){
@@ -3802,7 +3802,7 @@ console.log(mul(2)(3)[1](4));
 
 </details>
 
-### 5**. What would be the output of following code ?
+### 5. What would be the output of following code ?
 
 ```javascript
 function mul(x) {
