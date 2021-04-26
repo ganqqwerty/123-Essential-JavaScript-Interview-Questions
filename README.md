@@ -103,7 +103,7 @@ A closure is a function defined inside another function (called parent function)
 
 The closure has access to the variables in three scopes:
 
-- Variable declared in his own scope
+- Variable declared in its own scope
 - Variable declared in its parent function's scope
 - Variable declared in the global namespace
 
@@ -333,7 +333,7 @@ console.log(output);
 ```
 <details><summary><b>Answer</b></summary>
 
-The code above will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object it's **local variable**. `delete` operator doesn't affect local variables.
+The code above will output `0` as output. `delete` operator is used to delete a property from an object. Here `x` is not an object, it's a **local variable**. `delete` operator doesn't affect local variables.
 
 
 </details>
