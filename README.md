@@ -3910,6 +3910,41 @@ personObj.getName2();
 
 </details>
 
+### 8 . What would be the output of the following code ?
+```javascript
+let a = true;
+let c = 0;
+
+setTimeout(() => {
+	a = false;
+},2000)
+
+while(a){
+	console.log('Hello')
+}
+```
+<details><summary><b>Answer</b></summary> 
+The above program will print Hello infinitely. Since, Javascript is a single threaded language the actual execution happens only on the main thread. So, setTimeout will wailt for 2000 milliseconds on a seperate thread as while loop has occupied the main thread. The exit condition for the loop is to set the variable a as fasle. But as the loop continously running on the main thread , it a cannot be set false.
+</details>
+
+### 9 . What would be the output of the following code ?
+```javascript
+
+let c=0;
+
+let id = setInterval(() => {
+	console.log(c++)
+},200)
+
+setTimeout(() => {
+	clearInterval(id)
+},2000)
+```
+
+<details><summary><b>Answer</b></summary>
+The above program will print 0 to 9 sequentially.
+</details>
+
 ## Contributing
 
 We always appreciate your feedback on how the book can be improved, and more questions can be added. If you think you have some question then please add that and open a pull request. 
