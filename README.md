@@ -95,6 +95,9 @@ In this case each instance variable `emp1`, `emp2`, `emp3` has its own copy of t
 
 </details>
 
+## Question What is Scope ?
+https://developer.mozilla.org/en-US/docs/Glossary/Scope
+
 ## Question 4. What is “closure” in javascript? Can you provide an example?
 
 <details><summary><b>Answer</b></summary>
