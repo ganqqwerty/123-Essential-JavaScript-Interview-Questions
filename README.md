@@ -3120,7 +3120,9 @@ console.log(funcA());
 	
 <details><summary><b>Answer</b></summary>
 
- 1) 
+ 1) funcA  Window {...} 
+    innerFunc1 Window {...} 
+    innerFunA11 Window {...}
 
 </details>
 
