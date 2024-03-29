@@ -2107,6 +2107,60 @@ btn.addEventListener('click', clickHandler.handleClick.bind(clickHandler));
 
 </details>
 
+## Question 48. What is Cross-Origin Resource Sharing (CORS)?
+
+<details><summary><b>Answer</b></summary>  
+
+Cross-Origin Resource Sharing (CORS) is a security feature implemented in web browsers to prevent malicious websites from accessing resources and data hosted on another domain without permission. It's a crucial part of the security model that allows or restricts web pages from making requests to a different domain than the one that served the web page, thus implementing the same-origin policy.
+
+CORS works through the exchange of HTTP headers between the client (browser) and the server. When a webpage attempts to make a request to a server from a different origin, the browser automatically adds an Origin header to the request, indicating the origin of the requesting page. The server can then decide whether to allow or deny the request based on its CORS policy.
+
+For example, if https://example.com is allowed to access resources on https://api.example.com, the response from https://api.example.com would include a header like:
+
+```
+Access-Control-Allow-Origin: https://example.com
+```
+
+Or, to allow requests from any origin, the server might send:
+
+```
+Access-Control-Allow-Origin: *
+```
+
+CORS is essential for web developers to understand for the security of web applications. It helps to prevent unwanted or malicious cross-site requests while still allowing legitimate web pages to request resources from different origins when those resources are intended to be shared.
+
+</details>
+
+## Question 49. What is Event Bubbling?
+
+<details><summary><b>Answer</b></summary>  
+
+Event bubbling describes the way events propagate through the DOM tree when an event is fired on an element. If an event is triggered on an element then it will 'bubble' up to the parent up until it reaches the root of the document tree unless the propagation is explicitly stopped.
+
+For example:
+
+```html
+<div>
+	<button>Click Me!</button>
+</div>
+```
+
+If the button is clicked here, the event will trigger on the button first. After that, if there are any event listeners attached to the parent (the div), the event will 'bubble' up to them in turn, allowing each one to react to the same event if desired.
+
+You can control event bubbling using event properties and methods. To stop the event from bubbling up the DOM tree, you can use the event's 'stopPropagation()' method within an event listener:
+
+```javascript
+element.addEventListener('click', function(event) {
+	event.stopPropagation();
+});
+```
+
+This will stop the event from reaching any parent elements beyond the one whos event listener called the method.
+
+Event Bubbling is particularly useful for 'Event delegation', which is where instead of adding an event listener to each child element, you can add a single listener to a parent element to handle events from multiple children. This is known as event delegation and can improve performance and manage dynamic elements (elements added to the DOM after the page load) more efficiently.
+
+</details>
+
 # Coding Questions
 
 ## Passing values by reference vs by value
