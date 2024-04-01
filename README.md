@@ -1,6 +1,6 @@
 ![](coverPage.png)
 
-# 123-JavaScript-Interview-Questions
+# 123-JavaScript-Mülakat-Soruları
 
 This book's goal is to help javascript frontend developers prepare for technical job interviews through a collection of carefully compiled questions.
 
